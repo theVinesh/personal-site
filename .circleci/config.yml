@@ -1,0 +1,38 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:lts
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/mongo:3.4.4
+
+    working_directory: ~/repo
+    
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: npm install firebase-tools
+      - run:
+          name:  Build
+          command: echo "Builds here"
+      - run:
+          name:  Test
+          command: echo "Tests here"
+      - run:
+          name:  Deploy
+          command: |
+                  if [ "${CIRCLE_BRANCH}" != master ]; then
+                    echo "${CIRCLE_BRANCH} branch,skipping deploy"
+                  else
+                    firebase deploy --token $FIREBASE_TOKEN
+                  fi
+  
