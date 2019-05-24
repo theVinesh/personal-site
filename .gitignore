@@ -1,3 +1,9 @@
+# Custom
+app/public/stylesheets/
+
+# macOs junk
+.DS_Store
+
 # Logs
 logs
 *.log
