@@ -3,8 +3,12 @@ body {
   background: $grey;
   font-family: "Oxygen Mono", monospace;
   border-top: 16px solid $red;
-  @include respond-to(small-screens) { padding: 16px;}
-  @include respond-to(medium-screens) { padding: 16px;}
+  @include respond-to(small-screens) {
+    padding: 16px;
+  }
+  @include respond-to(medium-screens) {
+    padding: 16px;
+  }
 }
 
 #content {
@@ -31,19 +35,30 @@ body {
     margin: 8px 0 16px;
     font-size: 18px;
   }
+
+  a {
+    text-decoration: underline;
+    color: $black;
+    text-decoration-color: $red;
+  }
 }
 
 #social {
-  padding: 4px 0 0 0;
   a {
-    margin: 8px 4px;
-    display: inline-block;
     text-align: center;
     background: $red;
     text-decoration: none;
     color: $white;
-    padding: 12px 16px;
+    display: inline-block;
+    padding: 12px 12px;
     border-radius: 4px;
-    box-shadow: 0 1px 3px $grey, 0 1px 2px $dark_grey;
+  }
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  li {
+    margin: 4px 4px 0 0;
   }
 }
