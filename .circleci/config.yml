@@ -18,22 +18,33 @@ jobs:
     
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - node-v1-{{ .Branch }}-
+            - node-v1-
       - run:
           name: Install Dependencies
-          command: echo "install here"
+          command: npm install
+      - save_cache:
+          paths:
+            - node_modules 
+          key: node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run:
-          name:  Build
-          command: echo "Builds here"
+          name: Build
+          command: ./node_modules/.bin/sass app/scss:app/public/stylesheets --style compressed
       - run:
           name:  Test
           command: echo "Tests here"
+      - store_artifacts:
+          path: app/public
+          destination: site
       - run:
           name:  Deploy
           command: |
                   if [ "${CIRCLE_BRANCH}" != master ]; then
-                    echo "${CIRCLE_BRANCH} branch,skipping deploy"
+                    echo "${CIRCLE_BRANCH} branch, skipping deploy"
                   else
-                    npm install firebase-tools
                     ./node_modules/.bin/firebase deploy --token $FIREBASE_TOKEN
                   fi
   #check this in the future and seperate jobs https://discuss.circleci.com/t/deploy-to-firebase-not-working/22887
