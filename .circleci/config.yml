@@ -38,7 +38,7 @@ jobs:
           command: echo "Tests here"
       - store_artifacts:
           path: app/public
-          destination: site
+          destination: public
       - run:
           name:  Deploy
           command: |
@@ -47,4 +47,7 @@ jobs:
                   else
                     ./node_modules/.bin/firebase deploy --token $FIREBASE_TOKEN
                   fi
+      - store_artifacts:
+          path: firebase-debug.log
+          destination: firebase-debug.log
   #check this in the future and seperate jobs https://discuss.circleci.com/t/deploy-to-firebase-not-working/22887
