@@ -32,7 +32,7 @@ jobs:
           key: node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run:
           name: Build
-          command: ./node_modules/.bin/sass app/scss:app/public/stylesheets --style compressed
+          command: ./node_modules/.bin/sass app/scss:app/public/style --style compressed
       - run:
           name:  Test
           command: echo "Tests here"
