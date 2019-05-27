@@ -4,7 +4,7 @@
     "description": "@theVinesh 's personal site",
     "dependencies": {
         "firebase-tools": "latest",
-        "lighthouse": "latest",
+        "lighthouse": "^5.0.0",
         "sass": "latest"
     }
 }
