@@ -1,14 +1,16 @@
-<!DOCTYPE html>
+<!DOCTYPE html lang="en">
 <html>
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>theVinesh</title>
-  <link href="https://fonts.googleapis.com/css?family=Oxygen+Mono&display=swap&&effect=anaglyph" rel="stylesheet">
-  <link href="stylesheets/main.css" rel="stylesheet">
-  <script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
-  <script defer src="/__/firebase/init.js"></script>
+  <meta name="Description" content="Personal site of Vinesh Raju">
+  <meta name="theme-color" content="#d50000" />
+  <title>theVinesh's Site</title>
+  <link async href="https://fonts.googleapis.com/css?family=Oxygen+Mono&display=swap&&effect=anaglyph" rel="stylesheet">
+  <link async href="style/main.css" rel="stylesheet">
+  <!-- <script defer src="/__/firebase/6.0.2/firebase-app.js"></script> -->
+  <!-- <script defer src="/__/firebase/init.js"></script> -->
   <link rel="apple-touch-icon" sizes="57x57" href="assets/fav-icon/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="assets/fav-icon/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="assets/fav-icon/apple-icon-72x72.png">
@@ -30,7 +32,8 @@
     <h2>about</h2>
     <h1><span class="font-effect-anaglyph">Vinesh Raju</span> - Android Developer, Tech Enthusiast and A Lazy Human🤤.
     </h1>
-    <p>I am currently an Android Developer at <a target="_blank" href="https://swiggy.com">Swiggy</a>. I am curious
+    <p>I am currently an Android Developer at <a target="_blank" rel="noopener" href="https://swiggy.com">Swiggy</a>. I
+      am curious
       about almost everything. When I am not sleeping,
       eating or coding, I like to Sing, Sketch and dream up about all the cool stuffs to do; which I almost always
       procrastinate.😅</p>
@@ -38,12 +41,27 @@
     <div id="social">
       <ul>
         <li><a href="mailto:hi@thevinesh.dev">mail</a></li>
-        <li><a target="_blank" href="https://twitter.com/theVinesh">twitter</a></li>
-        <li><a target="_blank" href="https://www.linkedin.com/in/theVinesh/">linkedin</a></li>
-        <li><a target="_blank" href="https://github.com/theVinesh">github</a></li>
+        <li><a target="_blank" rel="noopener" href="https://twitter.com/theVinesh">twitter</a></li>
+        <li><a target="_blank" rel="noopener" href="https://www.linkedin.com/in/theVinesh/">linkedin</a></li>
+        <li><a target="_blank" rel="noopener" href="https://github.com/theVinesh">github</a></li>
       </ul>
     </div>
   </div>
+  <script type="text/javascript">
+    if ("serviceWorker" in navigator) {
+      if (navigator.serviceWorker.controller) {
+        console.log("Active service worker found, no need to register");
+      } else {
+        navigator.serviceWorker
+          .register("sw.js", {
+            scope: "./"
+          })
+          .then(function (reg) {
+            console.log("Service worker has been registered for scope: " + reg.scope);
+          });
+      }
+    }
+  </script>
 </body>
 
 </html>

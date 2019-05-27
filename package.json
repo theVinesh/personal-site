@@ -1,9 +1,10 @@
 {
     "name": "thevinesh.dev - Personal site",
-    "url" : "https://theVinesh.dev",
+    "url": "https://theVinesh.dev",
     "description": "@theVinesh 's personal site",
     "dependencies": {
         "firebase-tools": "latest",
+        "lighthouse": "latest",
         "sass": "latest"
     }
 }
