@@ -1,0 +1,71 @@
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fafafa;
+  font-family: "Oxygen Mono", monospace;
+  border-top: 16px solid #f44336;
+}
+@media only screen and (max-width: 320px) {
+  body {
+    padding: 16px;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 1023px) {
+  body {
+    padding: 16px;
+  }
+}
+
+#content {
+  padding: 16px;
+  margin: 64px auto 0 auto;
+  max-width: 600px;
+}
+#content h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0 0 16px;
+}
+#content h2 {
+  color: #f44336;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+#content p {
+  line-height: 150%;
+  margin: 8px 0 16px;
+  font-size: 18px;
+}
+#content a {
+  text-decoration: underline;
+  color: #000000;
+  text-decoration-color: #f44336;
+}
+
+#social a {
+  text-align: center;
+  background: #f44336;
+  text-decoration: none;
+  color: #ffffff;
+  display: inline-block;
+  padding: 12px 12px;
+  border-radius: 4px;
+}
+#social ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+#social li {
+  margin: 4px 4px 0 0;
+}
+
+/*# sourceMappingURL=main.css.map */
