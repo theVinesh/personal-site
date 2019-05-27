@@ -3,12 +3,7 @@ body {
   background: $white;
   font-family: "Oxygen Mono", monospace;
   border-top: 16px solid $red;
-  @include respond-to(small-screens) {
-    padding: 16px;
-  }
-  @include respond-to(medium-screens) {
-    padding: 16px;
-  }
+  padding: 16px;
 }
 
 h1 {
@@ -40,7 +35,6 @@ p {
     color: $black;
     text-decoration-color: $red;
     &:hover {
-      border-radius: 2px;
       background: $red;
       color: $white;
     }
