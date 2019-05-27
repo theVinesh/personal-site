@@ -46,11 +46,5 @@ jobs:
                     echo "${CIRCLE_BRANCH} branch, skipping deploy"
                   else
                     ./node_modules/.bin/firebase deploy --token $FIREBASE_TOKEN
-                    sleep 1
-                    ./node_modules/.bin/lighthouse
                   fi
-      
-      - store_artifacts:
-          path: thevinesh.dev*.report.html
-          destination: lighthouse.report.html
   #check this in the future and seperate jobs https://discuss.circleci.com/t/deploy-to-firebase-not-working/22887
