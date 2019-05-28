@@ -20,15 +20,14 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
-            - node-v1-
+            - node-v1-{{ checksum "package.json" }}
       - run:
           name: Install Dependencies
           command: npm install
       - save_cache:
           paths:
-            - node_modules 
-          key: node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - ./node_modules 
+          key: node-v1-{{ checksum "package.json" }}
       - run:
           name: Build
           command: |
