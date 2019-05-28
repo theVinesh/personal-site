@@ -6,7 +6,7 @@
     "theme_color": "#d50000",
     "display": "standalone",
     "description": "Personal site of Vinesh Raju",
-    "start_url": "/",
+    "start_url": "https://thevinesh.dev",
     "icons": [
         {
             "src": "assets\/fav-icon\/android-icon-36x36.png",
