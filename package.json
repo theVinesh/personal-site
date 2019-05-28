@@ -4,7 +4,7 @@
     "description": "@theVinesh 's personal site",
     "dependencies": {
         "firebase-tools": "latest",
-        "html-minifier": "^4.0.0",
+        "html-minifier": "latest",
         "sass": "latest"
     }
 }
