@@ -1,4 +1,4 @@
-const CACHE = "page-cache-v1";
+const CACHE = "page-cache-v1.5";
 
 const filesToCache = [
   '/',
