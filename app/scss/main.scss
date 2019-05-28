@@ -1,6 +1,6 @@
 @import "modules/all";
 body {
-  background: $grey;
+  background: $white;
   font-family: "Oxygen Mono", monospace;
   border-top: 16px solid $red;
   @include respond-to(small-screens) {
@@ -11,35 +11,39 @@ body {
   }
 }
 
+h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: $black;
+  margin: 0 0 16px;
+}
+
+h2 {
+  color: $red;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+p {
+  line-height: 150%;
+  margin: 8px 0 16px;
+  font-size: 18px;
+}
+
 #content {
   padding: 16px;
   margin: 64px auto 0 auto;
   max-width: 600px;
-
-  h1 {
-    font-size: 32px;
-    font-weight: 600;
-    color: $black;
-    margin: 0 0 16px;
-  }
-
-  h2 {
-    color: $red;
-    font-weight: bold;
-    font-size: 16px;
-    margin: 0 0 8px;
-  }
-
-  p {
-    line-height: 150%;
-    margin: 8px 0 16px;
-    font-size: 18px;
-  }
-
   a {
     text-decoration: underline;
     color: $black;
     text-decoration-color: $red;
+    &:hover {
+      border-radius: 2px;
+      background: $red;
+      color: $white;
+    }
   }
 }
 
@@ -50,15 +54,10 @@ body {
     text-decoration: none;
     color: $white;
     display: inline-block;
-    padding: 12px 12px;
-    border-radius: 4px;
-  }
-  ul {
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  li {
-    margin: 4px 4px 0 0;
+    padding: 12px;
+    margin: 4px 0;
+    &:hover {
+      background: $dark-red;
+    }
   }
 }
