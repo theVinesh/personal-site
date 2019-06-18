@@ -2,8 +2,6 @@
 body {
   background: $white;
   font-family: "Oxygen Mono", monospace;
-  border-top: 16px solid $red;
-  padding: 16px;
 }
 
 h1 {
@@ -24,10 +22,46 @@ p {
   font-size: 18px;
 }
 
+header {
+  background: $red;
+}
+
+nav {
+  width: 100%;
+  background: $red;
+  a {
+    display: inline-block;
+    font-size: 18px;
+    color: $white;
+    text-decoration: none;
+    padding: $nav_item_top_bottom_padding $nav_item_left_right_padding;
+    &:hover {
+      background: $dark-red;
+      border-bottom: $nav_item_bottom_border_height solid $white;
+      padding-bottom: $nav_item_top_bottom_padding - $nav_item_bottom_border_height;
+    }
+  }
+}
+
+main {
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  margin-top: $page_top_margin;
+  justify-content: center;
+}
+
+#navigation {
+}
+
 #content {
-  padding: 16px;
-  margin: 64px auto 0 auto;
-  max-width: 600px;
+  padding: $page_padding;
+  margin: $page_top_margin auto 0 auto;
+  @include respond-to(wide-screens) {
+    max-width: $max_content_width;
+  }
   a {
     text-decoration: underline;
     color: $black;

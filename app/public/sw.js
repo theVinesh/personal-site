@@ -1,6 +1,6 @@
 //Make sure to update this everytime there is change in ui
 // even better make it auto increment in ci/cd
-const CACHE = "page-cache-v1.6";
+const CACHE = "page-cache-v1.7";
 
 const filesToCache = [
   //TODO - cache this when most styling is done 'style/main.css',
