@@ -13,7 +13,7 @@
       },
       {
         "source": "**",
-        "destination": "pages/404.html"
+        "destination": "/pages/404.html"
       }
     ]
   }
