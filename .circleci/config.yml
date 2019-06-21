@@ -32,7 +32,7 @@ jobs:
           name: Build
           command: |
                     ./node_modules/.bin/sass app/scss:app/public/style --style compressed &&
-                    ./node_modules/.bin/html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true app/public/index.html -o app/public/index.html
+                    ./node_modules/.bin/html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true app/public/pages/*.html -o app/public/pages/*.html
       - run:
           name:  Test
           command: echo "Tests here"
