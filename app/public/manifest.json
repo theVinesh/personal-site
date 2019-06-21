@@ -1,11 +1,11 @@
 {
-    "name": "theVinesh's Site",
-    "short_name": "theVinesh",
+    "name": "Vinesh Raju's Site",
+    "short_name": "Vinesh Raju",
     "lang": "en-US",
     "background_color": "#9b0000",
     "theme_color": "#d50000",
     "display": "standalone",
-    "description": "Personal site of Vinesh Raju",
+    "description": "Hi, I am Vinesh Raju. I am an Android developer currently working at Swiggy.",
     "start_url": "https://thevinesh.dev",
     "icons": [
         {
