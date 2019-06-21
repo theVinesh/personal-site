@@ -20,19 +20,19 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
-            - node-v1-{{ .Branch }}-
-            - node-v1-
+            - node-v1-{{ checksum "package.json" }}
       - run:
           name: Install Dependencies
           command: npm install
       - save_cache:
           paths:
-            - node_modules 
-          key: node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - ./node_modules 
+          key: node-v1-{{ checksum "package.json" }}
       - run:
           name: Build
-          command: ./node_modules/.bin/sass app/scss:app/public/style --style compressed
+          command: |
+                    ./node_modules/.bin/sass app/scss:app/public/style --style compressed &&
+                    ./node_modules/.bin/html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true app/public/index.html -o app/public/index.html
       - run:
           name:  Test
           command: echo "Tests here"
@@ -46,11 +46,5 @@ jobs:
                     echo "${CIRCLE_BRANCH} branch, skipping deploy"
                   else
                     ./node_modules/.bin/firebase deploy --token $FIREBASE_TOKEN
-                    sleep 1
-                    ./node_modules/.bin/lighthouse
                   fi
-      
-      - store_artifacts:
-          path: thevinesh.dev*.report.html
-          destination: lighthouse.report.html
   #check this in the future and seperate jobs https://discuss.circleci.com/t/deploy-to-firebase-not-working/22887
