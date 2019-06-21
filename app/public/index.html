@@ -7,9 +7,7 @@
   <meta name="Description" content="Personal site of Vinesh Raju">
   <meta name="theme-color" content="#d50000" />
   <title>theVinesh's Site</title>
-  <link async href="style/main.css" rel="stylesheet">
-  <!-- <script defer src="/__/firebase/6.0.2/firebase-app.js"></script> -->
-  <!-- <script defer src="/__/firebase/init.js"></script> -->
+  <link href="style/main.css" rel="stylesheet">
   <link rel="apple-touch-icon" sizes="57x57" href="assets/fav-icon/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="assets/fav-icon/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="assets/fav-icon/apple-icon-72x72.png">
@@ -35,7 +33,7 @@
   </div>
   <main>
     <div id="content">
-      <h2>hi</h2>
+      <h2>hi </h2>
       <h1>I'm <span class="font-effect-anaglyph">Vinesh Raju</span> - Android Developer, Tech Enthusiast and A Lazy
         Human🤤.
       </h1>
@@ -56,22 +54,25 @@
   <footer>
     ❤️ Vinesh Raju
   </footer>
-  <link async href="https://fonts.googleapis.com/css?family=Oxygen+Mono&display=swap&&effect=anaglyph" rel="stylesheet">
   <script type="text/javascript">
     if ("serviceWorker" in navigator) {
-      if (navigator.serviceWorker.controller) {
-        console.log("Active service worker found, no need to register");
-      } else {
+      if (!navigator.serviceWorker.controller) {
         navigator.serviceWorker
           .register("sw.js", {
             scope: "./"
           })
-          .then(function (reg) {
-            console.log("Service worker has been registered for scope: " + reg.scope);
-          });
       }
     }
   </script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="/__/firebase/6.2.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#reserved-urls -->
+
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
+  <link defer href="https://fonts.googleapis.com/css?family=Oxygen+Mono&display=swap&&effect=anaglyph" rel="stylesheet">
 </body>
 
 </html>
