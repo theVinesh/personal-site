@@ -1,10 +1,9 @@
 //Make sure to update this everytime there is change in ui
 // even better make it auto increment in ci/cd
-const CACHE = "page-cache-v1.8";
+const CACHE = "page-cache-v1.7";
 
 const filesToCache = [
   //TODO - cache this when most styling is done 'style/main.css',
-  'pages/404.html',
   'https://fonts.googleapis.com/css?family=Oxygen+Mono&display=swap&&effect=anaglyph'
 ];
 
