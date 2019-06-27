@@ -1,5 +1,5 @@
 # Custom
-app/public/style/
+dist/
 
 # macOs junk
 .DS_Store
