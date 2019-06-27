@@ -30,14 +30,12 @@ jobs:
           key: node-v1-{{ checksum "package.json" }}
       - run:
           name: Build
-          command: |
-                    ./node_modules/.bin/sass app/scss:app/public/style --style compressed &&
-                    ./node_modules/.bin/html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true --input-dir app/public/pages/ --output-dir app/public/pages/
+          command: npm run build:prod
       - run:
           name:  Test
           command: echo "Tests here"
       - store_artifacts:
-          path: app/public
+          path: dist
           destination: public
       - run:
           name:  Deploy
