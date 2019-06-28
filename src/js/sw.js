@@ -1,57 +1,15 @@
-//Make sure to update this everytime there is change in ui
-// even better make it auto increment in ci/cd
-const CACHE = "page-cache-v1.8";
-
-const filesToCache = [
-  //TODO - cache this when most styling is done 'style/main.css',
-  'pages/404.html',
-  'https://fonts.googleapis.com/css?family=Oxygen+Mono&display=swap&&effect=anaglyph'
-];
-
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE)
-      .then(cache => {
-        return cache.addAll(filesToCache);
-      })
-  );
+const routesMap = new Map([
+  ["\/", "\/index.html"],
+  ["\/home", "\/index.html"],
+]);
+const pageRouteMatcher = ({ url, event }) => { return routesMap.has(url.pathname); Î };
+const pageRouteHandler = async ({ url, event, params }) => { return fetch(routesMap.get(url.pathname) + url.search); };
+const router = workbox.routing;
+router.registerRoute(pageRouteMatcher, pageRouteHandler);
+router.setDefaultHandler(({ url, event, params }) => {
+  return fetch(event.request);
 });
-
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-          // .then(response => {
-          //   // TODO - Respond with custom 404 page
-          //   return caches.open(CACHE).then(cache => {
-          //     cache.put(event.request.url, response.clone());
-          //     return response;
-          //   });
-          // });
-      }).catch(error => {
-
-        // TODO - Respond with custom offline page
-
-      })
-  );
-});
-
-self.addEventListener('activate', event => {
-  const cacheWhitelist = [CACHE];
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
-});
-
+workbox.googleAnalytics.initialize();
+workbox.core.skipWaiting();
+workbox.core.clientsClaim();
+workbox.precaching.precacheAndRoute(self.__precacheManifest);
