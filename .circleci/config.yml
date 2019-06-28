@@ -43,6 +43,6 @@ jobs:
                   if [ "${CIRCLE_BRANCH}" != master ]; then
                     echo "${CIRCLE_BRANCH} branch, skipping deploy"
                   else
-                    ./node_modules/.bin/firebase deploy --token $FIREBASE_TOKEN
+                    ./node_modules/.bin/firebase deploy  --non-interactive --token $FIREBASE_TOKEN
                   fi
   #check this in the future and seperate jobs https://discuss.circleci.com/t/deploy-to-firebase-not-working/22887
