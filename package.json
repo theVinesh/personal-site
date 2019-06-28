@@ -5,7 +5,7 @@
   "description": "Hi, I am Vinesh Raju. I am an Android developer currently working at Swiggy.",
   "author": "Vinesh Raju",
   "scripts": {
-    "test": " echo \"No tests specified\" && exit 1",
+    "test": " echo \"No tests specified\"",
     "build": "rm -rf dist && webpack",
     "build:prod": "webpack -p"
   },
@@ -23,8 +23,8 @@
     "sass-loader": "^7.1.0",
     "webpack": "^4.35.0",
     "webpack-cli": "^3.3.5",
-    "webpack-dev-server": "^3.7.2",
-    "webpack-pwa-manifest": "^4.0.0"
+    "webpack-pwa-manifest": "^4.0.0",
+    "workbox-webpack-plugin": "^4.3.1"
   },
   "keywords": [],
   "license": "ISC"

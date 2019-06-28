@@ -2,6 +2,7 @@ const path = require('path');
 const CssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest')
+const workboxPlugin = require('workbox-webpack-plugin');
 const fs = require('fs')
 
 function generateHtmlPlugins(templateDir) {
@@ -64,7 +65,7 @@ module.exports = {
                 ]
             },
             {
-                test: /(robots.txt|sw.js)$/,
+                test: /robots.txt$/,
                 use: [
                     {
                         loader: 'file-loader',
@@ -79,6 +80,10 @@ module.exports = {
     plugins: [
         new CssExtractPlugin({
             filename: 'style/main.css'
+        }),
+        new workboxPlugin.InjectManifest({
+            swSrc: './src/js/sw.js',
+            swDest: 'sw.js',
         }),
         new WebpackPwaManifest({
             name: "Vinesh Raju's Site",

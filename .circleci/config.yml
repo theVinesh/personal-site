@@ -33,7 +33,7 @@ jobs:
           command: npm run build:prod
       - run:
           name:  Test
-          command: echo "Tests here"
+          command: npm run test
       - store_artifacts:
           path: dist
           destination: public
