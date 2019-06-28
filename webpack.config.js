@@ -18,7 +18,12 @@ function generateHtmlPlugins(templateDir) {
                 "language": "English",
                 "charset": "utf-8",
                 "viewport": "width=device-width, initial-scale=1",
-                "theme-color": "#d50000"
+                "theme-color": "#d50000",
+                "robots": "index,follow",
+                "article:author": "Vinesh Raju",
+                "twitter:card": "summary",
+                "twitter:site": "@theVinesh",
+                "twitter:creator": "@theVinesh",
             }
         })
     })
