@@ -29,5 +29,8 @@
     "workbox-webpack-plugin": "^4.3.1"
   },
   "keywords": [],
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^6.2.4"
+  }
 }
