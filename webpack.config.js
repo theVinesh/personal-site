@@ -1,6 +1,7 @@
 const path = require('path');
 const CssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest')
 const workboxPlugin = require('workbox-webpack-plugin');
 const fs = require('fs')
@@ -32,7 +33,7 @@ function generateHtmlPlugins(templateDir) {
 const htmlPlugins = generateHtmlPlugins('./src/pages')
 
 module.exports = {
-    entry: './src/js/app.js',
+    entry: ['./src/js/app.js'],
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: 'js/bundle.js',
@@ -41,12 +42,14 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                use: [{
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['es2015']
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['es2015']
+                        }
                     }
-                }]
+                ]
             },
             {
                 test: /\.scss$/,
@@ -79,10 +82,14 @@ module.exports = {
                         }
                     }
                 ]
-            }
+            },
         ]
     },
-    plugins: [
+    plugins: htmlPlugins.concat([
+        new ScriptExtHtmlWebpackPlugin({
+            // sync: 'js/bundle.js',
+            defaultAttribute: 'async'
+        }),
         new CssExtractPlugin({
             filename: 'style/main.css'
         }),
@@ -125,5 +132,5 @@ module.exports = {
                 }
             ]
         })
-    ].concat(htmlPlugins)
+    ])
 };
