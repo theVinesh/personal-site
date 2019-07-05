@@ -23,7 +23,7 @@ jobs:
             - node-v2-{{ checksum "package-lock.json" }}
       - run:
           name: Install Dependencies
-          command: npm install
+          command: npm ci
       - save_cache:
           paths:
             - ./node_modules 
