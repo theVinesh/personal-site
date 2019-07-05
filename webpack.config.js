@@ -20,6 +20,7 @@ function generateHtmlPlugins(templateDir) {
                 "charset": "utf-8",
                 "viewport": "width=device-width, initial-scale=1",
                 "theme-color": "#d50000",
+                "keywords":"vinesh raju,theVinesh,android,web,developer,india,tirunelveli",
                 "robots": "index,follow",
                 "article:author": "Vinesh Raju",
                 "twitter:card": "summary",
