@@ -74,7 +74,15 @@ jobs:
           command: |
                     ./node_modules/.bin/firebase deploy  --non-interactive --token $FIREBASE_TOKEN
   
-
+  deploy_staging:
+    <<: *base_config
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name:  Deploying to staging
+          command: |
+                    ./node_modules/.bin/netlify deploy -p --dir=dist
 workflows:
   version: 2
   build-test-deploy:
@@ -91,7 +99,14 @@ workflows:
             - build
       - deploy_prod:
           requires:
+            - test
             - build
           filters:
             branches:
               only: master
+      - deploy_staging:
+          requires:
+            - build
+          filters:
+            branches:
+              only: dev
