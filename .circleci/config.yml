@@ -5,7 +5,7 @@ base_config: &base_config
 
 version: 2
 jobs:
-  setup_and_install:
+  build:
     <<: *base_config
     steps:
       - checkout
@@ -19,17 +19,6 @@ jobs:
           paths:
             - ./node_modules 
           key: node-v2-{{ checksum "package-lock.json" }}
-      - persist_to_workspace:
-          root: .
-          paths:
-            - .
-  
-  
-  build:
-    <<: *base_config
-    steps:
-      - attach_workspace:
-          at: .
       - run:
           name: Building in prod mode
           command: npm run build:prod
@@ -38,6 +27,7 @@ jobs:
           paths:
              - ./node_modules
              - ./dist
+             - ./package.json
 
 
   test:
@@ -82,10 +72,7 @@ workflows:
   version: 2
   build-test-deploy:
     jobs:
-      - setup_and_install
-      - build:
-          requires:
-            - setup_and_install
+      - build
       - test:
           requires:
             - build
