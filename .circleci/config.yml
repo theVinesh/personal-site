@@ -24,6 +24,7 @@ jobs:
           paths:
             - .
   
+  
   build:
     <<: *base_config
     steps:
@@ -47,10 +48,7 @@ jobs:
       - run:
           name:  Running Tests
           command: npm run test
-      - persist_to_workspace:
-          root: .
-          paths:
-             - .
+
 
   upload_artifacts:
     <<: *base_config
@@ -59,22 +57,24 @@ jobs:
           at: .
       - store_artifacts:
           path: dist
-          destination: public
+          destination: dist
       - persist_to_workspace:
           root: .
           paths:
              - .
 
-  deploy:
+
+  deploy_prod:
     <<: *base_config
     steps:
       - attach_workspace:
           at: .
       - run:
-          name:  Deploy
+          name:  Deploying to thevinesh.dev
           command: |
                     ./node_modules/.bin/firebase deploy  --non-interactive --token $FIREBASE_TOKEN
   
+
 workflows:
   version: 2
   build-test-deploy:
@@ -89,7 +89,7 @@ workflows:
       - upload_artifacts:
           requires:
             - build
-      - deploy:
+      - deploy_prod:
           requires:
             - build
           filters:
