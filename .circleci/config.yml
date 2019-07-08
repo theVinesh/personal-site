@@ -58,11 +58,6 @@ jobs:
       - store_artifacts:
           path: dist
           destination: dist
-      - persist_to_workspace:
-          root: .
-          paths:
-             - .
-
 
   deploy_prod:
     <<: *base_config
@@ -74,7 +69,15 @@ jobs:
           command: |
                     ./node_modules/.bin/firebase deploy  --non-interactive --token $FIREBASE_TOKEN
   
-
+  deploy_staging:
+    <<: *base_config
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name:  Deploying to staging
+          command: |
+                    ./node_modules/.bin/netlify deploy -p --dir=dist && ./node_modules/.bin/netlify watch
 workflows:
   version: 2
   build-test-deploy:
@@ -91,7 +94,14 @@ workflows:
             - build
       - deploy_prod:
           requires:
+            - test
             - build
           filters:
             branches:
               only: master
+      - deploy_staging:
+          requires:
+            - build
+          filters:
+            branches:
+              only: dev
