@@ -1,48 +1,89 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
+base_config: &base_config
+  docker:
+    - image: circleci/node:lts
+  working_directory: ~/project
+
 version: 2
 jobs:
   build:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:lts
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
-    working_directory: ~/repo
-    
+    <<: *base_config
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - node-v2-{{ checksum "package-lock.json" }}
       - run:
-          name: Install Dependencies
+          name: Installing Dependencies
           command: npm ci
-      - save_cache:
-          paths:
-            - ./node_modules 
-          key: node-v2-{{ checksum "package-lock.json" }}
       - run:
-          name: Build
+          name: Building in prod mode
           command: npm run build:prod
+      - persist_to_workspace:
+          root: .
+          paths:
+             - ./node_modules
+             - ./dist
+             - ./package.json
+             - ./.firebaserc
+             - ./.netlify
+
+
+  test:
+    <<: *base_config
+    steps:
+      - attach_workspace:
+          at: .
       - run:
-          name:  Test
+          name:  Running Tests
           command: npm run test
+
+
+  upload_artifacts:
+    <<: *base_config
+    steps:
+      - attach_workspace:
+          at: .
       - store_artifacts:
           path: dist
-          destination: public
+          destination: dist
+
+  deploy_prod:
+    <<: *base_config
+    steps:
+      - attach_workspace:
+          at: .
       - run:
-          name:  Deploy
+          name:  Deploying to thevinesh.dev
           command: |
-                  if [ "${CIRCLE_BRANCH}" != master ]; then
-                    echo "${CIRCLE_BRANCH} branch, skipping deploy"
-                  else
                     ./node_modules/.bin/firebase deploy  --non-interactive --token $FIREBASE_TOKEN
-                  fi
-  #check this in the future and seperate jobs https://discuss.circleci.com/t/deploy-to-firebase-not-working/22887
+  
+  deploy_staging:
+    <<: *base_config
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name:  Deploying to staging
+          command: |
+                    ./node_modules/.bin/netlify deploy -p --dir=dist
+workflows:
+  version: 2
+  build-test-deploy:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - upload_artifacts:
+          requires:
+            - build
+      - deploy_prod:
+          requires:
+            - test
+            - build
+          filters:
+            branches:
+              only: master
+      - deploy_staging:
+          requires:
+            - build
+          filters:
+            branches:
+              only: dev
