@@ -21,6 +21,7 @@ jobs:
              - ./node_modules
              - ./dist
              - ./package.json
+             - ./firebase.json
              - ./.firebaserc
              - ./.netlify
 
