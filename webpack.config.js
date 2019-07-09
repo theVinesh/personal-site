@@ -1,38 +1,52 @@
 const path = require('path');
 const CssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
-const WebpackPwaManifest = require('webpack-pwa-manifest')
+const marked = require("marked");
+marked.setOptions({ headerIds: false });
+const MinifyPlugin = require("babel-minify-webpack-plugin");
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 const workboxPlugin = require('workbox-webpack-plugin');
-const fs = require('fs')
+const fs = require('fs');
 
-function generateHtmlPlugins(templateDir) {
-    const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir))
-    return templateFiles.map(item => {
-        const parts = item.split('.')
-        const name = parts[0]
-        const extension = parts[1]
-        return new HtmlWebpackPlugin({
-            filename: `${name}.html`,
-            favicon:  path.resolve(__dirname, `./src/assets/favicon.png`),
-            template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
-            'meta': {
-                "language": "English",
-                "charset": "utf-8",
-                "viewport": "width=device-width, initial-scale=1",
-                "theme-color": "#d50000",
-                "keywords":"vinesh raju,theVinesh,android,web,developer,india,tirunelveli",
-                "robots": "index,follow",
-                "article:author": "Vinesh Raju",
-                "twitter:card": "summary",
-                "twitter:site": "@theVinesh",
-                "twitter:creator": "@theVinesh",
-            }
-        })
-    })
+const readFileContents = (filePath) => fs.readFileSync(path.join(__dirname, filePath), "utf8");
+
+const makeHtmlPlugin = (templateFilename, bodyHtml) => {
+    const filename = templateFilename.split('.')[0];
+    return new HtmlWebpackPlugin({
+        filename: `${filename}.html`,
+        favicon: path.resolve(__dirname, `./src/assets/favicon.png`),
+        template: path.resolve(__dirname, `./src/pages/${filename}.html`),
+        templateParameters: {
+            content: bodyHtml,
+            header: readFileContents("./src/partials/header.html"),
+            footer: readFileContents("./src/partials/footer.html"),
+        },
+        meta: {
+            "language": "English",
+            "charset": "utf-8",
+            "viewport": "width=device-width, initial-scale=1",
+            "theme-color": "#d50000",
+            "keywords": "vinesh raju,theVinesh,android,web,developer,india,tirunelveli",
+            "robots": "index,follow",
+            "article:author": "Vinesh Raju",
+            "twitter:card": "summary",
+            "twitter:site": "@theVinesh",
+            "twitter:creator": "@theVinesh",
+        }
+    });
 }
 
-const htmlPlugins = generateHtmlPlugins('./src/pages')
+function generateHtmlPlugins(templateDir) {
+    const pathName = path.resolve(__dirname, templateDir);
+    const templateFiles = fs.readdirSync(pathName);
+    const htmls = templateFiles.filter(filename => /\.html$/.test(filename));
+    const mds = templateFiles.filter(filename => /\.md$/.test(filename));
+    return htmls.map(filename => makeHtmlPlugin(filename, null)).concat(
+        mds.map(filename => makeHtmlPlugin(
+            filename,
+            marked(readFileContents(path.join(templateDir, filename)))
+        )));
+}
 
 module.exports = {
     entry: ['./src/js/app.js'],
@@ -58,8 +72,8 @@ module.exports = {
                 use: [CssExtractPlugin.loader, 'css-loader', 'sass-loader']
             },
             {
-                test: /\.html$/,
-                use: ['html-loader']
+                test: /\.(html)$/,
+                use: ['ejs-loader', 'extract-loader', 'html-loader']
             },
             {
                 test: /\.(png|ico)$/,
@@ -87,17 +101,16 @@ module.exports = {
             },
         ]
     },
-    plugins: htmlPlugins.concat([
-        new ScriptExtHtmlWebpackPlugin({
-            // sync: 'js/bundle.js',
-            defaultAttribute: 'async'
-        }),
-        new CssExtractPlugin({
-            filename: 'style/main.css'
-        }),
+    plugins: ([
         new workboxPlugin.InjectManifest({
             swSrc: './src/js/sw.js',
             swDest: 'sw.js',
+        }),
+        new MinifyPlugin({}, {
+            comments: false
+        }),
+        new CssExtractPlugin({
+            filename: 'style/main.css'
         }),
         new WebpackPwaManifest({
             name: "Vinesh Raju's Site",
@@ -133,6 +146,7 @@ module.exports = {
                     destination: path.join('icons', 'android')
                 }
             ]
-        })
+        }),
+        ...generateHtmlPlugins('./src/pages'),
     ])
 };
