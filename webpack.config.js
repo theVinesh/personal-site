@@ -14,14 +14,14 @@ function generateHtmlPlugins(templateDir) {
         const extension = parts[1]
         return new HtmlWebpackPlugin({
             filename: `${name}.html`,
-            favicon:  path.resolve(__dirname, `./src/assets/favicon.png`),
+            favicon: path.resolve(__dirname, `./src/assets/favicon.png`),
             template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
             'meta': {
                 "language": "English",
                 "charset": "utf-8",
                 "viewport": "width=device-width, initial-scale=1",
                 "theme-color": "#d50000",
-                "keywords":"vinesh raju,theVinesh,android,web,developer,india,tirunelveli",
+                "keywords": "vinesh raju,theVinesh,android,web,developer,india,tirunelveli",
                 "robots": "index,follow",
                 "article:author": "Vinesh Raju",
                 "twitter:card": "summary",
@@ -59,7 +59,12 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                use: ['html-loader']
+                use: {
+                    loader: 'html-loader',
+                    options: {
+                        interpolate: true
+                    }
+                }
             },
             {
                 test: /\.(png|ico)$/,
