@@ -1,6 +1,7 @@
 const path = require('path');
 const CssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MinifyPlugin = require("babel-minify-webpack-plugin");
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest')
 const workboxPlugin = require('workbox-webpack-plugin');
@@ -93,16 +94,19 @@ module.exports = {
         ]
     },
     plugins: htmlPlugins.concat([
+        new workboxPlugin.InjectManifest({
+            swSrc: './src/js/sw.js',
+            swDest: 'sw.js',
+        }),
+        new MinifyPlugin({}, {
+            comments: false
+        }),
         new ScriptExtHtmlWebpackPlugin({
             // sync: 'js/bundle.js',
             defaultAttribute: 'async'
         }),
         new CssExtractPlugin({
             filename: 'style/main.css'
-        }),
-        new workboxPlugin.InjectManifest({
-            swSrc: './src/js/sw.js',
-            swDest: 'sw.js',
         }),
         new WebpackPwaManifest({
             name: "Vinesh Raju's Site",
