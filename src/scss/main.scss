@@ -6,56 +6,38 @@ body {
   font-family: "Oxygen Mono", monospace;
 }
 
-h1 {
-  font-size: 32px;
-  font-weight: 600;
-  color: $black;
-}
-
-h2 {
-  color: $red;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-p {
-  line-height: 150%;
-  margin: 8px 0 16px;
-  font-size: 18px;
-}
-
 header {
   background: $red;
-}
-
-nav {
-  width: 100%;
-  background: $red;
-  a {
-    display: inline-block;
-    font-size: 18px;
-    color: $white;
-    text-decoration: none;
-    padding: $nav_item_top_bottom_padding $nav_item_left_right_padding;
-    &:hover {
-      background: $dark-red;
-      border-bottom: $nav_item_bottom_border_height solid $white;
-      padding-bottom: $nav_item_top_bottom_padding - $nav_item_bottom_border_height;
-    }
-  }
-}
-
-main {
 }
 
 footer {
   width: 100%;
   display: flex;
-  margin-top: $page_top_margin;
+  margin: $page_top_margin 0 $page_bottom_margin 0;
   justify-content: center;
 }
 
-#navigation {
+nav {
+  width: 100%;
+  background: $red;
+  ul {
+    list-style: none;
+    li {
+      padding: $nav_item_top_bottom_padding $nav_item_left_right_padding;
+      display: inline-block;
+      &:hover {
+        background: $dark-red;
+        border-bottom: $nav_item_bottom_border_height solid $white;
+        padding-bottom: $nav_item_top_bottom_padding - $nav_item_bottom_border_height;
+      }
+    }
+  }
+
+  a {
+    font-size: 18px;
+    color: $white;
+    text-decoration: none;
+  }
 }
 
 #content {
@@ -64,6 +46,63 @@ footer {
   @include respond-to(wide-screens) {
     max-width: $max_content_width;
   }
+  h1 {
+    font-size: 38px;
+    color: $black;
+    font-weight: bolder;
+  }
+
+  h2 {
+    font-size: 28px;
+    color: $red;
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 24px;
+    color: $black;
+    font-weight: normal;
+    margin: 32px 0 0 0;
+  }
+
+  h4 {
+    font-size: 20px;
+    color: $black;
+    font-weight: normal;
+    margin: 4px 0 0 0;
+  }
+
+  h5 {
+    font-size: 16px;
+    color: $red;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  ol {
+    @include respond-to(medium-and-small-screens) {
+      margin: 0 16px;
+    }
+    hr {
+      border-style: dashed;
+    }
+  }
+
+  ul {
+    li {
+      font-size: 18px;
+      margin: 16px;
+      list-style-type: square;
+      line-height: 150%;
+    }
+  }
+
+  p {
+    line-height: 150%;
+    margin: 8px 0 16px;
+    font-size: 18px;
+  }
+
   a {
     text-decoration: underline;
     color: $black;
@@ -72,6 +111,10 @@ footer {
       background: $red;
       color: $white;
     }
+  }
+
+  hr {
+    border-color: $red;
   }
 }
 
