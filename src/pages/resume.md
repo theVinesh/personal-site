@@ -39,9 +39,9 @@ I can communicate fluently in English and work closely with the team, motivate a
    ------------------------
 1. ### **Freelance Developer** at **Smart iApps** 
    #### **JUN, 2014 - JAN, 2016** | Oslo, Norway
-    - Designed and developed an Android application that showcases and provides audio walkthrough for all the arts exhibited in A Norwegian Museum.
-    - Developed an Android application to allows users to order food online.
-    - Developed a Web application to monitor billing for the restaurant.
+    - Designed and developed an Android application that showcases and provides audio walkthrough for all the arts exhibited in a Norwegian Museum.
+    - Developed an Android application that allows users to order food online.
+    - Developed a Web application to monitor billing for a restaurant.
 ----------------------
 ## Skills
 - Android application development
