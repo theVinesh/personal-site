@@ -23,20 +23,20 @@ nav {
   ul {
     list-style: none;
     li {
-      padding: $nav_item_top_bottom_padding $nav_item_left_right_padding;
       display: inline-block;
-      &:hover {
-        background: $dark-red;
-        border-bottom: $nav_item_bottom_border_height solid $white;
-        padding-bottom: $nav_item_top_bottom_padding - $nav_item_bottom_border_height;
+      a {
+        display: block;
+        padding: $nav_item_top_bottom_padding $nav_item_left_right_padding;
+        font-size: 18px;
+        color: $white;
+        text-decoration: none;
+        &:hover {
+          background: $dark-red;
+          border-bottom: $nav_item_bottom_border_height solid $white;
+          padding-bottom: $nav_item_top_bottom_padding - $nav_item_bottom_border_height;
+        }
       }
     }
-  }
-
-  a {
-    font-size: 18px;
-    color: $white;
-    text-decoration: none;
   }
 }
 

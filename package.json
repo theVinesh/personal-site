@@ -11,8 +11,8 @@
     "build:prod": "webpack -p"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
+    "@babel/core": "^7.5.4",
+    "babel-loader": "^8.0.6",
     "babel-minify-webpack-plugin": "^0.3.1",
     "babel-preset-es2015": "^6.24.1",
     "css-loader": "^3.0.0",
@@ -35,6 +35,6 @@
   "keywords": [],
   "license": "ISC",
   "dependencies": {
-    "firebase": "^6.2.4"
+    "firebase": "^6.3.0"
   }
 }
