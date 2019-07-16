@@ -26,7 +26,7 @@ const makeHtmlPlugin = (templateFilename, bodyHtml) => {
             "charset": "utf-8",
             "viewport": "width=device-width, initial-scale=1",
             "theme-color": "#d50000",
-            "keywords": "vinesh raju,theVinesh,android,web,developer,india,tirunelveli",
+            "keywords": "vinesh raju,theVinesh,android,web,developer,designer,india,tirunelveli",
             "robots": "index,follow",
             "article:author": "Vinesh Raju",
             "twitter:card": "summary",
@@ -60,10 +60,7 @@ module.exports = {
                 test: /\.js$/,
                 use: [
                     {
-                        loader: 'babel-loader',
-                        options: {
-                            presets: ['es2015']
-                        }
+                        loader: 'babel-loader'
                     }
                 ]
             },
@@ -88,17 +85,6 @@ module.exports = {
                     }
                 ]
             },
-            {
-                test: /robots.txt$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[ext]'
-                        }
-                    }
-                ]
-            },
         ]
     },
     plugins: ([
@@ -117,7 +103,7 @@ module.exports = {
             short_name: "Vinesh Raju",
             lang: "en-US",
             start_url: "/",
-            description: "Hi, I am Vinesh Raju. I am an Android developer currently working at Swiggy.",
+            description: "I am Vinesh Raju, Android and Web Developer, Designer, Tech Enthusiast. I am currently an Android Developer at Swiggy, I am curious about almost everything. When I am not sleeping, eating or coding, I like to Sing, Sketch and dream up about all the cool stuffs to do; which I almost always procrastinate.",
             background_color: "#9b0000",
             theme_color: "#d50000",
             display: "standalone",
