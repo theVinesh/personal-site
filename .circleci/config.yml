@@ -91,6 +91,10 @@ workflows:
           requires:
             - build
             - test
+            - upload_artifacts
+          filters:
+            branches:
+              only: master
       - deploy_prod:
           requires:
             - build
