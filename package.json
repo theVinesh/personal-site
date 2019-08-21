@@ -5,7 +5,7 @@
   "description": "Hi, I am Vinesh Raju. I am an Android developer currently working at Swiggy.",
   "author": "Vinesh Raju",
   "scripts": {
-    "release": ". ./scripts/release.sh",
+    "release": "bash ./scripts/release.sh",
     "test": "echo \"No tests specified\"",
     "build": "rm -rf dist && webpack --mode=development",
     "serve": "npm run build && firebase serve",

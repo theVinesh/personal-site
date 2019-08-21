@@ -18,12 +18,14 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
+             - ./.git
              - ./node_modules
              - ./dist
              - ./package.json
              - ./firebase.json
              - ./.firebaserc
              - ./.netlify
+             - ./scripts
 
 
   test:
@@ -64,6 +66,16 @@ jobs:
           name:  Deploying to staging
           command: |
                     ./node_modules/.bin/netlify deploy -p --dir=dist
+              
+  create_release:
+    <<: *base_config
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name:  Creating release
+          command: npm run release
+       
 workflows:
   version: 2
   build-test-deploy:
@@ -75,10 +87,14 @@ workflows:
       - upload_artifacts:
           requires:
             - build
+      - create_release:
+          requires:
+            - build
+            - test
       - deploy_prod:
           requires:
-            - test
             - build
+            - test
           filters:
             branches:
               only: master

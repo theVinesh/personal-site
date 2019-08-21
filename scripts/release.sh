@@ -1,12 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 version_string=`git describe --abbrev=1 | sed 's/-/./g'`
 # split version_string
-IFS='.' read -ra major_minor_patch <<< "${version_string:1}"
-
-major=${major_minor_patch[0]}
-minor=${major_minor_patch[1]}
-patch=${major_minor_patch[2]}
-commit_hash=${major_minor_patch[3]}
+IFS=. read -r major minor patch commit_hash<<<"${version_string:1}"
 
 if (( $patch > 9 )); then 
     patch=0
