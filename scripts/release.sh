@@ -1,5 +1,5 @@
 #!/bin/bash
-bash scripts/version.sh && curl -X POST \
+curl -X POST \
   https://api.github.com/repos/theVinesh/personal-site/releases \
   -H 'Accept: application/vnd.github.v3+json' \
   -H 'Authorization: token '$GITHUB_TOKEN'' \

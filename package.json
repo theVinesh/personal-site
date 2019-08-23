@@ -10,7 +10,7 @@
     "test": "echo \"No tests specified\"",
     "build": "npm run version && rm -rf dist && webpack --mode=development",
     "serve": "npm run build && firebase serve",
-    "build:prod": "npm run version && webpack -p"
+    "build:prod": "webpack -p"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
