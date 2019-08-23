@@ -20,6 +20,7 @@ const makeHtmlPlugin = (templateFilename, bodyHtml) => {
             content: bodyHtml,
             header: readFileContents("./src/partials/header.html"),
             footer: readFileContents("./src/partials/footer.html"),
+            ga: readFileContents("./src/partials/ga.html"),
         },
         meta: {
             "language": "English",
