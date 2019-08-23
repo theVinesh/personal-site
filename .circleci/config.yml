@@ -5,20 +5,26 @@ base_config: &base_config
 
 version: 2
 jobs:
-  build:
+  build_and_test:
     <<: *base_config
     steps:
       - checkout
+      - run:
+          name: Version
+          command: |
+            bash scripts/version.sh >> version
       - run:
           name: Installing Dependencies
           command: npm ci
       - run:
           name: Building in prod mode
           command: npm run build:prod
+      - run:
+          name:  Running Tests
+          command: npm run test
       - persist_to_workspace:
           root: .
           paths:
-             - ./.git
              - ./node_modules
              - ./dist
              - ./package.json
@@ -26,17 +32,7 @@ jobs:
              - ./.firebaserc
              - ./.netlify
              - ./scripts
-
-
-  test:
-    <<: *base_config
-    steps:
-      - attach_workspace:
-          at: .
-      - run:
-          name:  Running Tests
-          command: npm run test
-
+             - ./version
 
   upload_artifacts:
     <<: *base_config
@@ -56,7 +52,7 @@ jobs:
           name:  Deploying to thevinesh.dev
           command: |
                     ./node_modules/.bin/firebase deploy  --non-interactive --token $FIREBASE_TOKEN
-  
+
   deploy_staging:
     <<: *base_config
     steps:
@@ -74,37 +70,34 @@ jobs:
           at: .
       - run:
           name:  Creating release
-          command: npm run release
-       
+          command: |
+                    export VERSION=$(cat version)
+                    npm run release
+                    
 workflows:
   version: 2
   build-test-deploy:
     jobs:
-      - build
-      - test:
-          requires:
-            - build
+      - build_and_test
       - upload_artifacts:
           requires:
-            - build
+            - build_and_test
       - create_release:
           requires:
-            - build
-            - test
+            - build_and_test
             - upload_artifacts
           filters:
             branches:
               only: master
       - deploy_prod:
           requires:
-            - build
-            - test
+            - build_and_test
           filters:
             branches:
               only: master
       - deploy_staging:
           requires:
-            - build
+            - build_and_test
           filters:
             branches:
               only: dev
