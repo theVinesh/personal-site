@@ -14,5 +14,4 @@ if (( $minor > 9 )); then
     $((major+=1))
 fi
 
-export VERSION="v$major.$minor.$patch"
-echo "version: $VERSION"
+echo "v$major.$minor.$patch"
