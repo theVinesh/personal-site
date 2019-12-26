@@ -73,8 +73,8 @@ jobs:
           name:  Creating release
           command: |
                     export VERSION=$(cat version)
-                    npm run release
-  
+                    npm run release  
+                    
   analyze_with_sonar:
     docker:
       - image: circleci/node:lts    
@@ -99,7 +99,7 @@ jobs:
                       -Dsonar.sources=. \
                       -Dsonar.host.url=https://sonarcloud.io \
                       -Dsonar.login=$SONAR_LOGIN_TOKEN
-                    
+                      
 workflows:
   version: 2
   build-test-deploy:
