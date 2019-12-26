@@ -73,12 +73,41 @@ jobs:
           name:  Creating release
           command: |
                     export VERSION=$(cat version)
-                    npm run release
-
+                    npm run release  
+                    
+  analyze_with_sonar:
+    docker:
+      - image: circleci/node:lts    
+    steps:
+      - run:
+          name:  Initiate Sonar
+          command: |
+                    export SONAR_SCANNER_HOME=$HOME/.sonar/sonar-scanner-$SONAR_SCANNER_VERSION-linux
+                    rm -rf $SONAR_SCANNER_HOME
+                    mkdir -p $SONAR_SCANNER_HOME
+                    curl -sSLo $HOME/.sonar/sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_SCANNER_VERSION-linux.zip
+                    unzip $HOME/.sonar/sonar-scanner.zip -d $HOME/.sonar/
+                    rm $HOME/.sonar/sonar-scanner.zip
+                    echo "sonar path $SONAR_SCANNER_HOME/bin"
+                    export SONAR_PATH=$SONAR_SCANNER_HOME/bin
+                    echo "SONAR_PATH $SONAR_PATH"
+                    export SONAR_SCANNER_OPTS="-server"
+                    echo "SONAR_SCANNER_OPTS $SONAR_SCANNER_OPTS"
+                    $SONAR_PATH/sonar-scanner \
+                      -Dsonar.projectKey=theVinesh_personal-site \
+                      -Dsonar.organization=thevinesh \
+                      -Dsonar.sources=. \
+                      -Dsonar.host.url=https://sonarcloud.io \
+                      -Dsonar.login=$SONAR_LOGIN_TOKEN
+                      
 workflows:
   version: 2
   build-test-deploy:
     jobs:
+      - analyze_with_sonar:
+          filters:
+            branches:
+              only: master
       - build_and_test
       - upload_artifacts:
           requires:
