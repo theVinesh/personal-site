@@ -13,8 +13,9 @@ header {
 footer {
   width: 100%;
   display: flex;
+  flex-direction: column;
   margin: $page_top_margin 0 $page_bottom_margin 0;
-  justify-content: center;
+  align-items: center;
 }
 
 nav {
@@ -40,6 +41,28 @@ nav {
   }
 }
 
+.nl-signup-form {
+  display: flex;
+  flex-direction: column;
+  form {
+    margin: 8px 0;
+  }
+  input {
+    padding: 12px;
+    margin: 4px 0;
+    font-family: "Oxygen Mono", monospace;
+    font-size: 14px;
+  }
+  .button {
+    background: $red;
+    color: $white;
+    border: none;
+    &:hover {
+      background: $dark-red;
+    }
+  }
+}
+
 #content {
   padding: $page_padding;
   margin: $page_top_margin auto 0 auto;
@@ -47,7 +70,7 @@ nav {
     max-width: $max_content_width;
   }
   h1 {
-    font-size: 38px;
+    font-size: 32px;
     color: $black;
     font-weight: bolder;
   }
