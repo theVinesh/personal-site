@@ -50,7 +50,7 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name:  Deploying to thevinesh.dev
+          name:  Deploying to thevinesh.com
           command: |
                     ./node_modules/.bin/firebase deploy  --non-interactive --token $FIREBASE_TOKEN
 
@@ -130,4 +130,4 @@ workflows:
             - build_and_test
           filters:
             branches:
-              only: dev
+              only: develop
