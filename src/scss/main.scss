@@ -1,9 +1,34 @@
 @import "modules/all";
-@import url("https://fonts.googleapis.com/css?family=Oxygen+Mono&display=swap&&effect=anaglyph");
+@import url("https://fonts.googleapis.com/css?family=Oxygen+Mono&display=swap");
 
 body {
-  background: $white;
   font-family: "Oxygen Mono", monospace;
+  color: $black;
+  #content {
+    a {
+      color: $black;
+    }
+  }
+  #social {
+    a {
+      color: $white;
+    }
+  }
+}
+
+body.dark {
+  background: $black;
+  color: $white;
+  #content {
+    a {
+      color: $white;
+    }
+  }
+}
+
+a {
+  color: $white;
+  text-decoration: none;
 }
 
 header {
@@ -21,16 +46,30 @@ footer {
 nav {
   width: 100%;
   background: $red;
+
   ul {
+    display: flex;
+    flex-direction: row;
     list-style: none;
+    .push {
+      margin-left: auto;
+    }
+    .setting-item {
+      a {
+        padding-left: $nav_setting_item_left_right_padding;
+        padding-right: $nav_setting_item_left_right_padding;
+      }
+      .emoji {
+        font-size: 20px;
+      }
+    }
     li {
-      display: inline-block;
       a {
         display: block;
-        padding: $nav_item_top_bottom_padding $nav_item_left_right_padding;
         font-size: 18px;
         color: $white;
-        text-decoration: none;
+        display: block;
+        padding: $nav_item_top_bottom_padding $nav_item_left_right_padding;
         &:hover {
           background: $dark-red;
           border-bottom: $nav_item_bottom_border_height solid $white;
@@ -41,18 +80,21 @@ nav {
   }
 }
 
-.nl-signup-form {
+#nl-signup-form {
   display: flex;
   flex-direction: column;
+
   form {
     margin: 8px 0;
   }
+
   input {
     padding: 12px;
     margin: 4px 0;
     font-family: "Oxygen Mono", monospace;
     font-size: 14px;
   }
+
   .button {
     background: $red;
     color: $white;
@@ -71,7 +113,6 @@ nav {
   }
   h1 {
     font-size: 30px;
-    color: $black;
     font-weight: bolder;
   }
 
@@ -83,14 +124,12 @@ nav {
 
   h3 {
     font-size: 24px;
-    color: $black;
     font-weight: normal;
     margin: 32px 0 0 0;
   }
 
   h4 {
     font-size: 20px;
-    color: $black;
     font-weight: normal;
     margin: 4px 0 0 0;
   }
@@ -128,7 +167,6 @@ nav {
 
   a {
     text-decoration: underline;
-    color: $black;
     text-decoration-color: $red;
     &:hover {
       background: $red;
@@ -145,8 +183,6 @@ nav {
   a {
     text-align: center;
     background: $red;
-    text-decoration: none;
-    color: $white;
     display: inline-block;
     padding: 12px;
     margin: 4px 0;
