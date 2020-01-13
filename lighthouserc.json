@@ -7,7 +7,6 @@
     "assert": {
       "preset": "lighthouse:recommended",
       "assertions": {
-        //consider turning these on in the future
         "offscreen-images": "off",
         "uses-webp-images": "on",
         "works-offline": "off",
