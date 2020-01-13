@@ -10,11 +10,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Version
-          command: |
-            bash scripts/version.sh >> version
-            cat version
-      - run:
           name: Installing Dependencies
           command: npm ci
       - run:
@@ -72,7 +67,7 @@ jobs:
       - run:
           name:  Creating release
           command: |
-                    export VERSION=$(cat version)
+                    export VERSION=$(bash scripts/version.sh)
                     npm run release  
 
   run_lighthouse:
