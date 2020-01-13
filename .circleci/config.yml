@@ -30,11 +30,11 @@ jobs:
              - ./dist
              - ./package.json
              - ./firebase.json
+             - ./lighthouserc.json
              - ./.firebaserc
              - ./.netlify
              - ./scripts
-             - ./version
-
+             
   upload_artifacts:
     <<: *base_config
     steps:
