@@ -1,5 +1,6 @@
 # Custom
 dist/
+.lighthouseci
 
 # macOs junk
 .DS_Store

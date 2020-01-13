@@ -3,7 +3,7 @@ base_config: &base_config
     - image: circleci/node:lts
   working_directory: ~/project
 
-version: 2
+version: 2.1
 jobs:
   build_and_test:
     <<: *base_config
@@ -30,11 +30,11 @@ jobs:
              - ./dist
              - ./package.json
              - ./firebase.json
+             - ./lighthouserc.json
              - ./.firebaserc
              - ./.netlify
              - ./scripts
-             - ./version
-
+             
   upload_artifacts:
     <<: *base_config
     steps:
@@ -74,7 +74,22 @@ jobs:
           command: |
                     export VERSION=$(cat version)
                     npm run release  
-                    
+
+  run_lighthouse:
+    docker:
+    - image: circleci/node:lts-browsers
+    working_directory: ~/project
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name:  Running Ligthouse
+          command: |
+                    ./node_modules/.bin/lhci autorun
+      - store_artifacts:
+          path: .lighthouseci
+          destination: ligthouse
+
   analyze_with_sonar:
     docker:
       - image: circleci/node:lts    
@@ -110,6 +125,9 @@ workflows:
               only: master
       - build_and_test
       - upload_artifacts:
+          requires:
+            - build_and_test
+      - run_lighthouse:
           requires:
             - build_and_test
       - create_release:

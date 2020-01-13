@@ -105,7 +105,7 @@ module.exports = {
             short_name: "Vinesh Raju",
             lang: "en-US",
             start_url: "/",
-            description: "I am Vinesh Raju, Android and Web Developer, Designer, Tech Enthusiast. I am currently an Android Developer at Swiggy, I am curious about almost everything. When I am not sleeping, eating or coding, I like to Sing, Sketch and dream up about all the cool stuffs to do; which I almost always procrastinate.",
+            description: "I am Vinesh Raju, Android Developer and Tech Enthusiast. I am currently an Android Developer at Swiggy, I am curious about almost everything. When I am not sleeping, eating or coding, I like to Sing, Sketch and dream up about all the cool stuffs to do; which I almost always procrastinate.",
             background_color: "#9b0000",
             theme_color: "#d50000",
             display: "standalone",
