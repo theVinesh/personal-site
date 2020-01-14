@@ -14,4 +14,6 @@ if (( $minor > 9 )); then
     $((major+=1))
 fi
 
-echo "v$major.$minor.$patch"
+version="$major.$minor.$patch"
+sed -i -e "s/<VERSION>/$version/g" package.json
+echo "$version"

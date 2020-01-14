@@ -6,9 +6,9 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'cache-control: no-cache' \
   -d '{
-  "tag_name": "'$VERSION'",
+  "tag_name": "'v$VERSION'",
   "target_commitish": "master",
-  "name": "'$VERSION'",
+  "name": "'v$VERSION'",
   "draft": true
 }
 '

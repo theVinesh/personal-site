@@ -1,7 +1,7 @@
 {
-  "name": "thevinesh.dev",
-  "version": "2.5.2",
-  "url": "https://theVinesh.dev",
+  "name": "thevinesh.com",
+  "version": "<VERSION>",
+  "url": "https://theVinesh.com",
   "description": "Hi, I am Vinesh Raju. I am an Android developer currently working at Swiggy.",
   "author": "Vinesh Raju",
   "scripts": {
