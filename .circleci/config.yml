@@ -34,6 +34,7 @@ jobs:
              - ./.firebaserc
              - ./.netlify
              - ./scripts
+             - ./version #this file is created by build process
              
   upload_artifacts:
     <<: *base_config
