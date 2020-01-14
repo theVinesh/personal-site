@@ -73,8 +73,7 @@ jobs:
       - run:
           name:  Creating release
           command: |
-                    export VERSION=$(cat version)
-                    npm run release  
+                     export VERSION=$(cat version) && npm run release  
 
   run_lighthouse:
     docker:
