@@ -48,7 +48,7 @@ class ScreenHome extends StatelessWidget {
             children: [
               TextSpan(
                   text:
-                      "I am a UX/UI design/developer from India.\n\nCurrently, I work at Swiggy as an Android Developer.\n-"),
+                      "I am an UX/UI design/developer from India.\n\nCurrently, I work at Swiggy as an Android Developer.\n-"),
             ],
           ),
           textScaleFactor: SizeConfig.textScaleFactor,

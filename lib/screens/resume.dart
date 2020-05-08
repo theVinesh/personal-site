@@ -6,7 +6,7 @@ class ScreenResume extends StatelessWidget {
     return Center(
       child: Container(
         child: Text(
-          "Resume is on Pause, coming soon",
+          "Resume is on Pause.\n\n coming soon",
           style: Theme.of(context).textTheme.headline2,
         ),
       ),

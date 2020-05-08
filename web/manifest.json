@@ -1,11 +1,11 @@
 {
-    "name": "thevinesh",
+    "name": "Vinesh Raju",
     "short_name": "thevinesh",
     "start_url": ".",
     "display": "minimal-ui",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "theVinesh.com with flutter",
+    "background_color": "#d50000",
+    "theme_color": "#d50000",
+    "description": "I am Vinesh Raju, Mobile Application developer with deep focus on UX/UI",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
