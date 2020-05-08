@@ -93,10 +93,6 @@ workflows:
   version: 2
   build-test-deploy:
     jobs:
-      - analyze_with_sonar:
-          filters:
-            branches:
-              only: master
       - build_and_test
       - upload_artifacts:
           requires:
