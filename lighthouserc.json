@@ -2,16 +2,14 @@
   "ci": {
     "collect": {
       "staticDistDir": "./build/web",
-      "numberOfRuns": 1
+      "numberOfRuns": 2
     },
     "assert": {
       "preset": "lighthouse:recommended",
       "assertions": {
-        "offscreen-images": "off",
         "uses-webp-images": "on",
-        "works-offline": "off",
-        "offline-start-url": "off",
-        "uses-rel-preconnect": "off"
+        "meta-viewport": "off",
+        "redirects-http": "off"
       }
     },
     "upload": {
