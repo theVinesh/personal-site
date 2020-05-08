@@ -1,4 +1,0 @@
-# robots.txt for https://theVinesh.dev/
-# All robots are welcome to crawl/walk/run over this site
-User-agent: *
-Allow: /

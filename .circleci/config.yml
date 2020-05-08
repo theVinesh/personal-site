@@ -10,39 +10,37 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Version
-          command: |
-            bash scripts/version.sh >> version
-            cat version
-      - run:
-          name: Installing Dependencies
+          name: Installing npm Dependencies
           command: npm ci
       - run:
-          name: Building in prod mode
-          command: npm run build:prod
+          name: Installing Flutter
+          command: |
+            git clone -b master https://github.com/flutter/flutter.git
+            flutter/bin/flutter channel beta
+            flutter/bin/flutter upgrade
+            flutter/bin/flutter config --enable-web
+            flutter/bin/flutter pub get
       - run:
-          name:  Running Tests
-          command: npm run test
+          name: Building in prod mode
+          command: flutter/bin/flutter build web
       - persist_to_workspace:
           root: .
           paths:
-             - ./node_modules
-             - ./dist
-             - ./package.json
-             - ./firebase.json
-             - ./lighthouserc.json
-             - ./.firebaserc
-             - ./.netlify
-             - ./scripts
-             - ./version #this file is created by build process
-             
+            - ./node_modules
+            - ./build
+            - ./package.json
+            - ./firebase.json
+            - ./lighthouserc.json
+            - ./.firebaserc
+            - ./.netlify
+
   upload_artifacts:
     <<: *base_config
     steps:
       - attach_workspace:
           at: .
       - store_artifacts:
-          path: dist
+          path: build/web
           destination: dist
 
   deploy_prod:
@@ -53,7 +51,7 @@ jobs:
       - run:
           name:  Deploying to thevinesh.com
           command: |
-                    ./node_modules/.bin/firebase deploy  --non-interactive --token $FIREBASE_TOKEN
+            ./node_modules/.bin/firebase deploy  --non-interactive --token $FIREBASE_TOKEN
 
   deploy_staging:
     <<: *base_config
@@ -63,8 +61,9 @@ jobs:
       - run:
           name:  Deploying to staging
           command: |
-                    ./node_modules/.bin/netlify deploy -p --dir=dist
-              
+            ./node_modules/.bin/netlify deploy -p --dir=build/web
+
+# change this
   create_release:
     <<: *base_config
     steps:
@@ -73,11 +72,11 @@ jobs:
       - run:
           name:  Creating release
           command: |
-                     export VERSION=$(cat version) && npm run release  
+            export VERSION=$(cat version) && npm run release
 
   run_lighthouse:
     docker:
-    - image: circleci/node:lts-browsers
+      - image: circleci/node:lts-browsers
     working_directory: ~/project
     steps:
       - attach_workspace:
@@ -85,36 +84,11 @@ jobs:
       - run:
           name:  Running Ligthouse
           command: |
-                    ./node_modules/.bin/lhci autorun
+            ./node_modules/.bin/lhci autorun
       - store_artifacts:
           path: .lighthouseci
           destination: ligthouse
 
-  analyze_with_sonar:
-    docker:
-      - image: circleci/node:lts    
-    steps:
-      - run:
-          name:  Initiate Sonar
-          command: |
-                    export SONAR_SCANNER_HOME=$HOME/.sonar/sonar-scanner-$SONAR_SCANNER_VERSION-linux
-                    rm -rf $SONAR_SCANNER_HOME
-                    mkdir -p $SONAR_SCANNER_HOME
-                    curl -sSLo $HOME/.sonar/sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_SCANNER_VERSION-linux.zip
-                    unzip $HOME/.sonar/sonar-scanner.zip -d $HOME/.sonar/
-                    rm $HOME/.sonar/sonar-scanner.zip
-                    echo "sonar path $SONAR_SCANNER_HOME/bin"
-                    export SONAR_PATH=$SONAR_SCANNER_HOME/bin
-                    echo "SONAR_PATH $SONAR_PATH"
-                    export SONAR_SCANNER_OPTS="-server"
-                    echo "SONAR_SCANNER_OPTS $SONAR_SCANNER_OPTS"
-                    $SONAR_PATH/sonar-scanner \
-                      -Dsonar.projectKey=theVinesh_personal-site \
-                      -Dsonar.organization=thevinesh \
-                      -Dsonar.sources=. \
-                      -Dsonar.host.url=https://sonarcloud.io \
-                      -Dsonar.login=$SONAR_LOGIN_TOKEN
-                      
 workflows:
   version: 2
   build-test-deploy:
@@ -130,13 +104,13 @@ workflows:
       - run_lighthouse:
           requires:
             - build_and_test
-      - create_release:
-          requires:
-            - build_and_test
-            - upload_artifacts
-          filters:
-            branches:
-              only: master
+#      - create_release:
+#          requires:
+#            - build_and_test
+#            - upload_artifacts
+#          filters:
+#            branches:
+#              only: master
       - deploy_prod:
           requires:
             - build_and_test
