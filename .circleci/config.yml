@@ -9,9 +9,20 @@ jobs:
     <<: *base_config
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - npm-cache-v1-{{ checksum "package-lock.json" }}
+            - flutter-cache-v1-{{ checksum "pubspec.lock" }}
+
       - run:
           name: Installing npm Dependencies
           command: npm ci
+
+      - save_cache:
+          key: npm-cache-v1-{{ checksum "package-lock.json" }}
+          paths:
+              - node_modules
+
       - run:
           name: Installing Flutter
           command: |
@@ -20,9 +31,17 @@ jobs:
             flutter/bin/flutter upgrade
             flutter/bin/flutter config --enable-web
             flutter/bin/flutter pub get
+
+      - save_cache:
+          key: flutter-cache-v1-{{ checksum "pubspec.lock" }}
+          paths:
+              - .dart_tool
+              - flutter
+
       - run:
           name: Building in prod mode
           command: flutter/bin/flutter build web
+
       - persist_to_workspace:
           root: .
           paths:
@@ -39,6 +58,7 @@ jobs:
     steps:
       - attach_workspace:
           at: .
+
       - store_artifacts:
           path: build/web
           destination: dist
@@ -48,6 +68,7 @@ jobs:
     steps:
       - attach_workspace:
           at: .
+
       - run:
           name:  Deploying to thevinesh.com
           command: |
@@ -58,17 +79,19 @@ jobs:
     steps:
       - attach_workspace:
           at: .
+
       - run:
           name:  Deploying to staging
           command: |
             ./node_modules/.bin/netlify deploy -p --dir=build/web
 
-# change this
+  # change this
   create_release:
     <<: *base_config
     steps:
       - attach_workspace:
           at: .
+
       - run:
           name:  Creating release
           command: |
@@ -81,10 +104,12 @@ jobs:
     steps:
       - attach_workspace:
           at: .
+
       - run:
           name:  Running Ligthouse
           command: |
             ./node_modules/.bin/lhci autorun
+
       - store_artifacts:
           path: .lighthouseci
           destination: ligthouse
@@ -94,25 +119,30 @@ workflows:
   build-test-deploy:
     jobs:
       - build_and_test
+
       - upload_artifacts:
           requires:
             - build_and_test
+
       - run_lighthouse:
           requires:
             - build_and_test
-#      - create_release:
-#          requires:
-#            - build_and_test
-#            - upload_artifacts
-#          filters:
-#            branches:
-#              only: master
+
+      #      - create_release:
+      #          requires:
+      #            - build_and_test
+      #            - upload_artifacts
+      #          filters:
+      #            branches:
+      #              only: master
+
       - deploy_prod:
           requires:
             - build_and_test
           filters:
             branches:
               only: master
+
       - deploy_staging:
           requires:
             - build_and_test
