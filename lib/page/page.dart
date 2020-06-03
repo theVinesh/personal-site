@@ -2,7 +2,7 @@ export './page_bloc.dart';
 
 enum SitePage {
   home,
-  resume,
+  //resume,
 }
 
 extension SitePageName on SitePage {
@@ -12,9 +12,9 @@ extension SitePageName on SitePage {
       case SitePage.home:
         name = "Home";
         break;
-      case SitePage.resume:
+      /*case SitePage.resume:
         name = "Resume";
-        break;
+        break;*/
     }
     assert(name != null);
     return name;

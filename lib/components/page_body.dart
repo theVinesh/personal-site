@@ -28,8 +28,8 @@ class PageBody extends StatelessWidget {
   Widget _buildPage(BuildContext context, PageState state) {
     if (state is PageLoadSuccess) {
       switch (state.page) {
-        case SitePage.resume:
-          return ScreenResume();
+       /* case SitePage.resume:
+          return ScreenResume();*/
         default:
           return BlocProvider(
             create: (_) => TextCycleViewBloc()..add(TextCycleStarted()),

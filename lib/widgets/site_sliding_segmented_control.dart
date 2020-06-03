@@ -140,7 +140,6 @@ class SlidingSegmentedControlWithThumbUnderneath<T> extends StatefulWidget {
     this.thumbColor = _kThumbColor,
     this.padding = _kHorizontalItemPadding,
   })  : assert(children != null),
-        assert(children.length >= 2),
         assert(padding != null),
         assert(onValueChanged != null),
         assert(
