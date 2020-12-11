@@ -1,4 +1,5 @@
-export './page_bloc.dart';
+export 'home.dart';
+export 'resume.dart';
 
 enum SitePage {
   home,

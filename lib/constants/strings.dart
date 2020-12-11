@@ -1,3 +1,3 @@
-class SiteStrings{
+class AppStrings{
   static final appName = "Vinesh Raju";
 }

@@ -1,2 +1,3 @@
-export './strings.dart';
-export './theme.dart';
+export 'strings.dart';
+export 'theme.dart';
+export 'colors.dart';
