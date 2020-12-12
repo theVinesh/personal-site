@@ -3,50 +3,58 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:thevinesh/components/nav_bar/nav_bar.dart';
+import 'package:provider/provider.dart';
+import 'package:thevinesh/components/components.dart';
 import 'package:thevinesh/constants/constants.dart';
 import 'package:thevinesh/page/pages.dart';
+import 'package:thevinesh/page/store/app_store.dart';
 import 'package:thevinesh/utils/utils.dart';
 
 void main() {
   runZonedGuarded<Future<void>>(() async {
-    runApp(SiteApp());
+    final appStore = AppStore();
+    runApp(
+      MultiProvider(providers: [
+        Provider(create: (_) => appStore),
+      ], child: SiteApp()),
+    );
   }, (dynamic error, StackTrace stackTrace) {
     log(error.toString(), stackTrace: stackTrace);
   });
 }
 
-class SiteApp extends StatefulWidget {
+class SiteApp extends StatelessWidget {
   @override
-  _SiteAppState createState() => _SiteAppState();
+  Widget build(BuildContext context) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Site(),
+      );
 }
 
-class _SiteAppState extends State<SiteApp> {
+class Site extends StatefulWidget {
+  @override
+  _SiteState createState() => _SiteState();
+}
+
+class _SiteState extends State<Site> {
+  AppStore _store;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _store ??= context.read<AppStore>();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Observer(
-      builder: (_) => MaterialApp(
-        title: AppStrings.appName,
-        debugShowCheckedModeBanner: false,
-        home: SiteBody(),
-      ),
-    );
-  }
-}
-
-class SiteBody extends StatefulWidget {
-  @override
-  _SiteBodyState createState() => _SiteBodyState();
-}
-
-class _SiteBodyState extends State<SiteBody> {
-  @override
-  Widget build(BuildContext context) {
-    return Theme(
-      data: AppTheme.theme(using: context),
-      child: Scaffold(
-        appBar: NavBar(preferredHeight: 64.dp(using: context)),
-        body: ScreenHome(),
+      builder: (_) => Theme(
+        data: AppTheme.theme(using: context, darkMode: _store.darkMode),
+        child: Scaffold(
+          appBar:
+              NavBar(appStore: _store, preferredHeight: 64.dp(using: context)),
+          body: _store.currentPage.widget,
+        ),
       ),
     );
   }

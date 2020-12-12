@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ScreenResume extends StatelessWidget {
+class Resume extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
