@@ -1,55 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:thevinesh/utils/utils.dart';
 
 class ScreenHome extends StatelessWidget {
-  static const _verbs = [
-    "Dream",
-    "Think",
-    "Design",
-    "Code",
-    "Read",
-    "Learn",
-    "Make",
-    "Sing",
-    "Sketch",
-    "Cook",
-    "Party",
-  ];
+  Map<String, TextStyle> _textStyles;
 
-  static const _roleColors = [
-    Colors.greenAccent,
-    Colors.yellowAccent,
-    Colors.lightBlueAccent,
-    Colors.lightGreenAccent,
-  ];
+  Map<String, TextStyle> _initTextStyles(ThemeData theme) {
+    if (_textStyles == null) {
+      _textStyles = {
+        'Headline 1': theme.textTheme.headline1,
+        'Headline 2': theme.textTheme.headline2,
+        'Headline 3': theme.textTheme.headline3,
+        'Headline 4': theme.textTheme.headline4,
+        'Headline 5': theme.textTheme.headline5,
+        'Headline 6': theme.textTheme.headline6,
+        'Subtitle 1': theme.textTheme.subtitle1,
+        'Subtitle 2': theme.textTheme.subtitle2,
+        'Body Text 1': theme.textTheme.bodyText1,
+        'Body Text 2': theme.textTheme.bodyText2,
+        'Caption': theme.textTheme.caption,
+        'Button': theme.textTheme.button,
+        'Overline': theme.textTheme.overline,
+      };
+    }
+    return _textStyles;
+  }
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        RichText(
-          text: TextSpan(
-            style: Theme.of(context).textTheme.headline3,
-            children: [
-              TextSpan(text: "hello world"),
-            ],
-          ),
-          textScaleFactor: SizeConfig.textScaleFactor,
-        ),
-        RichText(
-          text: TextSpan(
-            style: Theme.of(context).textTheme.headline6,
-            children: [
-              TextSpan(
-                  text:
-                      "I am an UX/UI design/developer from India.\n\nCurrently, I work at Swiggy as an Android Developer.\n-"),
-            ],
-          ),
-          textScaleFactor: SizeConfig.textScaleFactor,
-        ),
-      ],
+    _initTextStyles(Theme.of(context));
+    return ListView.builder(
+      itemCount: _textStyles.length,
+      itemBuilder: (_, int index) {
+        final name = _textStyles.keys.elementAt(index);
+        final style = _textStyles[name];
+        return Text(name, style: style);
+      },
     );
   }
 }

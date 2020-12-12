@@ -1,23 +1,38 @@
+import 'package:flutter/material.dart';
+import 'package:thevinesh/page/home.dart';
+import 'package:thevinesh/page/resume.dart';
+
 export 'home.dart';
 export 'resume.dart';
 
-enum SitePage {
+enum AppPage {
   home,
-  //resume,
+  resume,
+  //uses,
 }
 
-extension SitePageName on SitePage {
-  String toName() {
-    String name;
+extension XAppPage on AppPage {
+  String get name {
+    String _name;
     switch (this) {
-      case SitePage.home:
-        name = "Home";
+      case AppPage.home:
+        _name = "Home";
         break;
-      /*case SitePage.resume:
-        name = "Resume";
-        break;*/
+      case AppPage.resume:
+        _name = "Resume";
+        break;
     }
-    assert(name != null);
-    return name;
+    assert(_name != null);
+    return _name;
+  }
+
+  // ignore: missing_return
+  Widget get widget {
+    switch (this) {
+      case AppPage.home:
+        return ScreenHome();
+      case AppPage.resume:
+        return ScreenResume();
+    }
   }
 }
