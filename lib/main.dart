@@ -28,6 +28,7 @@ class SiteApp extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Site(),
+        title: AppStrings.appName,
       );
 }
 

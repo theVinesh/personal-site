@@ -39,6 +39,10 @@ jobs:
               - flutter
 
       - run:
+          name: Generate code
+          command: flutter/bin/flutter pub run build_runner build
+
+      - run:
           name: Building in prod mode
           command: flutter/bin/flutter build web
 

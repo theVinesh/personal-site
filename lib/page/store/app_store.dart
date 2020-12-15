@@ -9,7 +9,7 @@ abstract class _AppStore with Store {
   @observable
   bool darkMode = false;
   @observable
-  AppPage currentPage = AppPage.design_test;
+  AppPage currentPage = AppPage.home;
 
   @action
   void toggleDarkMode() => darkMode = !darkMode;

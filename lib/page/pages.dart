@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:thevinesh/page/design_test.dart';
 import 'package:thevinesh/page/home.dart';
-import 'package:thevinesh/page/resume.dart';
+import 'package:thevinesh/page/resume/resume.dart';
 
 export 'design_test.dart';
 export 'home.dart';
-export 'resume.dart';
+export 'resume/resume.dart';
+export 'unknown.dart';
 
 enum AppPage {
   home,
@@ -42,5 +43,17 @@ extension XAppPage on AppPage {
       case AppPage.design_test:
         return DesignTestScreen();
     }
+  }
+
+  String get route {
+    switch (this) {
+      case AppPage.home:
+        return "/home";
+      case AppPage.resume:
+        return "/resume";
+      case AppPage.design_test:
+        return "/design_test";
+    }
+    return "/404";
   }
 }
