@@ -46,7 +46,7 @@ flutter:
   fonts:
     - family: OxygenMono
       fonts:
-        - asset: assets/font/OxygenMono-Regular.ttf
+        - asset: fonts/OxygenMono-Regular.ttf
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -55,7 +55,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/pages/resume/resume.md
+    - mds/resume/resume.md
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

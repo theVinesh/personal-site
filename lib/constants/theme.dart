@@ -113,7 +113,7 @@ class AppTheme {
       button: button.copyWith(fontSize: DEFAULT_FONT_SIZE.sp(using: using)),
       overline:
           overline.copyWith(fontSize: (DEFAULT_FONT_SIZE - 4).sp(using: using)),
-    );
+    ).apply(fontFamily: "OxygenMono");
 
     final _localizedTheme = ThemeData.localize(_themeData, textTheme);
     return _localizedTheme;
