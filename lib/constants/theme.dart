@@ -37,6 +37,7 @@ class AppTheme {
       onError: AppColors.white,
       brightness: Brightness.light,
     );
+
     final _themeData = ThemeData.from(
       colorScheme: darkMode ? _darkColorScheme : _lightColorScheme,
     );
@@ -86,7 +87,6 @@ class AppTheme {
     /// Typically used for captions or to introduce a (larger) headline.
     final TextStyle overline = _themeData.textTheme.overline;
 
-    /// Text with a color that contrasts with the card and canvas colors.
     final textTheme = _themeData.textTheme.copyWith(
       headline1: headline1.copyWith(
           fontSize: (DEFAULT_FONT_SIZE + 80).sp(using: using)),
@@ -116,7 +116,6 @@ class AppTheme {
     );
 
     final _localizedTheme = ThemeData.localize(_themeData, textTheme);
-
     return _localizedTheme;
   }
 }

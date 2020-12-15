@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:thevinesh/page/design_test.dart';
 import 'package:thevinesh/page/home/home.dart';
 import 'package:thevinesh/page/resume/resume.dart';
 
@@ -11,8 +10,8 @@ export 'unknown.dart';
 enum AppPage {
   home,
   resume,
-  design_test,
   //uses,
+  //design_test,
 }
 
 extension XAppPage on AppPage {
@@ -25,9 +24,9 @@ extension XAppPage on AppPage {
       case AppPage.resume:
         _name = "Resume";
         break;
-      case AppPage.design_test:
+      /* case AppPage.design_test:
         _name = "Design Test";
-        break;
+        break;*/
     }
     assert(_name != null);
     return _name;
@@ -40,8 +39,8 @@ extension XAppPage on AppPage {
         return Home();
       case AppPage.resume:
         return Resume();
-      case AppPage.design_test:
-        return DesignTestScreen();
+      /* case AppPage.design_test:
+        return DesignTestScreen();*/
     }
   }
 
@@ -51,8 +50,8 @@ extension XAppPage on AppPage {
         return "/home";
       case AppPage.resume:
         return "/resume";
-      case AppPage.design_test:
-        return "/design_test";
+      /*case AppPage.design_test:
+        return "/design_test";*/
     }
     return "/404";
   }

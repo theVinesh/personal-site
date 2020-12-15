@@ -70,8 +70,8 @@ class _Hero extends StatelessWidget {
             BoxShadow(
               color: Theme.of(context).colorScheme.primaryVariant,
               offset: Offset(
-                4.dp(using: context),
-                4.dp(using: context),
+                6.dp(using: context),
+                6.dp(using: context),
               ),
             )
           ]),
