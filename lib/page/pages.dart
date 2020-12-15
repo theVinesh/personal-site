@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:thevinesh/page/design_test.dart';
-import 'package:thevinesh/page/home.dart';
+import 'package:thevinesh/page/home/home.dart';
 import 'package:thevinesh/page/resume/resume.dart';
 
 export 'design_test.dart';
-export 'home.dart';
+export 'home/home.dart';
 export 'resume/resume.dart';
 export 'unknown.dart';
 
