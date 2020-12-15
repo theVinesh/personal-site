@@ -117,12 +117,6 @@ class AppTheme {
 
     final _localizedTheme = ThemeData.localize(_themeData, textTheme);
 
-    return _localizedTheme.copyWith(
-      appBarTheme: _localizedTheme.appBarTheme.copyWith(
-        brightness: Brightness.dark,
-        textTheme: _localizedTheme.accentTextTheme,
-        backgroundColor: _localizedTheme.primaryColor,
-      ),
-    );
+    return _localizedTheme;
   }
 }
