@@ -54,7 +54,18 @@ class _SiteState extends State<Site> {
         child: Scaffold(
           appBar:
               NavBar(appStore: _store, preferredHeight: 64.dp(using: context)),
-          body: _store.currentPage.widget,
+          body: Stack(
+            children: [
+              Text(
+                AppStrings.bgWordWall,
+                style: Theme.of(context)
+                    .textTheme
+                    .headline1
+                    .copyWith(color: AppColors.tomato.withOpacity(0.10)),
+              ),
+              _store.currentPage.widget,
+            ],
+          ),
         ),
       ),
     );

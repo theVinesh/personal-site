@@ -14,4 +14,12 @@ class AppStrings {
     "I like to Sketch ✍️",
     "I Party hard 🕺",
   ];
+
+  static const bgWordWall =
+      "theVinesh. from Tirunelveli, Tamil Nadu, India."
+      "Living at Bengaluru for now. I love Biriyani and Burritos."
+      "My Early morning is 10am. Have an Idea? contact me."
+      "Kotlin fanatic, Recently in an affair with Flutter."
+      "Freelance? Yes. Android developer, Software Engineer, Designer, "
+      "Developer, Mobile Developer. I binge watch random stuff on Youtube.";
 }
