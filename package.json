@@ -2,7 +2,7 @@
   "name": "thevinesh.com",
   "version": "3.0.0",
   "url": "https://theVinesh.com",
-  "description": "Hi, I am Vinesh Raju. I am an Android developer currently working at Swiggy.",
+  "description": "I am Vinesh Raju a Mobile Application developer from India with a deep focus on UX/UI.",
   "author": "Vinesh Raju",
   "scripts": {
     "version": "bash ./scripts/version.sh",
