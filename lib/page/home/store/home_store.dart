@@ -16,7 +16,7 @@ abstract class _HomeStore with Store {
   @observable
   int currentIndex = 0;
   bool isCyclingPaused = false;
-  final _whatDoIDoList = AppStrings.whatDoIDo;
+  final _whatDoIDoList = ObservableList.of(AppStrings.whatDoIDo);
 
   _HomeStore() {
     whatDoIDo = _whatDoIDoList[currentIndex];
@@ -33,6 +33,10 @@ abstract class _HomeStore with Store {
       whatDoIDo = _whatDoIDoList[currentIndex];
     }
   }
+
+  @computed
+  String get longestString => _whatDoIDoList.reduce((string1, string2) =>
+      string1.length > string2.length ? string1 : string2);
 
   void dispose() {
     _timer?.cancel();

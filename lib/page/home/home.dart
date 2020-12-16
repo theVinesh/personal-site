@@ -3,6 +3,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:thevinesh/constants/constants.dart';
 import 'package:thevinesh/page/home/store/home_store.dart';
 import 'package:thevinesh/utils/utils.dart';
+import 'package:thevinesh/widgets/shadowed_box.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -29,7 +30,8 @@ class _HomeState extends State<Home> {
     return SingleChildScrollView(
       padding: EdgeInsets.symmetric(
         vertical: 32.sp(using: context),
-        horizontal: 64.sp(using: context),
+        horizontal: (context.screenSize <= ScreenSize.medium ? 16 : 64)
+            .sp(using: context),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,7 +40,9 @@ class _HomeState extends State<Home> {
             AppStrings.helloWorld,
             style: Theme.of(context).textTheme.headline5,
           ),
-          Observer(builder: (_) => _Hero(whatDoIDo: _store.whatDoIDo)),
+          Observer(
+            builder: (_) => _Hero(whatDoIDo: _store.whatDoIDo),
+          ),
           SizedBox(height: 16.dp(using: context)),
           Text(
             AppStrings.introText,
@@ -57,33 +61,18 @@ class _Hero extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(16.sp(using: context)),
-      margin: EdgeInsets.symmetric(vertical: 4.sp(using: context)),
-      constraints: BoxConstraints(
-        minWidth: MediaQuery.of(context).size.width,
-        minHeight: 128.sp(using: context),
-      ),
-      decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.primary,
-          boxShadow: [
-            BoxShadow(
-              color: Theme.of(context).colorScheme.primaryVariant,
-              offset: Offset(
-                6.dp(using: context),
-                6.dp(using: context),
-              ),
-            )
-          ]),
+    return ShadowedBox(
+      padding: EdgeInsets.all(32.sp(using: context)),
+      height: (context.screenSize <= ScreenSize.medium ? 200 : 128)
+          .sp(using: context),
       child: Align(
         alignment: Alignment.centerLeft,
         child: RichText(
-          maxLines: 3,
           text: TextSpan(
             style: Theme.of(context).textTheme.headline4.copyWith(
                   color: Theme.of(context).colorScheme.onPrimary,
                 ),
-            text: AppStrings.iAmVineshAndI,
+            text: AppStrings.iAmVinesh,
             children: [TextSpan(text: whatDoIDo), TextSpan(text: ".")],
           ),
         ),

@@ -15,7 +15,7 @@ class NavBarButton extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(
           horizontal: 2.dp(using: context), vertical: 4.dp(using: context)),
-      child: GestureDetector(
+      child: InkWell(
         onTap: () => onTap?.call(page),
         child: Container(
           padding: EdgeInsets.all(4.dp(using: context)),

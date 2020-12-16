@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:thevinesh/utils/utils.dart';
 
 extension XString on String {
   String stripMargin() => this.splitMapJoin(RegExp(r'^', multiLine: true),
@@ -13,17 +14,22 @@ extension XBuildContext on BuildContext {
     return sqrt(pow(screenSize.width, 2) + pow(screenSize.height, 2));
   }
 
+  ScreenSize get screenSize {
+    final currentScreenDiagonalInInches = this.screenDiagonalPx.pxToIn;
+    return ScreenSize.values.firstWhere((screenSize) =>
+        currentScreenDiagonalInInches <= screenSize.maxDiagonalInInches());
+  }
+
   double get scalingFactor {
-    final screenDiagonalPx = this.screenDiagonalPx;
-    if (screenDiagonalPx <= 6.inch) {
-      //0in > diagonal <= 6in
-      return 1;
-    } else if (screenDiagonalPx <= 15.inch) {
-      //6in> diagonal <= 15in
-      return 1.3;
-    } else {
-      //15in> diagonal <= infinity
-      return 1.5;
+    switch (this.screenSize) {
+      case ScreenSize.small:
+        return 1;
+      case ScreenSize.medium:
+        return 1.3;
+      case ScreenSize.large:
+        return 1.5;
+      default: // ScreenSize.xlarge
+        return 1.7;
     }
   }
 }

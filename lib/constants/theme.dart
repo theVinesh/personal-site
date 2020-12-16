@@ -87,33 +87,35 @@ class AppTheme {
     /// Typically used for captions or to introduce a (larger) headline.
     final TextStyle overline = _themeData.textTheme.overline;
 
-    final textTheme = _themeData.textTheme.copyWith(
-      headline1: headline1.copyWith(
-          fontSize: (DEFAULT_FONT_SIZE + 80).sp(using: using)),
-      headline2: headline2.copyWith(
-          fontSize: (DEFAULT_FONT_SIZE + 40).sp(using: using)),
-      headline3: headline3.copyWith(
-          fontSize: (DEFAULT_FONT_SIZE + 30).sp(using: using)),
-      headline4: headline4.copyWith(
-          fontSize: (DEFAULT_FONT_SIZE + 20).sp(using: using)),
-      headline5: headline5.copyWith(
-          fontSize: (DEFAULT_FONT_SIZE + 10).sp(using: using)),
-      headline6: headline6.copyWith(
-          fontSize: (DEFAULT_FONT_SIZE + 6).sp(using: using)),
-      subtitle1: subtitle1.copyWith(
-          fontSize: (DEFAULT_FONT_SIZE + 2).sp(using: using)),
-      subtitle2:
-          subtitle2.copyWith(fontSize: DEFAULT_FONT_SIZE.sp(using: using)),
-      bodyText1:
-          bodyText1.copyWith(fontSize: DEFAULT_FONT_SIZE.sp(using: using)),
-      bodyText2:
-          bodyText2.copyWith(fontSize: DEFAULT_FONT_SIZE.sp(using: using)),
-      caption:
-          caption.copyWith(fontSize: (DEFAULT_FONT_SIZE - 2).sp(using: using)),
-      button: button.copyWith(fontSize: DEFAULT_FONT_SIZE.sp(using: using)),
-      overline:
-          overline.copyWith(fontSize: (DEFAULT_FONT_SIZE - 4).sp(using: using)),
-    ).apply(fontFamily: "OxygenMono");
+    final textTheme = _themeData.textTheme
+        .copyWith(
+          headline1: headline1.copyWith(
+              fontSize: (DEFAULT_FONT_SIZE + 80).sp(using: using)),
+          headline2: headline2.copyWith(
+              fontSize: (DEFAULT_FONT_SIZE + 40).sp(using: using)),
+          headline3: headline3.copyWith(
+              fontSize: (DEFAULT_FONT_SIZE + 30).sp(using: using)),
+          headline4: headline4.copyWith(
+              fontSize: (DEFAULT_FONT_SIZE + 20).sp(using: using)),
+          headline5: headline5.copyWith(
+              fontSize: (DEFAULT_FONT_SIZE + 10).sp(using: using)),
+          headline6: headline6.copyWith(
+              fontSize: (DEFAULT_FONT_SIZE + 6).sp(using: using)),
+          subtitle1: subtitle1.copyWith(
+              fontSize: (DEFAULT_FONT_SIZE + 2).sp(using: using)),
+          subtitle2:
+              subtitle2.copyWith(fontSize: DEFAULT_FONT_SIZE.sp(using: using)),
+          bodyText1:
+              bodyText1.copyWith(fontSize: DEFAULT_FONT_SIZE.sp(using: using)),
+          bodyText2:
+              bodyText2.copyWith(fontSize: DEFAULT_FONT_SIZE.sp(using: using)),
+          caption: caption.copyWith(
+              fontSize: (DEFAULT_FONT_SIZE - 2).sp(using: using)),
+          button: button.copyWith(fontSize: DEFAULT_FONT_SIZE.sp(using: using)),
+          overline: overline.copyWith(
+              fontSize: (DEFAULT_FONT_SIZE - 4).sp(using: using)),
+        )
+        .apply(fontFamily: "OxygenMono");
 
     final _localizedTheme = ThemeData.localize(_themeData, textTheme);
     return _localizedTheme;

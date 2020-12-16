@@ -5,14 +5,13 @@ class AppStrings {
   static final introText =
       "I am a Mobile applications Designer / Developer from India.\n" +
           "I'm currently leading the development of Multipl's client application on both iOS and Android.\n";
-  static final iAmVineshAndI = "I am Vinesh and I ";
+  static final iAmVinesh = "I am Vinesh, ";
   static final whatDoIDo = [
-    "make Mobile Apps 📱",
-    "occasionally Cook 🍳",
-    "always Eat 🍽",
-    "make Web apps ‍💻",
-    "love to Sing and whistle 😙🎶",
-    "like to Sketch ✍️",
-    "Party hard 🥳️",
+    "I make Mobile Apps 📱",
+    "I occasionally Cook 🍳",
+    "I make Web apps ‍💻",
+    "I love to Sing and whistle 😙🎶",
+    "I like to Sketch ✍️",
+    "I Party hard 🕺",
   ];
 }
