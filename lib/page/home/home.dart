@@ -48,6 +48,20 @@ class _HomeState extends State<Home> {
             AppStrings.introText,
             style: Theme.of(context).textTheme.bodyText2.copyWith(height: 2),
           ),
+          SizedBox(height: 32.dp(using: context)),
+          Wrap(
+            spacing: 8.sp(using: context),
+            runSpacing: 8.sp(using: context),
+            children: _store.socialButtons
+                .map((button) => RaisedButton(
+                      onPressed: () => _store.onSocialButtonTapped(button),
+                      child: Padding(
+                        padding: EdgeInsets.all(8.sp(using: context)),
+                        child: Text(button.name),
+                      ),
+                    ))
+                .toList(),
+          )
         ],
       ),
     );

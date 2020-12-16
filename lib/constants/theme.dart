@@ -118,6 +118,11 @@ class AppTheme {
         .apply(fontFamily: "OxygenMono");
 
     final _localizedTheme = ThemeData.localize(_themeData, textTheme);
-    return _localizedTheme;
+    return _localizedTheme.copyWith(
+      buttonTheme: _localizedTheme.buttonTheme.copyWith(
+        buttonColor: darkMode ? AppColors.doctorWhite : AppColors.fireEngine,
+        textTheme: ButtonTextTheme.primary,
+      ),
+    );
   }
 }

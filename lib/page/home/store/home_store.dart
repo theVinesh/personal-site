@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:mobx/mobx.dart';
 import 'package:thevinesh/constants/constants.dart';
+import 'package:thevinesh/page/home/model/social.dart';
+import 'package:thevinesh/utils/utils.dart';
 
 part 'home_store.g.dart';
 
@@ -17,6 +19,11 @@ abstract class _HomeStore with Store {
   int currentIndex = 0;
   bool isCyclingPaused = false;
   final _whatDoIDoList = ObservableList.of(AppStrings.whatDoIDo);
+  final socialButtons = [
+    Social(name: "twitter", link: "https://twitter.com/theVinesh"),
+    Social(name: "github", link: "https://github.com/theVinesh"),
+    Social(name: "linkedIn", link: "https://linkedin.com/in/theVinesh"),
+  ];
 
   _HomeStore() {
     whatDoIDo = _whatDoIDoList[currentIndex];
@@ -34,9 +41,7 @@ abstract class _HomeStore with Store {
     }
   }
 
-  @computed
-  String get longestString => _whatDoIDoList.reduce((string1, string2) =>
-      string1.length > string2.length ? string1 : string2);
+  void onSocialButtonTapped(Social social) => tryLaunch(social.link);
 
   void dispose() {
     _timer?.cancel();
