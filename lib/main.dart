@@ -52,16 +52,17 @@ class _SiteState extends State<Site> {
       builder: (_) => Theme(
         data: AppTheme.theme(using: context, darkMode: _store.darkMode),
         child: Scaffold(
-          appBar:
-              NavBar(appStore: _store, preferredHeight: 64.dp(using: context)),
+          appBar: NavBar(
+              appStore: _store,
+              preferredHeight: AppDimen.NAV_BAR_HEIGHT.dp(using: context)),
           body: Stack(
             children: [
               Text(
                 AppStrings.bgWordWall,
-                style: Theme.of(context)
-                    .textTheme
-                    .headline1
-                    .copyWith(color: AppColors.tomato.withOpacity(0.10)),
+                style: Theme.of(context).textTheme.headline1.copyWith(
+                      color: _store.bgWallColor,
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
               _store.currentPage.widget,
             ],
