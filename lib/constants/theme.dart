@@ -6,7 +6,9 @@ import 'package:thevinesh/utils/utils.dart';
 class AppTheme {
   static const double DEFAULT_FONT_SIZE = 14.0;
 
-  static ThemeData theme({BuildContext using, bool isDarkMode = false}) {
+  static ThemeData theme(
+      {@required BuildContext using, bool isDarkMode = false}) {
+    assert(using != null);
     final _darkColorScheme = ColorScheme(
       primary: AppColors.fireEngine,
       primaryVariant: AppColors.brick,

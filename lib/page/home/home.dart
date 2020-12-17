@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
         children: [
           Text(
             AppStrings.helloWorld,
-            style: Theme.of(context).textTheme.headline5,
+            style: Theme.of(context).textTheme.headline6,
           ),
           Observer(
             builder: (_) => _Hero(whatDoIDo: _store.whatDoIDo),
@@ -77,13 +77,13 @@ class _Hero extends StatelessWidget {
   Widget build(BuildContext context) {
     return ShadowedBox(
       padding: EdgeInsets.all(32.sp(using: context)),
-      height: (context.screenSize <= ScreenSize.medium ? 256 : 160)
+      height: (context.screenSize <= ScreenSize.medium ? 200 : 118)
           .sp(using: context),
       child: Align(
         alignment: Alignment.centerLeft,
         child: RichText(
           text: TextSpan(
-            style: Theme.of(context).textTheme.headline4.copyWith(
+            style: Theme.of(context).textTheme.headline5.copyWith(
                   color: Theme.of(context).colorScheme.onPrimary,
                 ),
             text: AppStrings.iAmVinesh,

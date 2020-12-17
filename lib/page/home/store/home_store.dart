@@ -23,6 +23,7 @@ abstract class _HomeStore with Store {
     Social(name: "twitter", link: "https://twitter.com/theVinesh"),
     Social(name: "github", link: "https://github.com/theVinesh"),
     Social(name: "linkedIn", link: "https://linkedin.com/in/theVinesh"),
+    //Social(name: "telegram", link: "https://t.me/theVinesh"),
   ];
 
   _HomeStore() {

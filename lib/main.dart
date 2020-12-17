@@ -13,26 +13,32 @@ import 'package:thevinesh/utils/utils.dart';
 void main() {
   runZonedGuarded<Future<void>>(() async {
     final appStore = AppStore();
+    final router = AppRouter(appStore: appStore);
     runApp(
-      MultiProvider(providers: [
-        Provider(create: (_) => appStore),
-      ], child: SiteApp()),
+      MultiProvider(
+        providers: [
+          Provider<AppStore>(create: (_) => appStore),
+          Provider<AppRouter>(create: (_) => router),
+        ],
+        child: MaterialApp(
+          navigatorKey: AppRouter.globalNavKey,
+          debugShowCheckedModeBanner: false,
+          initialRoute: AppPage.home.route,
+          title: AppStrings.appName,
+          onGenerateRoute: router.generateRoute,
+        ),
+      ),
     );
   }, (dynamic error, StackTrace stackTrace) {
     log(error.toString(), stackTrace: stackTrace);
   });
 }
 
-class SiteApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) => MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Site(),
-        title: AppStrings.appName,
-      );
-}
-
 class Site extends StatefulWidget {
+  final WidgetBuilder pageBodyBuilder;
+
+  const Site({this.pageBodyBuilder});
+
   @override
   _SiteState createState() => _SiteState();
 }
@@ -64,7 +70,7 @@ class _SiteState extends State<Site> {
                       fontWeight: FontWeight.bold,
                     ),
               ),
-              _store.currentPage.widget,
+              widget.pageBodyBuilder(context),
             ],
           ),
         ),

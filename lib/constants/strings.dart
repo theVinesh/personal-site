@@ -3,7 +3,7 @@ class AppStrings {
   static final toggleDarkMode = "Toggle dark mode.";
   static final helloWorld = "hello world!";
   static final introText =
-      "I am a Mobile applications Designer / Developer from India.\n" +
+      "I am a Mobile applications Designer / Developer from India 🇮🇳.\n" +
           "I'm currently leading the development of Multipl's client application on both iOS and Android.\n";
   static final iAmVinesh = "I am Vinesh, ";
   static final whatDoIDo = [
@@ -15,8 +15,7 @@ class AppStrings {
     "I Party hard 🕺",
   ];
 
-  static const bgWordWall =
-      "theVinesh. from Tirunelveli, Tamil Nadu, India."
+  static const bgWordWall = "theVinesh. from Tirunelveli, Tamil Nadu, India."
       "Living at Bengaluru for now. I love Biriyani and Burritos."
       "My Early morning is 10am. Have an Idea? contact me."
       "Kotlin fanatic, Recently in an affair with Flutter."

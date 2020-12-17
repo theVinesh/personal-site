@@ -30,11 +30,19 @@ class NavBar extends StatelessWidget implements PreferredSizeWidget {
             Observer(
               builder: (_) => Row(
                 children: AppPage.values
-                    .map((page) => NavBarButton(
-                          page,
-                          selectedPage: appStore.currentPage,
-                          onTap: (newPage) => appStore.currentPage = newPage,
-                        ))
+                    .map(
+                      (page) => NavBarButton(
+                        page,
+                        selectedPage: appStore.currentPage,
+                        onTap: (newPage) {
+                          appStore.currentPage = newPage;
+                          Navigator.pushNamed(
+                            AppRouter.globalNavKey.currentContext,
+                            newPage.route,
+                          );
+                        },
+                      ),
+                    )
                     .toList(),
               ),
             ),
