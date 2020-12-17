@@ -27,6 +27,7 @@ jobs:
           name: Installing Flutter
           command: |
             git clone -b master https://github.com/flutter/flutter.git
+            flutter/bin/flutter --suppress-analytics
             flutter/bin/flutter channel beta
             flutter/bin/flutter upgrade
             flutter/bin/flutter config --enable-web
@@ -44,7 +45,7 @@ jobs:
 
       - run:
           name: Building in prod mode
-          command: flutter/bin/flutter build web
+          command: flutter/bin/flutter build web --release --tree-shake-icons --web-renderer auto
 
       - persist_to_workspace:
           root: .
