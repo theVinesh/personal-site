@@ -77,7 +77,7 @@ class _Hero extends StatelessWidget {
   Widget build(BuildContext context) {
     return ShadowedBox(
       padding: EdgeInsets.all(32.sp(using: context)),
-      height: (context.screenSize <= ScreenSize.medium ? 200 : 128)
+      height: (context.screenSize <= ScreenSize.medium ? 256 : 160)
           .sp(using: context),
       child: Align(
         alignment: Alignment.centerLeft,

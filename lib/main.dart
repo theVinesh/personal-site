@@ -50,7 +50,7 @@ class _SiteState extends State<Site> {
   Widget build(BuildContext context) {
     return Observer(
       builder: (_) => Theme(
-        data: AppTheme.theme(using: context, darkMode: _store.darkMode),
+        data: AppTheme.theme(using: context, isDarkMode: _store.darkMode),
         child: Scaffold(
           appBar: NavBar(
               appStore: _store,
