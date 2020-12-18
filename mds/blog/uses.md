@@ -10,7 +10,6 @@
 - [Firefox](https://www.mozilla.org/en-US/firefox/) - as my main browser.
 - [Pocket](https://getpocket.com/) - to save and read later.
 - [Authy](https://authy.com/) - for 2FA as a Google Authenticator replacement.
-- [Pocket](https://getpocket.com/) - to save and read later.
 - [Spark](https://sparkmailapp.com/) - as my email client.
 - [MyKi](https://myki.com/) - to manage Passwords.
 ## Gear.
