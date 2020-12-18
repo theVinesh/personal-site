@@ -4,6 +4,7 @@
 - [Duck Duck Go](https://duckduckgo.com/) - to Search.
 - [Google Domains](https://domains.google.com/) - to get and manage domains names.
 - [Netlify](https://netlify.com/) and [Firebase](https://firebase.google.com/products/hosting/) - to Host.
+- [Del.dog](https://del.dog/) - to Shorten urls, take and share notes.
 ## Apps.
 - [Youtube Music](https://music.youtube.com/) and [Spotify](https://spotify.com/) - to listen to music.
 - [Firefox](https://www.mozilla.org/en-US/firefox/) - as my main browser.
