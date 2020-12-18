@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:thevinesh/common_stores/common_stores.dart';
 import 'package:thevinesh/main.dart';
 import 'package:thevinesh/page/pages.dart';
-import 'package:thevinesh/page/store/app_store.dart';
 
 class AppRouter {
   static final globalNavKey =
@@ -34,18 +34,22 @@ extension XAppPage on AppPage {
       case AppPage.resume:
         _name = "Resume";
         break;
+      case AppPage.uses:
+        _name = "Uses";
+        break;
     }
     assert(_name != null);
     return _name;
   }
 
-  // ignore: missing_return
   Widget get body {
     switch (this) {
       case AppPage.home:
         return Site(pageBodyBuilder: (_) => Home());
       case AppPage.resume:
         return Site(pageBodyBuilder: (_) => Resume());
+      case AppPage.uses:
+        return Site(pageBodyBuilder: (_) => Uses());
       default:
         return Site(pageBodyBuilder: (_) => FourOhFour());
     }
@@ -57,6 +61,9 @@ extension XAppPage on AppPage {
         return "/home";
       case AppPage.resume:
         return "/resume";
+      case AppPage.uses:
+        return "/uses";
+        break;
     }
     return "/404";
   }

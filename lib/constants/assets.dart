@@ -1,6 +1,11 @@
 class Pages {
   static const BASE_PATH = "mds";
-  static const RESUME_MD = "$BASE_PATH/resume/resume.md";
+  static const RESUME = "$BASE_PATH/resume/resume.md";
+}
+
+class Blogs{
+  static const BASE_PATH = "mds/blog";
+  static const USES = "$BASE_PATH/uses.md";
 }
 
 class Fonts {

@@ -4,10 +4,10 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
+import 'package:thevinesh/common_stores/common_stores.dart';
 import 'package:thevinesh/components/components.dart';
 import 'package:thevinesh/constants/constants.dart';
 import 'package:thevinesh/page/pages.dart';
-import 'package:thevinesh/page/store/app_store.dart';
 import 'package:thevinesh/utils/utils.dart';
 
 void main() {

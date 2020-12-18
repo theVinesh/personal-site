@@ -28,11 +28,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      padding: EdgeInsets.symmetric(
-        vertical: 32.sp(using: context),
-        horizontal: (context.screenSize <= ScreenSize.medium ? 16 : 64)
-            .sp(using: context),
-      ),
+      padding: AppDimen.getDefaultPadding(context),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

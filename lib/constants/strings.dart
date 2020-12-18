@@ -20,4 +20,6 @@ class AppStrings {
       "Kotlin fanatic, Recently in an affair with Flutter."
       "Freelance? Yes. Android developer, Software Engineer, Designer, "
       "Developer, Mobile Developer. I binge watch random stuff on Youtube.";
+
+  static final someThingWentWrongMd = "# You shouldn't be seeing this, Something is broken :(";
 }

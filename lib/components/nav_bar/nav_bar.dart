@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:thevinesh/common_stores/common_stores.dart';
 import 'package:thevinesh/constants/constants.dart';
 import 'package:thevinesh/page/pages.dart';
-import 'package:thevinesh/page/store/app_store.dart';
 import 'package:thevinesh/utils/utils.dart';
 
 part 'nav_bar_button.dart';
@@ -51,7 +51,7 @@ class NavBar extends StatelessWidget implements PreferredSizeWidget {
               builder: (_) => IconButton(
                 tooltip: AppStrings.toggleDarkMode,
                 icon: Icon(
-                  appStore.darkMode ? Icons.brightness_5 : Icons.brightness_2,
+                  appStore.darkMode ? Icons.brightness_1 : Icons.nights_stay,
                   color: Theme.of(context).colorScheme.onPrimary,
                 ),
                 onPressed: () => appStore.toggleDarkMode(),
