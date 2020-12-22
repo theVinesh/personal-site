@@ -3,7 +3,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:thevinesh/constants/constants.dart';
 import 'package:thevinesh/page/home/store/home_store.dart';
 import 'package:thevinesh/utils/utils.dart';
-import 'package:thevinesh/widgets/shadowed_box.dart';
+import 'package:thevinesh/widgets/widgets.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -57,7 +57,12 @@ class _HomeState extends State<Home> {
                       ),
                     ))
                 .toList(),
-          )
+          ),
+          SizedBox(height: 32.dp(using: context)),
+          MdBody(
+            AppStrings.footerMd,
+            mdStyleSheet: AppTheme.footerTheme(using: context),
+          ),
         ],
       ),
     );

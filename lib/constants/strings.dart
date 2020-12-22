@@ -21,5 +21,9 @@ class AppStrings {
       "Freelance? Yes. Android developer, Software Engineer, Designer, "
       "Developer, Mobile Developer. I binge watch random stuff on Youtube.";
 
-  static final someThingWentWrongMd = "# You shouldn't be seeing this, Something is broken :(";
+  static final someThingWentWrongMd =
+      "# You shouldn't be seeing this, Something is broken :(";
+  static final footerMd =
+      "built with flutter.  \n"
+      "checkout the source on [github](https://github.com/theVinesh/personal-site)";
 }
