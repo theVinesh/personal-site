@@ -12,6 +12,9 @@
 .AppleDouble
 .LSOverride
 
+#fvm
+.fvm/
+
 # IntelliJ related
 *.iml
 *.ipr
