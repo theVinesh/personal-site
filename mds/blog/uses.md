@@ -2,7 +2,8 @@
 ## Services.
 - [Zoho Mail](https://zoho.com/mail/) - as my email host
 - [Duck Duck Go](https://duckduckgo.com/) - to Search.
-- [Google Domains](https://domains.google.com/) - to get and manage domains names.
+- [Google Domains](https://domains.google.com/) - to get and manage domains.
+- [Airtable](https://airtable.com/invite/r/dYQWU0zt/) - as a backend for my experiments and side projects.
 - [Netlify](https://netlify.com/) and [Firebase](https://firebase.google.com/products/hosting/) - to Host.
 - [Del.dog](https://del.dog/) - to Shorten urls, take and share notes.
 ## Apps.
