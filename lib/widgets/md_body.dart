@@ -13,6 +13,7 @@ class MdBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return MarkdownBody(
       data: mdData,
+      selectable: true,
       styleSheet: mdStyleSheet ?? AppTheme.mdStyleSheet(using: context),
       onTapLink: (_, link, __) => tryLaunch(link),
     );
