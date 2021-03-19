@@ -49,7 +49,7 @@ class _HomeState extends State<Home> {
             spacing: 8.sp(using: context),
             runSpacing: 8.sp(using: context),
             children: _store.socialButtons
-                .map((button) => RaisedButton(
+                .map((button) => ElevatedButton(
                       onPressed: () => _store.onSocialButtonTapped(button),
                       child: Padding(
                         padding: EdgeInsets.all(8.sp(using: context)),
