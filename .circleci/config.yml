@@ -28,9 +28,7 @@ jobs:
           command: |
             git clone -b master https://github.com/flutter/flutter.git
             flutter/bin/flutter config --no-analytics
-            flutter/bin/flutter channel beta
             flutter/bin/flutter upgrade
-            flutter/bin/flutter config --enable-web
             flutter/bin/flutter pub get
 
       - save_cache:

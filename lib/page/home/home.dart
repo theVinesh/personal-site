@@ -14,9 +14,9 @@ class _HomeState extends State<Home> {
   HomeStore _store;
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    _store ??= HomeStore();
+  void initState() {
+    _store = HomeStore();
+    super.initState();
   }
 
   @override

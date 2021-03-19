@@ -13,9 +13,9 @@ class _ResumeState extends State<Resume> {
   MdPageStore _store;
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    _store ??= MdPageStore(Pages.RESUME);
+  void initState() {
+    _store = MdPageStore(Pages.RESUME);
+    super.initState();
   }
 
   @override

@@ -13,9 +13,9 @@ class _UsestateState extends State<Uses> {
   MdPageStore _store;
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    _store ??= MdPageStore(Blogs.USES);
+  void initState() {
+    _store = MdPageStore(Blogs.USES);
+    super.initState();
   }
 
   @override
