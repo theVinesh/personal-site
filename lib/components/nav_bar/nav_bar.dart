@@ -4,6 +4,7 @@ import 'package:thevinesh/common_stores/common_stores.dart';
 import 'package:thevinesh/constants/constants.dart';
 import 'package:thevinesh/page/pages.dart';
 import 'package:thevinesh/utils/utils.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 part 'nav_bar_button.dart';
 
@@ -35,11 +36,15 @@ class NavBar extends StatelessWidget implements PreferredSizeWidget {
                         page,
                         selectedPage: appStore.currentPage,
                         onTap: (newPage) {
-                          appStore.currentPage = newPage;
-                          Navigator.pushNamed(
-                            AppRouter.globalNavKey.currentContext,
-                            newPage.route,
-                          );
+                          if (newPage.isHyperlink) {
+                            launch(newPage.route, webOnlyWindowName: "_self");
+                          } else {
+                            appStore.currentPage = newPage;
+                            Navigator.pushNamed(
+                              AppRouter.globalNavKey.currentContext,
+                              newPage.route,
+                            );
+                          }
                         },
                       ),
                     )

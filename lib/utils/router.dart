@@ -31,6 +31,9 @@ extension XAppPage on AppPage {
       case AppPage.home:
         _name = "Home";
         break;
+      case AppPage.blog:
+        _name = "Blog";
+        break;
       case AppPage.resume:
         _name = "Resume";
         break;
@@ -55,14 +58,26 @@ extension XAppPage on AppPage {
     }
   }
 
+  bool get isHyperlink {
+    switch (this) {
+      case AppPage.blog:
+      case AppPage.uses:
+        return true;
+      default:
+        return false;
+    }
+  }
+
   String get route {
     switch (this) {
       case AppPage.home:
         return "/home";
+      case AppPage.blog:
+        return "https://blog.thevinesh.com";
       case AppPage.resume:
         return "/resume";
       case AppPage.uses:
-        return "/uses";
+        return "https://blog.thevinesh.com/what-do-i-use/";
         break;
     }
     return "/404";
