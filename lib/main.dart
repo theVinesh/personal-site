@@ -47,9 +47,13 @@ class _SiteState extends State<Site> {
   AppStore _store;
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    _store ??= context.read<AppStore>();
+  void initState() {
+    _store = context.read<AppStore>();
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      _store.darkMode =
+          MediaQuery.of(context).platformBrightness == Brightness.dark;
+    });
+    super.initState();
   }
 
   @override

@@ -4,6 +4,12 @@ import 'package:thevinesh/common_stores/common_stores.dart';
 import 'package:thevinesh/main.dart';
 import 'package:thevinesh/page/pages.dart';
 
+///app for Flutter routes
+///self & external are for urls
+///self to open on the same tab (on web)
+///external to open on a separate tab
+enum RouteType { app, self, external }
+
 class AppRouter {
   static final globalNavKey =
       GlobalKey<NavigatorState>(debugLabel: "globalNavKey");
@@ -58,13 +64,13 @@ extension XAppPage on AppPage {
     }
   }
 
-  bool get isHyperlink {
+  RouteType get type {
     switch (this) {
       case AppPage.blog:
       case AppPage.uses:
-        return true;
+        return RouteType.self;
       default:
-        return false;
+        return RouteType.app;
     }
   }
 
@@ -77,7 +83,7 @@ extension XAppPage on AppPage {
       case AppPage.resume:
         return "/resume";
       case AppPage.uses:
-        return "https://blog.thevinesh.com/what-do-i-use/";
+        return "https://blog.thevinesh.com/posts/what-do-i-use/";
         break;
     }
     return "/404";

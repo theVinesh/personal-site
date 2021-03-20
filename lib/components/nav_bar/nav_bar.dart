@@ -36,14 +36,20 @@ class NavBar extends StatelessWidget implements PreferredSizeWidget {
                         page,
                         selectedPage: appStore.currentPage,
                         onTap: (newPage) {
-                          if (newPage.isHyperlink) {
-                            launch(newPage.route, webOnlyWindowName: "_self");
-                          } else {
-                            appStore.currentPage = newPage;
-                            Navigator.pushNamed(
-                              AppRouter.globalNavKey.currentContext,
-                              newPage.route,
-                            );
+                          switch (newPage.type) {
+                            case RouteType.app:
+                              appStore.currentPage = newPage;
+                              Navigator.pushNamed(
+                                AppRouter.globalNavKey.currentContext,
+                                newPage.route,
+                              );
+                              break;
+                            case RouteType.self:
+                              launch(newPage.route, webOnlyWindowName: "_self");
+                              break;
+                            case RouteType.external:
+                              launch(newPage.route);
+                              break;
                           }
                         },
                       ),
