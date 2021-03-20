@@ -6,6 +6,7 @@ export 'uses.dart';
 
 enum AppPage {
   home,
+  blog,
   resume,
   uses,
   //design_test,
