@@ -83,7 +83,7 @@ extension XAppPage on AppPage {
       case AppPage.resume:
         return "/resume";
       case AppPage.uses:
-        return "https://blog.thevinesh.com/posts/what-do-i-use/";
+        return "https://blog.thevinesh.com/uses/";
         break;
     }
     return "/404";
