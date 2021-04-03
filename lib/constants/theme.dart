@@ -161,7 +161,7 @@ class AppTheme {
     final theme = Theme.of(using);
     return MarkdownStyleSheet(
       a: TextStyle(
-        color: AppColors.tomato,
+        color: AppColors.fireEngine,
         decoration: TextDecoration.underline,
       ),
       p: theme.textTheme.bodyText2,

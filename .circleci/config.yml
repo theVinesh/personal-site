@@ -28,7 +28,6 @@ jobs:
           command: |
             git clone -b master https://github.com/flutter/flutter.git
             flutter/bin/flutter config --no-analytics
-            flutter/bin/flutter upgrade
             flutter/bin/flutter pub get
 
       - save_cache:
@@ -147,6 +146,8 @@ workflows:
               only: master
 
       - deploy_staging:
+          context:
+            - SHARED_AUTH_TOKENS
           requires:
             - build_and_test
           filters:
