@@ -6,6 +6,8 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "cleanUrls": true
+    "cleanUrls": true,
+    "appAssociation": "AUTO",
+    "rewrites": [ { "source": "/link/**", "dynamicLinks": true } ]
   }
 }
