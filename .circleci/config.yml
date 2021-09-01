@@ -42,7 +42,7 @@ jobs:
 
       - run:
           name: Building in prod mode
-          command: flutter/bin/flutter build web --release --tree-shake-icons --web-renderer canvaskit
+          command: flutter/bin/flutter build web --release
 
       - persist_to_workspace:
           root: .
