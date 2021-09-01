@@ -6,11 +6,11 @@ export 'extensions.dart';
 export 'router.dart';
 export 'screen_size.dart';
 
-Future<bool> tryLaunch(String link) async {
-  if (await canLaunch(link)) {
-    return await launch(link);
-  } else {
+Future<bool> tryLaunch(String? link) async {
+  if (link == null || !(await canLaunch(link))) {
     log("Cannot launch $link");
     return false;
+  } else {
+    return await launch(link);
   }
 }

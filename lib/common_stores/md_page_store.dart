@@ -13,7 +13,7 @@ abstract class _MdPageStore with Store {
   bool isLoading = false;
 
   @observable
-  String mdData;
+  String? mdData;
 
   final String filePath;
 

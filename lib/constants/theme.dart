@@ -8,8 +8,7 @@ class AppTheme {
   static const double DEFAULT_FONT_SIZE = 14.0;
 
   static ThemeData theme(
-      {@required BuildContext using, bool isDarkMode = false}) {
-    assert(using != null);
+      {required BuildContext using, bool isDarkMode = false}) {
     final _darkColorScheme = ColorScheme(
       primary: AppColors.fireEngine,
       primaryVariant: AppColors.brick,
@@ -76,49 +75,49 @@ class AppTheme {
     ///_________________
 
     /// Extremely large text.
-    final TextStyle headline1 = _themeData.textTheme.headline1;
+    final TextStyle headline1 = _themeData.textTheme.headline1!;
 
     /// Very, very large text.
     ///
     /// Used for the date in the dialog shown by [showDatePicker].
-    final TextStyle headline2 = _themeData.textTheme.headline2;
+    final TextStyle headline2 = _themeData.textTheme.headline2!;
 
     /// Very large text.
-    final TextStyle headline3 = _themeData.textTheme.headline3;
+    final TextStyle headline3 = _themeData.textTheme.headline3!;
 
     /// Large text.
-    final TextStyle headline4 = _themeData.textTheme.headline4;
+    final TextStyle headline4 = _themeData.textTheme.headline4!;
 
     /// Used for large text in dialogs (e.g., the month and year in the dialog
     /// shown by [showDatePicker]).
-    final TextStyle headline5 = _themeData.textTheme.headline5;
+    final TextStyle headline5 = _themeData.textTheme.headline5!;
 
     /// Used for the primary text in app bars and dialogs (e.g., [AppBar.title]
     /// and [AlertDialog.title]).
-    final TextStyle headline6 = _themeData.textTheme.headline6;
+    final TextStyle headline6 = _themeData.textTheme.headline6!;
 
     /// Used for the primary text in lists (e.g., [ListTile.title]).
-    final TextStyle subtitle1 = _themeData.textTheme.subtitle1;
+    final TextStyle subtitle1 = _themeData.textTheme.subtitle1!;
 
     /// For medium emphasis text that's a little smaller than [subtitle1].
-    final TextStyle subtitle2 = _themeData.textTheme.subtitle2;
+    final TextStyle subtitle2 = _themeData.textTheme.subtitle2!;
 
     /// Used for emphasizing text that would otherwise be [bodyText2].
-    final TextStyle bodyText1 = _themeData.textTheme.bodyText1;
+    final TextStyle bodyText1 = _themeData.textTheme.bodyText1!;
 
     /// The default text style for [Material].
-    final TextStyle bodyText2 = _themeData.textTheme.bodyText2;
+    final TextStyle bodyText2 = _themeData.textTheme.bodyText2!;
 
     /// Used for auxiliary text associated with images.
-    final TextStyle caption = _themeData.textTheme.caption;
+    final TextStyle caption = _themeData.textTheme.caption!;
 
     /// Used for text on [ElevatedButton], [TextButton] and [OutlinedButton].
-    final TextStyle button = _themeData.textTheme.button;
+    final TextStyle button = _themeData.textTheme.button!;
 
     /// The smallest style.
     ///
     /// Typically used for captions or to introduce a (larger) headline.
-    final TextStyle overline = _themeData.textTheme.overline;
+    final TextStyle overline = _themeData.textTheme.overline!;
 
     final textTheme = _themeData.textTheme.copyWith(
       headline1: headline1.copyWith(
@@ -157,38 +156,38 @@ class AppTheme {
     );
   }
 
-  static MarkdownStyleSheet mdStyleSheet({@required BuildContext using}) {
+  static MarkdownStyleSheet mdStyleSheet({required BuildContext using}) {
     final theme = Theme.of(using);
     return MarkdownStyleSheet(
       a: TextStyle(
         color: AppColors.fireEngine,
         decoration: TextDecoration.underline,
       ),
-      p: theme.textTheme.bodyText2,
-      code: theme.textTheme.bodyText2.copyWith(
-        backgroundColor: theme.cardTheme?.color ?? theme.cardColor,
+      p: theme.textTheme.bodyText2!,
+      code: theme.textTheme.bodyText2!.copyWith(
+        backgroundColor: theme.cardTheme.color ?? theme.cardColor,
         fontFamily: "monospace",
-        fontSize: theme.textTheme.bodyText2.fontSize * 0.85,
+        fontSize: theme.textTheme.bodyText2!.fontSize! * 0.85,
       ),
-      h1: theme.textTheme.headline5,
-      h2: theme.textTheme.headline6,
-      h3: theme.textTheme.subtitle1,
-      h4: theme.textTheme.bodyText2,
-      h5: theme.textTheme.bodyText1,
-      h6: theme.textTheme.bodyText1,
+      h1: theme.textTheme.headline5!,
+      h2: theme.textTheme.headline6!,
+      h3: theme.textTheme.subtitle1!,
+      h4: theme.textTheme.bodyText2!,
+      h5: theme.textTheme.bodyText1!,
+      h6: theme.textTheme.bodyText1!,
       em: const TextStyle(fontStyle: FontStyle.italic),
       strong: const TextStyle(fontWeight: FontWeight.bold),
       del: const TextStyle(decoration: TextDecoration.lineThrough),
-      blockquote: theme.textTheme.bodyText2,
-      img: theme.textTheme.bodyText2,
-      checkbox: theme.textTheme.bodyText2.copyWith(
+      blockquote: theme.textTheme.bodyText2!,
+      img: theme.textTheme.bodyText2!,
+      checkbox: theme.textTheme.bodyText2!.copyWith(
         color: theme.primaryColor,
       ),
       blockSpacing: 8.0,
       listIndent: 24.0,
-      listBullet: theme.textTheme.bodyText2,
+      listBullet: theme.textTheme.bodyText2!,
       tableHead: const TextStyle(fontWeight: FontWeight.w600),
-      tableBody: theme.textTheme.bodyText2,
+      tableBody: theme.textTheme.bodyText2!,
       tableHeadAlign: TextAlign.center,
       tableBorder: TableBorder.all(
         color: theme.dividerColor,
@@ -204,7 +203,7 @@ class AppTheme {
       ),
       codeblockPadding: const EdgeInsets.all(8.0),
       codeblockDecoration: BoxDecoration(
-        color: theme.cardTheme?.color ?? theme.cardColor,
+        color: theme.cardTheme.color ?? theme.cardColor,
         borderRadius: BorderRadius.circular(2.0),
       ),
       horizontalRuleDecoration: BoxDecoration(
@@ -218,8 +217,8 @@ class AppTheme {
     );
   }
 
-  static MarkdownStyleSheet footerTheme({@required BuildContext using}) {
+  static MarkdownStyleSheet footerTheme({required BuildContext using}) {
     final baseTheme = mdStyleSheet(using: using);
-    return baseTheme.copyWith(p: Theme.of(using).textTheme.overline);
+    return baseTheme.copyWith(p: Theme.of(using).textTheme.overline!);
   }
 }

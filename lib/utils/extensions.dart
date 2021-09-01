@@ -41,8 +41,8 @@ extension XNum on num {
 
   double get pxToIn => this / ONE_INCH_IN_OP;
 
-  double sp({BuildContext using}) => this * using.scalingFactor;
+  double sp({required BuildContext using}) => this * using.scalingFactor;
 
-  double dp({BuildContext using}) =>
+  double dp({required BuildContext using}) =>
       this * MediaQuery.of(using).devicePixelRatio;
 }

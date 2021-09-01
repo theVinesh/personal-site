@@ -37,14 +37,14 @@ void main() {
 class Site extends StatefulWidget {
   final WidgetBuilder pageBodyBuilder;
 
-  const Site({this.pageBodyBuilder});
+  const Site({required this.pageBodyBuilder});
 
   @override
   _SiteState createState() => _SiteState();
 }
 
 class _SiteState extends State<Site> {
-  AppStore _store;
+  late AppStore _store;
 
   @override
   void initState() {
@@ -69,7 +69,7 @@ class _SiteState extends State<Site> {
             children: [
               Text(
                 AppStrings.bgWordWall,
-                style: Theme.of(context).textTheme.headline1.copyWith(
+                style: Theme.of(context).textTheme.headline1!.copyWith(
                       color: _store.bgWallColor,
                       fontWeight: FontWeight.bold,
                     ),

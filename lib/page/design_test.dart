@@ -6,7 +6,7 @@ class DesignTestScreen extends StatefulWidget {
 }
 
 class _DesignTestScreenState extends State<DesignTestScreen> {
-  Map<String, TextStyle> _textStyles;
+  late Map<String, TextStyle?> _textStyles;
 
   @override
   void didChangeDependencies() {
@@ -26,7 +26,7 @@ class _DesignTestScreenState extends State<DesignTestScreen> {
     );
   }
 
-  Map<String, TextStyle> _initTextStyles(ThemeData theme) {
+  Map<String, TextStyle?> _initTextStyles(ThemeData theme) {
     _textStyles = {
       'Headline 1': theme.textTheme.headline1,
       'Headline 2': theme.textTheme.headline2,
