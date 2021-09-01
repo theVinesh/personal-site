@@ -10,7 +10,7 @@ class Resume extends StatefulWidget {
 }
 
 class _ResumeState extends State<Resume> {
-  MdPageStore _store;
+  late MdPageStore _store;
 
   @override
   void initState() {

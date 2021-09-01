@@ -15,9 +15,9 @@ class AppRouter {
       GlobalKey<NavigatorState>(debugLabel: "globalNavKey");
   final AppStore appStore;
 
-  const AppRouter({@required this.appStore}) : assert(appStore != null);
+  const AppRouter({required this.appStore});
 
-  AppPage _getPageFor(String route) => AppPage.values
+  AppPage _getPageFor(String? route) => AppPage.values
       .firstWhere((page) => page.route == route, orElse: () => AppPage.home);
 
   Route<dynamic> generateRoute(RouteSettings settings) {
@@ -47,7 +47,6 @@ extension XAppPage on AppPage {
         _name = "Uses";
         break;
     }
-    assert(_name != null);
     return _name;
   }
 
@@ -84,8 +83,6 @@ extension XAppPage on AppPage {
         return "/resume";
       case AppPage.uses:
         return "https://blog.thevinesh.com/uses/";
-        break;
     }
-    return "/404";
   }
 }

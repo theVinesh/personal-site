@@ -2,13 +2,12 @@ part of 'nav_bar.dart';
 
 class NavBarButton extends StatelessWidget {
   final AppPage page;
-  final ValueChanged<AppPage> onTap;
+  final ValueChanged<AppPage>? onTap;
   final bool isSelected;
 
   const NavBarButton(this.page,
       {AppPage selectedPage = AppPage.home, this.onTap})
-      : isSelected = page == selectedPage,
-        assert(page != null);
+      : isSelected = page == selectedPage;
 
   @override
   Widget build(BuildContext context) {

@@ -12,9 +12,9 @@ class HomeStore = _HomeStore with _$HomeStore;
 abstract class _HomeStore with Store {
   static const UPDATE_INTERVAL_IN_SECONDS = 2;
 
-  Timer _timer;
+  Timer? _timer;
   @observable
-  String whatDoIDo;
+  String whatDoIDo = "";
   @observable
   int currentIndex = 0;
   bool isCyclingPaused = false;

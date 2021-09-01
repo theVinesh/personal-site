@@ -11,7 +11,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  HomeStore _store;
+  late HomeStore _store;
 
   @override
   void initState() {
@@ -42,7 +42,7 @@ class _HomeState extends State<Home> {
           SizedBox(height: 16.dp(using: context)),
           Text(
             AppStrings.introText,
-            style: Theme.of(context).textTheme.bodyText2.copyWith(height: 2),
+            style: Theme.of(context).textTheme.bodyText2?.copyWith(height: 2),
           ),
           SizedBox(height: 32.dp(using: context)),
           Wrap(
@@ -72,7 +72,7 @@ class _HomeState extends State<Home> {
 class _Hero extends StatelessWidget {
   final String whatDoIDo;
 
-  const _Hero({@required this.whatDoIDo}) : assert(whatDoIDo != null);
+  const _Hero({required this.whatDoIDo});
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +84,7 @@ class _Hero extends StatelessWidget {
         alignment: Alignment.centerLeft,
         child: RichText(
           text: TextSpan(
-            style: Theme.of(context).textTheme.headline5.copyWith(
+            style: Theme.of(context).textTheme.headline5!.copyWith(
                   color: Theme.of(context).colorScheme.onPrimary,
                 ),
             text: AppStrings.iAmVinesh,

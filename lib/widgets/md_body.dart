@@ -4,15 +4,15 @@ import 'package:thevinesh/constants/constants.dart';
 import 'package:thevinesh/utils/utils.dart';
 
 class MdBody extends StatelessWidget {
-  final String mdData;
-  final MarkdownStyleSheet mdStyleSheet;
+  final String? mdData;
+  final MarkdownStyleSheet? mdStyleSheet;
 
-  const MdBody(this.mdData, {this.mdStyleSheet}) : assert(mdData != null);
+  const MdBody(this.mdData, {this.mdStyleSheet});
 
   @override
   Widget build(BuildContext context) {
     return MarkdownBody(
-      data: mdData,
+      data: mdData ?? "",
       selectable: true,
       styleSheet: mdStyleSheet ?? AppTheme.mdStyleSheet(using: context),
       onTapLink: (_, link, __) => tryLaunch(link),

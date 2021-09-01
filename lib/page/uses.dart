@@ -10,7 +10,7 @@ class Uses extends StatefulWidget {
 }
 
 class _UsestateState extends State<Uses> {
-  MdPageStore _store;
+  late MdPageStore _store;
 
   @override
   void initState() {
@@ -26,7 +26,7 @@ class _UsestateState extends State<Uses> {
         if (_store.isLoading) {
           return Center(child: CircularProgressIndicator());
         } else {
-          return MdBody(_store.mdData);
+          return MdBody(_store.mdData!);
         }
       }),
     );

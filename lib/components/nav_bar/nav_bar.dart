@@ -12,10 +12,8 @@ class NavBar extends StatelessWidget implements PreferredSizeWidget {
   final double preferredHeight;
   final AppStore appStore;
 
-  const NavBar({@required this.preferredHeight, @required this.appStore})
-      : assert(preferredHeight != null),
-        assert(appStore != null),
-        assert(preferredHeight > 64.0);
+  const NavBar({required this.preferredHeight, required this.appStore})
+      :assert(preferredHeight > 64.0);
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +38,7 @@ class NavBar extends StatelessWidget implements PreferredSizeWidget {
                             case RouteType.app:
                               appStore.currentPage = newPage;
                               Navigator.pushNamed(
-                                AppRouter.globalNavKey.currentContext,
+                                AppRouter.globalNavKey.currentContext!,
                                 newPage.route,
                               );
                               break;
