@@ -69,7 +69,7 @@ class _SiteState extends State<Site> {
             children: [
               Text(
                 AppStrings.bgWordWall,
-                style: Theme.of(context).textTheme.headline1!.copyWith(
+                style: Theme.of(context).textTheme.headline1?.copyWith(
                       color: _store.bgWallColor,
                       fontWeight: FontWeight.bold,
                     ),
