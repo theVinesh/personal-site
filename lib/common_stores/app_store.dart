@@ -14,7 +14,7 @@ abstract class _AppStore with Store {
 
   @computed
   Color get bgWallColor =>
-      (darkMode ? AppColors.doctorWhite : AppColors.nero).withOpacity(0.03);
+      (darkMode ? AppColors.doctorWhite : AppColors.nero).withOpacity(0.05);
 
   @observable
   AppPage currentPage = AppPage.home;
