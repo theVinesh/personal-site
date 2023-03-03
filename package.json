@@ -10,7 +10,7 @@
     "test": "echo \"No tests specified\""
   },
   "devDependencies": {
-    "@lhci/cli": "^0.3.7",
+    "@lhci/cli": "^0.11.0",
     "firebase-tools": "^7.2.2",
     "netlify-cli": "^2.12.0"
   },
