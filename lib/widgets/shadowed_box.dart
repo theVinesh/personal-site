@@ -30,7 +30,7 @@ class ShadowedBox extends StatelessWidget {
         color: boxColor ?? Theme.of(context).colorScheme.primary,
         boxShadow: [
           BoxShadow(
-            color: shadowColor ?? Theme.of(context).colorScheme.primaryVariant,
+            color: shadowColor ?? Theme.of(context).colorScheme.primaryContainer,
             offset: shadowOffset ??
                 Offset(
                   6.dp(using: context),

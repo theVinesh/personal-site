@@ -28,19 +28,19 @@ class _DesignTestScreenState extends State<DesignTestScreen> {
 
   Map<String, TextStyle?> _initTextStyles(ThemeData theme) {
     _textStyles = {
-      'Headline 1': theme.textTheme.headline1,
-      'Headline 2': theme.textTheme.headline2,
-      'Headline 3': theme.textTheme.headline3,
-      'Headline 4': theme.textTheme.headline4,
-      'Headline 5': theme.textTheme.headline5,
-      'Headline 6': theme.textTheme.headline6,
-      'Subtitle 1': theme.textTheme.subtitle1,
-      'Subtitle 2': theme.textTheme.subtitle2,
-      'Body Text 1': theme.textTheme.bodyText1,
-      'Body Text 2': theme.textTheme.bodyText2,
-      'Caption': theme.textTheme.caption,
-      'Button': theme.textTheme.button,
-      'Overline': theme.textTheme.overline,
+      'Headline 1': theme.textTheme.displayLarge,
+      'Headline 2': theme.textTheme.displayMedium,
+      'Headline 3': theme.textTheme.displaySmall,
+      'Headline 4': theme.textTheme.headlineMedium,
+      'Headline 5': theme.textTheme.headlineSmall,
+      'Headline 6': theme.textTheme.titleLarge,
+      'Subtitle 1': theme.textTheme.titleMedium,
+      'Subtitle 2': theme.textTheme.titleSmall,
+      'Body Text 1': theme.textTheme.bodyLarge,
+      'Body Text 2': theme.textTheme.bodyMedium,
+      'Caption': theme.textTheme.bodySmall,
+      'Button': theme.textTheme.labelLarge,
+      'Overline': theme.textTheme.labelSmall,
     };
     return _textStyles;
   }

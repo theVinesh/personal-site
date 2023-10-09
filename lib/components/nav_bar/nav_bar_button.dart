@@ -20,7 +20,7 @@ class NavBarButton extends StatelessWidget {
           padding: EdgeInsets.all(4.dp(using: context)),
           child: Text(
             page.name,
-            style: Theme.of(context).textTheme.button,
+            style: Theme.of(context).textTheme.labelLarge,
           ),
         ),
       ),
