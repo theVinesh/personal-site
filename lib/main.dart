@@ -49,7 +49,7 @@ class _SiteState extends State<Site> {
   @override
   void initState() {
     _store = context.read<AppStore>();
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       _store.darkMode =
           MediaQuery.of(context).platformBrightness == Brightness.dark;
     });
@@ -69,7 +69,7 @@ class _SiteState extends State<Site> {
             children: [
               Text(
                 AppStrings.bgWordWall,
-                style: Theme.of(context).textTheme.headline1?.copyWith(
+                style: Theme.of(context).textTheme.displayLarge?.copyWith(
                       color: _store.bgWallColor,
                       fontWeight: FontWeight.bold,
                     ),

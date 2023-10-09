@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:thevinesh/constants/colors.dart';
 import 'package:thevinesh/constants/constants.dart';
 import 'package:thevinesh/utils/utils.dart';
 
@@ -11,10 +10,8 @@ class AppTheme {
       {required BuildContext using, bool isDarkMode = false}) {
     final _darkColorScheme = ColorScheme(
       primary: AppColors.fireEngine,
-      primaryVariant: AppColors.brick,
       onPrimary: AppColors.white,
       secondary: AppColors.nero,
-      secondaryVariant: AppColors.black,
       onSecondary: AppColors.white,
       surface: AppColors.black,
       onSurface: AppColors.white,
@@ -27,10 +24,8 @@ class AppTheme {
 
     final _lightColorScheme = ColorScheme(
       primary: AppColors.fireEngine,
-      primaryVariant: AppColors.brick,
       onPrimary: AppColors.white,
       secondary: AppColors.nero,
-      secondaryVariant: AppColors.black,
       onSecondary: AppColors.white,
       surface: AppColors.white,
       onSurface: AppColors.black,
@@ -53,97 +48,88 @@ class AppTheme {
     final _themeData = ThemeData(
       brightness: colorScheme.brightness,
       primaryColor: primarySurfaceColor,
-      primaryColorBrightness:
-          ThemeData.estimateBrightnessForColor(primarySurfaceColor),
       canvasColor: colorScheme.background,
-      accentColor: colorScheme.secondary,
-      accentColorBrightness:
-          ThemeData.estimateBrightnessForColor(colorScheme.secondary),
       scaffoldBackgroundColor: colorScheme.background,
-      bottomAppBarColor: colorScheme.surface,
       cardColor: colorScheme.surface,
       dividerColor: colorScheme.onSurface.withOpacity(0.12),
-      backgroundColor: colorScheme.background,
       dialogBackgroundColor: colorScheme.background,
-      errorColor: colorScheme.error,
       indicatorColor: onPrimarySurfaceColor,
       applyElevationOverlayColor: isDarkMode,
-      colorScheme: colorScheme,
-      fontFamily: Fonts.OXYGEN_MONO_REGULAR_FAMILY,
+      fontFamily: Fonts.OXYGEN_MONO_REGULAR_FAMILY, bottomAppBarTheme: BottomAppBarTheme(color: colorScheme.surface), colorScheme: colorScheme.copyWith(secondary: colorScheme.secondary).copyWith(background: colorScheme.background).copyWith(error: colorScheme.error),
     );
 
     ///_________________
 
     /// Extremely large text.
-    final TextStyle headline1 = _themeData.textTheme.headline1!;
+    final TextStyle headline1 = _themeData.textTheme.displayLarge!;
 
     /// Very, very large text.
     ///
     /// Used for the date in the dialog shown by [showDatePicker].
-    final TextStyle headline2 = _themeData.textTheme.headline2!;
+    final TextStyle headline2 = _themeData.textTheme.displayMedium!;
 
     /// Very large text.
-    final TextStyle headline3 = _themeData.textTheme.headline3!;
+    final TextStyle headline3 = _themeData.textTheme.displaySmall!;
 
     /// Large text.
-    final TextStyle headline4 = _themeData.textTheme.headline4!;
+    final TextStyle headline4 = _themeData.textTheme.headlineMedium!;
 
     /// Used for large text in dialogs (e.g., the month and year in the dialog
     /// shown by [showDatePicker]).
-    final TextStyle headline5 = _themeData.textTheme.headline5!;
+    final TextStyle headline5 = _themeData.textTheme.headlineSmall!;
 
     /// Used for the primary text in app bars and dialogs (e.g., [AppBar.title]
     /// and [AlertDialog.title]).
-    final TextStyle headline6 = _themeData.textTheme.headline6!;
+    final TextStyle headline6 = _themeData.textTheme.titleLarge!;
 
     /// Used for the primary text in lists (e.g., [ListTile.title]).
-    final TextStyle subtitle1 = _themeData.textTheme.subtitle1!;
+    final TextStyle subtitle1 = _themeData.textTheme.titleMedium!;
 
     /// For medium emphasis text that's a little smaller than [subtitle1].
-    final TextStyle subtitle2 = _themeData.textTheme.subtitle2!;
+    final TextStyle subtitle2 = _themeData.textTheme.titleSmall!;
 
     /// Used for emphasizing text that would otherwise be [bodyText2].
-    final TextStyle bodyText1 = _themeData.textTheme.bodyText1!;
+    final TextStyle bodyText1 = _themeData.textTheme.bodyLarge!;
 
     /// The default text style for [Material].
-    final TextStyle bodyText2 = _themeData.textTheme.bodyText2!;
+    final TextStyle bodyText2 = _themeData.textTheme.bodyMedium!;
 
     /// Used for auxiliary text associated with images.
-    final TextStyle caption = _themeData.textTheme.caption!;
+    final TextStyle caption = _themeData.textTheme.bodySmall!;
 
     /// Used for text on [ElevatedButton], [TextButton] and [OutlinedButton].
-    final TextStyle button = _themeData.textTheme.button!;
+    final TextStyle button = _themeData.textTheme.labelLarge!;
 
     /// The smallest style.
     ///
     /// Typically used for captions or to introduce a (larger) headline.
-    final TextStyle overline = _themeData.textTheme.overline!;
+    final TextStyle overline = _themeData.textTheme.labelSmall!;
 
     final textTheme = _themeData.textTheme.copyWith(
-      headline1: headline1.copyWith(
+      displayLarge: headline1.copyWith(
           fontSize: (DEFAULT_FONT_SIZE + 80).sp(using: using)),
-      headline2: headline2.copyWith(
+      displayMedium: headline2.copyWith(
           fontSize: (DEFAULT_FONT_SIZE + 40).sp(using: using)),
-      headline3: headline3.copyWith(
+      displaySmall: headline3.copyWith(
           fontSize: (DEFAULT_FONT_SIZE + 30).sp(using: using)),
-      headline4: headline4.copyWith(
+      headlineMedium: headline4.copyWith(
           fontSize: (DEFAULT_FONT_SIZE + 20).sp(using: using)),
-      headline5: headline5.copyWith(
+      headlineSmall: headline5.copyWith(
           fontSize: (DEFAULT_FONT_SIZE + 10).sp(using: using)),
-      headline6: headline6.copyWith(
+      titleLarge: headline6.copyWith(
           fontSize: (DEFAULT_FONT_SIZE + 6).sp(using: using)),
-      subtitle1: subtitle1.copyWith(
+      titleMedium: subtitle1.copyWith(
           fontSize: (DEFAULT_FONT_SIZE + 2).sp(using: using)),
-      subtitle2:
+      titleSmall:
           subtitle2.copyWith(fontSize: DEFAULT_FONT_SIZE.sp(using: using)),
-      bodyText1:
+      bodyLarge:
           bodyText1.copyWith(fontSize: DEFAULT_FONT_SIZE.sp(using: using)),
-      bodyText2:
+      bodyMedium:
           bodyText2.copyWith(fontSize: DEFAULT_FONT_SIZE.sp(using: using)),
-      caption:
+      bodySmall:
           caption.copyWith(fontSize: (DEFAULT_FONT_SIZE - 2).sp(using: using)),
-      button: button.copyWith(fontSize: DEFAULT_FONT_SIZE.sp(using: using)),
-      overline:
+      labelLarge: button.copyWith(fontSize: DEFAULT_FONT_SIZE.sp(using: using)),
+      labelSmall:
           overline.copyWith(fontSize: (DEFAULT_FONT_SIZE - 4).sp(using: using)),
     );
 
@@ -163,31 +149,31 @@ class AppTheme {
         color: AppColors.fireEngine,
         decoration: TextDecoration.underline,
       ),
-      p: theme.textTheme.bodyText2!,
-      code: theme.textTheme.bodyText2!.copyWith(
+      p: theme.textTheme.bodyMedium!,
+      code: theme.textTheme.bodyMedium!.copyWith(
         backgroundColor: theme.cardTheme.color ?? theme.cardColor,
         fontFamily: "monospace",
-        fontSize: theme.textTheme.bodyText2!.fontSize! * 0.85,
+        fontSize: theme.textTheme.bodyMedium!.fontSize! * 0.85,
       ),
-      h1: theme.textTheme.headline5!,
-      h2: theme.textTheme.headline6!,
-      h3: theme.textTheme.subtitle1!,
-      h4: theme.textTheme.bodyText2!,
-      h5: theme.textTheme.bodyText1!,
-      h6: theme.textTheme.bodyText1!,
+      h1: theme.textTheme.headlineSmall!,
+      h2: theme.textTheme.titleLarge!,
+      h3: theme.textTheme.titleMedium!,
+      h4: theme.textTheme.bodyMedium!,
+      h5: theme.textTheme.bodyLarge!,
+      h6: theme.textTheme.bodyLarge!,
       em: const TextStyle(fontStyle: FontStyle.italic),
       strong: const TextStyle(fontWeight: FontWeight.bold),
       del: const TextStyle(decoration: TextDecoration.lineThrough),
-      blockquote: theme.textTheme.bodyText2!,
-      img: theme.textTheme.bodyText2!,
-      checkbox: theme.textTheme.bodyText2!.copyWith(
+      blockquote: theme.textTheme.bodyMedium!,
+      img: theme.textTheme.bodyMedium!,
+      checkbox: theme.textTheme.bodyMedium!.copyWith(
         color: theme.primaryColor,
       ),
       blockSpacing: 8.0,
       listIndent: 24.0,
-      listBullet: theme.textTheme.bodyText2!,
+      listBullet: theme.textTheme.bodyMedium!,
       tableHead: const TextStyle(fontWeight: FontWeight.w600),
-      tableBody: theme.textTheme.bodyText2!,
+      tableBody: theme.textTheme.bodyMedium!,
       tableHeadAlign: TextAlign.center,
       tableBorder: TableBorder.all(
         color: theme.dividerColor,
@@ -198,7 +184,7 @@ class AppTheme {
       tableCellsDecoration: const BoxDecoration(),
       blockquotePadding: const EdgeInsets.all(8.0),
       blockquoteDecoration: BoxDecoration(
-        color: theme.accentColor,
+        color: theme.colorScheme.secondary,
         borderRadius: BorderRadius.circular(2.0),
       ),
       codeblockPadding: const EdgeInsets.all(8.0),
@@ -219,6 +205,6 @@ class AppTheme {
 
   static MarkdownStyleSheet footerTheme({required BuildContext using}) {
     final baseTheme = mdStyleSheet(using: using);
-    return baseTheme.copyWith(p: Theme.of(using).textTheme.overline!);
+    return baseTheme.copyWith(p: Theme.of(using).textTheme.labelSmall!);
   }
 }
