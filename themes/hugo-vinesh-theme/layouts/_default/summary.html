@@ -1,0 +1,20 @@
+<div class="summary">
+  {{ if .Site.Params.showAuthorOnPosts }}
+  {{ partial "author.html" . }}
+  {{ else }}
+  <div class="summary-date">{{ dateFormat "Jan 2, 2006" .Date }}</div>
+  {{ end }}
+  <h2 class="summary-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+  {{ if .Params.image }}
+  {{ $image := .Resources.Get .Params.image }}
+  <img alt="{{.Params.imageAltAttribute | default " Article hero image"}}" src="{{ $image.RelPermalink }}" />
+  {{ end }}
+  <p class="summary-description">
+    {{ if .Params.description }}
+    {{ .Params.description }}
+    {{ else }}
+
+    {{ .Summary }}
+    {{ end }}
+  </p>
+</div>

@@ -1,0 +1,63 @@
+baseURL = "/"
+languageCode = "en-us"
+theme = "hugo-vinesh-theme"
+themesDir = "themes"
+title = "Vinesh Raju"
+paginate = 10
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+pygmentsUseClasses = true
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.55.0"
+
+[params]
+  google_analytics_id = ""
+  twitter_handle = "@theVinesh"
+  showAuthorOnHomepage = false
+  showAuthorOnPosts = true
+  showIntroContentOnHomepage = true
+  showPostsOnHomepage = false
+  usePaginationOnHomepage = false
+  limitPostsOnHomepage = 3 # only used if usePaginationOnHomepage is false
+  sortPostsByDateOldestFirst = false
+  addDot = true
+  addFrame = true
+  highlightColor = '#cc3333' #codered
+  baseColor = "#fffcf0" #paper
+  baseOffsetColor = "#eaeaea"
+  headingColor = "#100f0f"
+  textColor = "#6f6e69"
+  dotColor = "#cc3333"
+  enableGoogleFonts = true 
+  googleFontsUrl = "https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap"
+  fontFamilyHeading = "Oxygen"
+  fontFamilyParagraph = "Helvetica"
+  fontFamilyMonospace = "monospace"
+
+# markdown config settings https://gohugo.io/getting-started/configuration-markup/#goldmark
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true
+      xhtml = false
+
+[menu]
+  [[menu.main]]
+    identifier = 'home'
+    name = 'home'
+    url = '/'
+    weight = 1
+  [[menu.main]]
+    name = "blog"
+    identifier = "blog"
+    weight = 2
+    url = "/posts/"
+  [[menu.main]]
+    name = "resume"
+    identifier = "resume"
+    weight = 3
+    url = "/resume/"

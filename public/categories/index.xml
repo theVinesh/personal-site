@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Vinesh Raju</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on Vinesh Raju</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 31 Aug 2022 00:44:57 +0100</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>home server</title>
+      <link>/categories/home-server/</link>
+      <pubDate>Wed, 31 Aug 2022 00:44:57 +0100</pubDate>
+      
+      <guid>/categories/home-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jellifin</title>
+      <link>/categories/jellifin/</link>
+      <pubDate>Wed, 31 Aug 2022 00:44:57 +0100</pubDate>
+      
+      <guid>/categories/jellifin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>self hosted</title>
+      <link>/categories/self-hosted/</link>
+      <pubDate>Wed, 31 Aug 2022 00:44:57 +0100</pubDate>
+      
+      <guid>/categories/self-hosted/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tech</title>
+      <link>/categories/tech/</link>
+      <pubDate>Wed, 31 Aug 2022 00:44:57 +0100</pubDate>
+      
+      <guid>/categories/tech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>flutter</title>
+      <link>/categories/flutter/</link>
+      <pubDate>Thu, 25 Mar 2021 04:42:02 +0530</pubDate>
+      
+      <guid>/categories/flutter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>about me</title>
+      <link>/categories/about-me/</link>
+      <pubDate>Sat, 20 Mar 2021 23:30:00 +0100</pubDate>
+      
+      <guid>/categories/about-me/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>general</title>
+      <link>/categories/general/</link>
+      <pubDate>Sat, 20 Mar 2021 23:30:00 +0100</pubDate>
+      
+      <guid>/categories/general/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

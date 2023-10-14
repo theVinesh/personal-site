@@ -1,0 +1,14 @@
+name = "Hugo Vinesh"
+license = "MIT"
+licenselink = "https://github.com/zerostaticthemes/hugo-winston/blob/master/LICENSE"
+description = "Hugo Vinesh is a fork of Hugo Winston theme."
+
+homepage = "https://thevinesh.com"
+demosite = "https://thevinesh.com"
+
+tags = ["blog", "minimal", "clean", "thevinesh", "vinesh"]
+features = ["blog"]
+
+[author]
+  name = "Vinesh Raju"
+  homepage = "https://thevinesh.com"
