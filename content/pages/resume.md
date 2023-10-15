@@ -7,14 +7,14 @@ aliases:
 ## Mobile Application Developer.  
 ------------------------
 1. ### **Product Engineer** at [**Intercom**](https://intercom.com)
-   #### Nov, 2021 - PRESENT | Dublin, Ireland
+   #### Nov, 2021 - Present | Dublin, Ireland
     - Co-developing Intercom’s native Android SDK.
     - Lead the planning, development and release of Intercom’s Ai bot - Fin on Mobile
     - Played an active role in Intercom Messenger’s recent UI refresh.
     - Actively maintains Intercom’s React Native and Flutter SDK
     ------------------------
 1. ### **Senior Software Developer** at [**Multipl**](https://multipl.xyz)
-   #### Jul, 2020 - Nov,2021 | Bengaluru, KA, India
+   #### Jul, 2020 - Nov, 2021 | Bengaluru, KA, India
     - Lead Multipl’s client app development from scratch with flutter.
     - Helped the startup grow from **0 to 300,000+** users.
     - Played a major role in architecting and designing backend apis.
