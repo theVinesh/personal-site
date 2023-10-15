@@ -72,6 +72,12 @@ body {
 }
 
 @media print {
+  body {
+    &.frame {
+      min-height: 100vh;
+      border: none;
+    }
+  }
   .noprint {
       display: none
   }
