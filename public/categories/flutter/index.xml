@@ -1,23 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>flutter on Vinesh Raju</title>
-    <link>/categories/flutter/</link>
-    <description>Recent content in flutter on Vinesh Raju</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 25 Mar 2021 04:42:02 +0530</lastBuildDate><atom:link href="/categories/flutter/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Command line variables on Flutter using --dart-define</title>
-      <link>/posts/cmd_line_variables_on_flutter/</link>
-      <pubDate>Thu, 25 Mar 2021 04:42:02 +0530</pubDate>
-      
-      <guid>/posts/cmd_line_variables_on_flutter/</guid>
-      <description>This post explains how to send command line variables and use them with flutter.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>flutter on Vinesh Raju</title><link>/categories/flutter/</link><description>Recent content in flutter on Vinesh Raju</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 25 Mar 2021 04:42:02 +0530</lastBuildDate><atom:link href="/categories/flutter/index.xml" rel="self" type="application/rss+xml"/><item><title>Command line variables on Flutter using --dart-define</title><link>/posts/cmd_line_variables_on_flutter/</link><pubDate>Thu, 25 Mar 2021 04:42:02 +0530</pubDate><guid>/posts/cmd_line_variables_on_flutter/</guid><description>This post explains how to send command line variables and use them with flutter.
 Why send variables via command line? Being able to set a variable through command line comes in very handy whenever you want to change the variable depending on the environment/client it&amp;rsquo;s being built for. Without having to change code manually every time.
 A few common use cases would be
-to configure your app&amp;rsquo;s base URL during build time.</description>
-    </item>
-    
-  </channel>
-</rss>
+to configure your app&amp;rsquo;s base URL during build time.</description></item></channel></rss>

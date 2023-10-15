@@ -1,21 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>general on Vinesh Raju</title>
-    <link>/categories/general/</link>
-    <description>Recent content in general on Vinesh Raju</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 20 Mar 2021 23:30:00 +0100</lastBuildDate><atom:link href="/categories/general/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>What do I use?</title>
-      <link>/posts/what-do-i-use/</link>
-      <pubDate>Sat, 20 Mar 2021 23:30:00 +0100</pubDate>
-      
-      <guid>/posts/what-do-i-use/</guid>
-      <description>I use a lot of Tools, Apps, and Services to get by every day. I&amp;rsquo;ve listed down those that I love and use frequently here.
-Services. Zoho Mail - as my email host Duck Duck Go - to Search. Google Domains - to get and manage domains. Airtable - as a backend for my experiments and side projects. Netlify and Firebase - to Host. Apps. Youtube Music - to listen to music.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>general on Vinesh Raju</title><link>/categories/general/</link><description>Recent content in general on Vinesh Raju</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 20 Mar 2021 23:30:00 +0100</lastBuildDate><atom:link href="/categories/general/index.xml" rel="self" type="application/rss+xml"/><item><title>What do I use?</title><link>/posts/what-do-i-use/</link><pubDate>Sat, 20 Mar 2021 23:30:00 +0100</pubDate><guid>/posts/what-do-i-use/</guid><description>I use a lot of Tools, Apps, and Services to get by every day. I&amp;rsquo;ve listed down those that I love and use frequently here.
+Services. Zoho Mail - as my email host Duck Duck Go - to Search. Google Domains - to get and manage domains. Airtable - as a backend for my experiments and side projects. Netlify and Firebase - to Host. Apps. Youtube Music - to listen to music.</description></item></channel></rss>

@@ -1,70 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Hello You! on Vinesh Raju</title>
-    <link>/</link>
-    <description>Recent content in Hello You! on Vinesh Raju</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 31 Aug 2022 00:44:57 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Installing Jellyfin Media System</title>
-      <link>/posts/installing_jellyfin/</link>
-      <pubDate>Wed, 31 Aug 2022 00:44:57 +0100</pubDate>
-      
-      <guid>/posts/installing_jellyfin/</guid>
-      <description>Jellyfish what? No, &amp;ldquo;Jellyfin&amp;rdquo;.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hello You! on Vinesh Raju</title><link>/</link><description>Recent content in Hello You! on Vinesh Raju</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 31 Aug 2022 00:44:57 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Installing Jellyfin Media System</title><link>/posts/installing_jellyfin/</link><pubDate>Wed, 31 Aug 2022 00:44:57 +0100</pubDate><guid>/posts/installing_jellyfin/</guid><description>Jellyfish what? No, &amp;ldquo;Jellyfin&amp;rdquo;.
 It is a free, open source media system that allows to collect, manage and stream your media to all of you devices.
 It&amp;rsquo;s like having your personal Netflix!
 1. Install Docker Update apt just in case
 sudo apt update Install latest version of docker
 sudo apt install docker.io Set Docker to run on start up
-sudo systemctl enable --now docker Grant your user permissions to docker</description>
-    </item>
-    
-    <item>
-      <title>Command line variables on Flutter using --dart-define</title>
-      <link>/posts/cmd_line_variables_on_flutter/</link>
-      <pubDate>Thu, 25 Mar 2021 04:42:02 +0530</pubDate>
-      
-      <guid>/posts/cmd_line_variables_on_flutter/</guid>
-      <description>This post explains how to send command line variables and use them with flutter.
+sudo systemctl enable --now docker Grant your user permissions to docker</description></item><item><title>Command line variables on Flutter using --dart-define</title><link>/posts/cmd_line_variables_on_flutter/</link><pubDate>Thu, 25 Mar 2021 04:42:02 +0530</pubDate><guid>/posts/cmd_line_variables_on_flutter/</guid><description>This post explains how to send command line variables and use them with flutter.
 Why send variables via command line? Being able to set a variable through command line comes in very handy whenever you want to change the variable depending on the environment/client it&amp;rsquo;s being built for. Without having to change code manually every time.
 A few common use cases would be
-to configure your app&amp;rsquo;s base URL during build time.</description>
-    </item>
-    
-    <item>
-      <title>What do I use?</title>
-      <link>/posts/what-do-i-use/</link>
-      <pubDate>Sat, 20 Mar 2021 23:30:00 +0100</pubDate>
-      
-      <guid>/posts/what-do-i-use/</guid>
-      <description>I use a lot of Tools, Apps, and Services to get by every day. I&amp;rsquo;ve listed down those that I love and use frequently here.
-Services. Zoho Mail - as my email host Duck Duck Go - to Search. Google Domains - to get and manage domains. Airtable - as a backend for my experiments and side projects. Netlify and Firebase - to Host. Apps. Youtube Music - to listen to music.</description>
-    </item>
-    
-    <item>
-      <title>In the beginning</title>
-      <link>/posts/in_the_beginning/</link>
-      <pubDate>Sun, 21 Mar 2021 02:52:51 +0530</pubDate>
-      
-      <guid>/posts/in_the_beginning/</guid>
-      <description>I&amp;rsquo;ve always wanted to set up a website, a blog, and write.
+to configure your app&amp;rsquo;s base URL during build time.</description></item><item><title>What do I use?</title><link>/posts/what-do-i-use/</link><pubDate>Sat, 20 Mar 2021 23:30:00 +0100</pubDate><guid>/posts/what-do-i-use/</guid><description>I use a lot of Tools, Apps, and Services to get by every day. I&amp;rsquo;ve listed down those that I love and use frequently here.
+Services. Zoho Mail - as my email host Duck Duck Go - to Search. Google Domains - to get and manage domains. Airtable - as a backend for my experiments and side projects. Netlify and Firebase - to Host. Apps. Youtube Music - to listen to music.</description></item><item><title>In the beginning</title><link>/posts/in_the_beginning/</link><pubDate>Sun, 21 Mar 2021 02:52:51 +0530</pubDate><guid>/posts/in_the_beginning/</guid><description>I&amp;rsquo;ve always wanted to set up a website, a blog, and write.
 Not that I had something to say online, I just wanted to blabber and share bits and pieces from time to time.
 I&amp;rsquo;ve tried out a few blogging platforms before but never stuck with them. They were too formal. I wanted a place where I can be informal. Just write and publish.
-I liked HEY World, but it came only with their email service which was too expensive for me.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>/pages/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/pages/about/</guid>
-      <description>Contra vagos Lorem markdownum notam si lintea meque certa en meumque illis, diu fatigant, nec praedae concustodita arcet. Paviunt castris cur errat ventis causa! Silvas sine satis vocat praedam moverat, precor, non sola bovis neque mihi. Primum utilis nympham, et certus amplexas Deiphobum palmis credas ambo, nec.
-Excidit gente, si orat suo quaeque dura Calydon nata? Pars auro post stetit adfusique imis amplexus. Agmina per fabricator mittere Erymanthon habetque tot.</description>
-    </item>
-    
-  </channel>
-</rss>
+I liked HEY World, but it came only with their email service which was too expensive for me.</description></item><item><title>Vinesh Raju</title><link>/pages/resume/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pages/resume/</guid><description>Mobile Application Developer. Product Engineer at Intercom Nov, 2021 - PRESENT | Dublin, Ireland Co-developing Intercom’s native Android SDK. Lead the planning, development and release of Intercom’s Ai bot - Fin on Mobile Played an active role in Intercom Messenger’s recent UI refresh. Actively maintains Intercom’s React Native and Flutter SDK Senior Software Developer at Multipl Jul, 2020 - Nov,2021 | Bengaluru, KA, India Lead Multipl’s client app development from scratch with flutter.</description></item></channel></rss>

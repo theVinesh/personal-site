@@ -1,26 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>home server on Vinesh Raju</title>
-    <link>/categories/home-server/</link>
-    <description>Recent content in home server on Vinesh Raju</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 31 Aug 2022 00:44:57 +0100</lastBuildDate><atom:link href="/categories/home-server/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Installing Jellyfin Media System</title>
-      <link>/posts/installing_jellyfin/</link>
-      <pubDate>Wed, 31 Aug 2022 00:44:57 +0100</pubDate>
-      
-      <guid>/posts/installing_jellyfin/</guid>
-      <description>Jellyfish what? No, &amp;ldquo;Jellyfin&amp;rdquo;.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>home server on Vinesh Raju</title><link>/categories/home-server/</link><description>Recent content in home server on Vinesh Raju</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 31 Aug 2022 00:44:57 +0100</lastBuildDate><atom:link href="/categories/home-server/index.xml" rel="self" type="application/rss+xml"/><item><title>Installing Jellyfin Media System</title><link>/posts/installing_jellyfin/</link><pubDate>Wed, 31 Aug 2022 00:44:57 +0100</pubDate><guid>/posts/installing_jellyfin/</guid><description>Jellyfish what? No, &amp;ldquo;Jellyfin&amp;rdquo;.
 It is a free, open source media system that allows to collect, manage and stream your media to all of you devices.
 It&amp;rsquo;s like having your personal Netflix!
 1. Install Docker Update apt just in case
 sudo apt update Install latest version of docker
 sudo apt install docker.io Set Docker to run on start up
-sudo systemctl enable --now docker Grant your user permissions to docker</description>
-    </item>
-    
-  </channel>
-</rss>
+sudo systemctl enable --now docker Grant your user permissions to docker</description></item></channel></rss>
