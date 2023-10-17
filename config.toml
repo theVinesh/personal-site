@@ -25,12 +25,6 @@ pygmentsUseClasses = true
   sortPostsByDateOldestFirst = false
   addDot = true
   addFrame = true
-  highlightColor = '#cc3333' #codered
-  baseColor = "#fffcf0" #paper
-  baseOffsetColor = "#eaeaea"
-  headingColor = "#100f0f"
-  textColor = "#6f6e69"
-  dotColor = "#cc3333"
   enableGoogleFonts = true 
   googleFontsUrl = "https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap"
   fontFamilyHeading = "Oxygen"

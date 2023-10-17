@@ -1,13 +1,112 @@
 :root {
+  --color-black: #100f0f;
+  --color-paper: #fffcf0;
+  --color-900: #621919;
+  --color-950: #391414;
+  --color-850: #741e1e;
+  --color-800: #862222;
+  --color-700: #9e2828;
+  --color-600: #c43131;
+  --color-500: #d45151;
+  --color-400: #dd7676;
+  --color-300: #e38f8f;
+  --color-200: #edb9b9;
+  --color-150: #f2caca;
+  --color-100: #f6dada;
+  --color-50: #fdf6f6;
+  --color-red-600: var(--color-600);
+  --color-red-400: var(--color-400);
+  --color-orange-600: #bc5215;
+  --color-orange-400: #da702c;
+  --color-yellow-900: #4d3a0b;
+  --color-yellow-600: #ad8301;
+  --color-yellow-400: #d0a215;
+  --color-yellow-100: #fceeb8;
+  --color-green-600: #66800b;
+  --color-green-400: #879a39;
+  --color-cyan-950: #142625;
+  --color-cyan-600: #24837b;
+  --color-cyan-400: #3aa99f;
+  --color-cyan-50: #ebf2e7;
+  --color-blue-600: #205ea6;
+  --color-blue-400: #4385be;
+  --color-purple-600: #5e409d;
+  --color-purple-400: #8b7ec8;
+  --color-magenta-600: #a02f6f;
+  --color-magenta-400: #ce5d97;
+  --color-codered : #cc3333;
+
   --font-family-heading: {{ .Site.Params.fontFamilyHeading | default "'Poppins', sans-serif" }};
   --font-family-paragraph: {{ .Site.Params.fontFamilyParagraph | default "'Helvetica', sans-serif" }};
   --font-family-monospace: {{ .Site.Params.fontFamilyMonospace | default "monospace" }};
-  --base-color: {{ .Site.Params.baseColor | default "#ffffff" }};
-  --base-offset-color: {{ .Site.Params.baseOffsetColor | default "#eaeaea" }};
-  --highlight-color: {{ .Site.Params.highlightColor | default "#7b16ff" }};
-  --heading-color: {{ .Site.Params.headingColor | default "#1c1b1d" }};
-  --text-color: {{ .Site.Params.textColor | default "#4e5157" }};
-  --dot-color: {{ .Site.Params.dotColor | default "#7b16ff" }};
+}
+
+:root,
+.theme-light {
+  --color-bg-primary: var(--color-paper);
+  --color-bg-secondary: var(--color-50);
+  --color-tx-normal: var(--color-black);
+  --color-tx-muted: var(--color-600);
+  --color-tx-faint: var(--color-300);
+  --color-ui-normal: var(--color-600);
+  --color-ui-hover: var(--color-400);
+  --color-re: var(--color-red-600);
+  --color-re-hover: var(--color-red-400);
+  --color-or: var(--color-orange-600);
+  --color-or-hover: var(--color-orange-400);
+  --color-ye: var(--color-yellow-600);
+  --color-ye-hover: var(--color-yellow-400);
+  --color-gr: var(--color-green-600);
+  --color-gr-hover: var(--color-green-400);
+  --color-cy: var(--color-cyan-600);
+  --color-cy-hover: var(--color-cyan-400);
+  --color-bl: var(--color-blue-600);
+  --color-bl-hover: var(--color-blue-400);
+  --color-pu: var(--color-purple-600);
+  --color-pu-hover: var(--color-purple-400);
+  --color-ma: var(--color-magenta-600);
+  --color-ma-hover: var(--color-magenta-400);
+
+  --base-color: var(--color-bg-primary);
+  --base-offset-color: var(--color-bg-secondary);
+  --highlight-color: var(--color-ui-normal);
+  --heading-color: var(--color-tx-normal);
+  --text-color: var(--color-tx-normal);
+  --dot-color: var(--color-ui-normal);
+}
+.theme-dark {
+  --color-bg-primary: var(--color-black);
+  --color-bg-secondary: var(--color-950);
+  --color-tx-normal: var(--color-200);
+  --color-tx-muted: var(--color-500);
+  --color-tx-faint: var(--color-700);
+  --color-ui-normal: var(--color-900);
+  --color-ui-hover: var(--color-850);
+  --color-action: var(--color-cyan-400);
+  --color-bg-hover: var(--color-cyan-950);
+  --color-re: var(--color-red-400);
+  --color-re-hover: var(--color-red-600);
+  --color-or: var(--color-orange-400);
+  --color-or-hover: var(--color-orange-600);
+  --color-ye: var(--color-yellow-400);
+  --color-ye-hover: var(--color-yellow-600);
+  --color-gr: var(--color-green-400);
+  --color-gr-hover: var(--color-green-600);
+  --color-cy: var(--color-cyan-400);
+  --color-cy-hover: var(--color-cyan-600);
+  --color-bl: var(--color-blue-400);
+  --color-bl-hover: var(--color-blue-600);
+  --color-pu: var(--color-purple-400);
+  --color-pu-hover: var(--color-purple-600);
+  --color-ma: var(--color-magenta-400);
+  --color-ma-hover: var(--color-magenta-600);
+
+  --base-color: var(--color-bg-primary);
+  --base-offset-color: var(--color-bg-secondary);
+  --highlight-color: var(--color-ui-normal);
+  --heading-color: var(--color-tx-normal);
+  --text-color: var(--color-tx-normal);
+  --dot-color: var(--color-ui-normal);
 }
 
 $breakpoints: (
