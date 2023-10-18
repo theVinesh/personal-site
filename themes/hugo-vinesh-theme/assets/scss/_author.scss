@@ -15,10 +15,7 @@
     vertical-align: middle;
     font-weight: bold;
     margin-left: 5px;
-  }
-  .author-date {
-    display: inline-block;
-    vertical-align: middle;
+    color: var(--color-tx-muted);
   }
 }
 .author-large {
@@ -32,9 +29,6 @@
     vertical-align: middle;
     font-weight: bold;
     margin-left: 5px;
-  }
-  .author-title {
-    display: inline-block;
-    vertical-align: middle;
+    color: var(--color-tx-muted);
   }
 }

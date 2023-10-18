@@ -85,7 +85,6 @@ Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your b
   google_analytics_id = ""
   twitter_handle = "@zerostaticio"
   showAuthorOnHomepage = true
-  showAuthorOnPosts = false
   showIntroContentOnHomepage = true
   showPostsOnHomepage = true
   usePaginationOnHomepage = false

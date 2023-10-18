@@ -1,6 +1,7 @@
 {{ define "body_classes" }}page-blog-list{{ end }}
 
 {{ define "main" }}
+  {{ partial "author-large.html" . }}
   <div class="intro">
     <h1>{{ .Title }}{{ if .Site.Params.addDot }}<span class="dot">.</span>{{ end }}</h1>
     {{ if .Params.description }}<p>{{ .Params.description }}</p>{{ end }}

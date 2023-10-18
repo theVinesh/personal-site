@@ -40,6 +40,11 @@
       line-height: 32px;
     }
   }
+  .post-date {
+    display: inline-block;
+    vertical-align: middle;
+    color: var(--color-tx-muted);
+  }
   img {
     max-width: 100%;
   }

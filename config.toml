@@ -17,7 +17,6 @@ pygmentsUseClasses = true
   google_analytics_id = ""
   twitter_handle = "@theVinesh"
   showAuthorOnHomepage = false
-  showAuthorOnPosts = true
   showIntroContentOnHomepage = true
   showPostsOnHomepage = false
   usePaginationOnHomepage = false
