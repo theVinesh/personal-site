@@ -1,9 +1,10 @@
 .summary {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-size: 18px;
   line-height: 24px;
+  border: 2px solid var(--color-tx-faint);
+  padding: 10px;
   @include breakpoint("small") {
-    margin-bottom: 80px;
     font-size: 18px;
     line-height: 26px;
   }
