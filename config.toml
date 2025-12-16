@@ -3,10 +3,12 @@ languageCode = "en-us"
 theme = "hugo-vinesh-theme"
 themesDir = "themes"
 title = "Vinesh Raju"
-paginate = 10
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses = true
+
+[pagination]
+  pagerSize = 10
 
 [module]
   [module.hugoVersion]
