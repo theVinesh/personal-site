@@ -9,6 +9,7 @@ aliases:
 📍 Dublin, Ireland | 📞 +353 892338410 | ✉️ hi@thevinesh.com | 👨🏻‍💻 [theVinesh.com](https://theVinesh.com)
 
 Mobile App Developer with 9+ years of experience building native and cross-platform apps using Android, Flutter and React Native. Skilled in end-to-end app development and delivering high-performance user experiences. Open to full-time and contract opportunities. No visa sponsorship required.
+
 ------------------------
 1. ### **Senior Software Engineer** at **DAA**
    #### Aug, 2025 - PRESENT | Dublin, Ireland
