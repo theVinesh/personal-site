@@ -8,7 +8,9 @@
     <h1>{{ .Title }}{{ if .Site.Params.addDot }}<span class="dot">.</span>{{ end }}</h1>
     {{ if .Params.image }}
     {{ $image := .Resources.Get .Params.image }}
+    {{ if $image }}
     <img alt="{{.Params.imageAltAttribute | default " Article hero image"}}" src="{{ $image.RelPermalink }}" />
+    {{ end }}
     {{ end }}
   </div>
   <div class="content">

@@ -3,7 +3,9 @@
   <h2 class="summary-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
   {{ if .Params.image }}
   {{ $image := .Resources.Get .Params.image }}
-  <img alt="{{.Params.imageAltAttribute | default " Article hero image"}}" src="{{ $image.RelPermalink }}" />
+  {{ if $image }}
+  <img alt="{{.Params.imageAltAttribute | default "Article hero image"}}" src="{{ $image.RelPermalink }}" />
+  {{ end }}
   {{ end }}
   <p class="summary-description">
     {{ if .Params.description }}
