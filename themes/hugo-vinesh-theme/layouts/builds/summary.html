@@ -1,0 +1,30 @@
+<div class="summary">
+    <div class="summary-date">{{ dateFormat "Jan 2, 2006" .Date }}</div>
+    <h2 class="summary-title">
+        {{ if and .Params.links (gt (len .Params.links) 0) }}
+        <a href="{{ index .Params.links 0 }}" target="_blank" rel="noopener noreferrer">{{ .Title }}</a>
+        {{ else }}
+        <span>{{ .Title }}</span>
+        {{ end }}
+    </h2>
+    {{ if .Params.image }}
+    {{ $image := .Resources.Get .Params.image }}
+    {{ if $image }}
+    <img alt="{{.Params.imageAltAttribute | default " Project hero image"}}" src="{{ $image.RelPermalink }}" />
+    {{ end }}
+    {{ end }}
+    <p class="summary-description">
+        {{ if .Params.description }}
+        {{ .Params.description }}
+        {{ else }}
+        {{ .Summary }}
+        {{ end }}
+    </p>
+    <div class="summary-links">
+        {{ range .Params.links }}
+        <a class="summary-readmore" href="{{ . }}" target="_blank" rel="noopener noreferrer">
+            {{ partial "icon.html" . }}
+        </a>
+        {{ end }}
+    </div>
+</div>
