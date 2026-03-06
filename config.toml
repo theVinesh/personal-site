@@ -30,7 +30,7 @@ pygmentsUseClasses = true
   googleFontsUrl = "https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap"
   fontFamilyHeading = "Oxygen"
   fontFamilyParagraph = "Helvetica"
-  fontFamilyMonospace = "monospace"
+  fontFamilyMonospace = "ui-monospace, 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'DejaVu Sans Mono', monospace"
 
 # markdown config settings https://gohugo.io/getting-started/configuration-markup/#goldmark
 [markup]

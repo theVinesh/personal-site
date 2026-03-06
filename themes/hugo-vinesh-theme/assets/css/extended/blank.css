@@ -1,3 +1,4 @@
-.custom {
-    background: red;
+.codeblock-bg {
+    background: var(--codeblock-bg-color);
+    border: 1px solid var(--codeblock-border-color);
 }

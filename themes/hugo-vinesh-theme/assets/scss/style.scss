@@ -38,7 +38,7 @@
 
   --font-family-heading: {{ .Site.Params.fontFamilyHeading | default "'Poppins', sans-serif" }};
   --font-family-paragraph: {{ .Site.Params.fontFamilyParagraph | default "'Helvetica', sans-serif" }};
-  --font-family-monospace: {{ .Site.Params.fontFamilyMonospace | default "monospace" }};
+  --font-family-monospace: {{ .Site.Params.fontFamilyMonospace | default "ui-monospace, 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'DejaVu Sans Mono', monospace" }};
 }
 
 :root,
@@ -69,6 +69,8 @@
 
   --base-color: var(--color-bg-primary);
   --base-offset-color: var(--color-bg-secondary);
+  --codeblock-bg-color: var(--color-bg-secondary);
+  --codeblock-border-color: var(--color-150);
   --highlight-color: var(--color-ui-normal);
   --heading-color: var(--color-tx-normal);
   --text-color: var(--color-tx-normal);
@@ -103,6 +105,8 @@
 
   --base-color: var(--color-bg-primary);
   --base-offset-color: var(--color-bg-secondary);
+  --codeblock-bg-color: var(--color-bg-secondary);
+  --codeblock-border-color: var(--color-850);
   --highlight-color: var(--color-ui-normal);
   --heading-color: var(--color-tx-normal);
   --text-color: var(--color-tx-normal);
@@ -127,6 +131,41 @@ $breakpoints: (
 @import 'main-menu';
 @import 'main-menu-mobile';
 @import 'pygments/github';
+
+.content {
+  code,
+  pre,
+  .highlight,
+  .highlight pre {
+    font-family: var(--font-family-monospace);
+  }
+
+  :not(pre) > code {
+    border: 1px solid var(--codeblock-border-color);
+    border-radius: 0.4rem;
+    background: var(--codeblock-bg-color);
+    color: inherit;
+    padding: 0.12em 0.35em;
+  }
+
+  .highlight {
+    margin: 1.75rem 0;
+    background: var(--codeblock-bg-color);
+    border: 1px solid var(--codeblock-border-color);
+    border-radius: 0.9rem;
+    box-shadow: 0 10px 24px rgba(16, 15, 15, 0.06);
+    overflow: hidden;
+  }
+
+  .highlight pre {
+    margin: 0;
+    border: 0;
+    border-radius: inherit;
+    padding: 1.1rem 1.25rem;
+    line-height: 1.65;
+    font-size: 0.95rem;
+  }
+}
 
 html, body {
   box-sizing: border-box;

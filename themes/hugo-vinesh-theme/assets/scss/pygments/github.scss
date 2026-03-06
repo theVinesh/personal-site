@@ -1,6 +1,6 @@
-pre { border: var(--color-bg-secondary) 1px solid; }
-.highlight  { background: var(--color-bg-primary);  }
-.highlight .hll { background-color: var(--color-bg-primary); }
+.highlight { background: var(--codeblock-bg-color); border: 1px solid var(--codeblock-border-color); }
+.highlight pre { border: 0; background: transparent; }
+.highlight .hll { background-color: var(--codeblock-bg-color); }
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
 .highlight .k { color: #000000; font-weight: bold } /* Keyword */
@@ -61,3 +61,62 @@ pre { border: var(--color-bg-secondary) 1px solid; }
 .highlight .vg { color: #008080 } /* Name.Variable.Global */
 .highlight .vi { color: #008080 } /* Name.Variable.Instance */
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+
+.theme-dark .highlight { color: var(--color-200); }
+.theme-dark .highlight .c,
+.theme-dark .highlight .cm,
+.theme-dark .highlight .cp,
+.theme-dark .highlight .c1,
+.theme-dark .highlight .cs,
+.theme-dark .highlight .gh,
+.theme-dark .highlight .go,
+.theme-dark .highlight .gp,
+.theme-dark .highlight .gu,
+.theme-dark .highlight .nn,
+.theme-dark .highlight .bp,
+.theme-dark .highlight .w { color: var(--color-500); }
+.theme-dark .highlight .ge,
+.theme-dark .highlight .gs,
+.theme-dark .highlight .k,
+.theme-dark .highlight .kc,
+.theme-dark .highlight .kd,
+.theme-dark .highlight .kn,
+.theme-dark .highlight .kp,
+.theme-dark .highlight .kr,
+.theme-dark .highlight .o,
+.theme-dark .highlight .ow { color: var(--color-paper); }
+.theme-dark .highlight .gr,
+.theme-dark .highlight .gt,
+.theme-dark .highlight .ne,
+.theme-dark .highlight .nf,
+.theme-dark .highlight .nl,
+.theme-dark .highlight .s,
+.theme-dark .highlight .s1,
+.theme-dark .highlight .s2,
+.theme-dark .highlight .sb,
+.theme-dark .highlight .sc,
+.theme-dark .highlight .sd,
+.theme-dark .highlight .se,
+.theme-dark .highlight .sh,
+.theme-dark .highlight .si,
+.theme-dark .highlight .sr,
+.theme-dark .highlight .ss,
+.theme-dark .highlight .sx { color: var(--color-or); }
+.theme-dark .highlight .m,
+.theme-dark .highlight .mf,
+.theme-dark .highlight .mh,
+.theme-dark .highlight .mi,
+.theme-dark .highlight .mo,
+.theme-dark .highlight .il { color: var(--color-ye); }
+.theme-dark .highlight .kt,
+.theme-dark .highlight .na,
+.theme-dark .highlight .nb,
+.theme-dark .highlight .nc,
+.theme-dark .highlight .no,
+.theme-dark .highlight .nt,
+.theme-dark .highlight .nv,
+.theme-dark .highlight .vc,
+.theme-dark .highlight .vg,
+.theme-dark .highlight .vi { color: var(--color-cy); }
+.theme-dark .highlight .nd,
+.theme-dark .highlight .ni { color: var(--color-pu); }
