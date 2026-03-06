@@ -1,5 +1,4 @@
 <div class="summary">
-    <div class="summary-date">{{ dateFormat "Jan 2, 2006" .Date }}</div>
     <h2 class="summary-title">
         {{ if and .Params.links (gt (len .Params.links) 0) }}
         <a href="{{ index .Params.links 0 }}" target="_blank" rel="noopener noreferrer">{{ .Title }}</a>
