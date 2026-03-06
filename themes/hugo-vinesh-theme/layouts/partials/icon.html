@@ -1,5 +1,6 @@
 {{ $url := . }}
-{{ if or (hasPrefix $url "http://apps.apple.com") (hasPrefix $url "https://apps.apple.com") }}🍎
-{{ else if or (hasPrefix $url "http://play.google.com") (hasPrefix $url "https://play.google.com") }}🤖
-{{ else if or (hasPrefix $url "http://github.com") (hasPrefix $url "https://github.com") }}🔨
-{{ else }}🔗{{ end }}
+{{ if or (hasPrefix $url "http://apps.apple.com") (hasPrefix $url "https://apps.apple.com") }}<img src="/images/icons/ios-icon.png" alt="iOS">
+{{ else if or (hasPrefix $url "http://play.google.com") (hasPrefix $url "https://play.google.com") }}<img src="/images/icons/android-icon.png" alt="Android">
+{{ else if or (hasPrefix $url "http://github.com") (hasPrefix $url "https://github.com") }}<img src="/images/icons/github-icon.png" alt="GitHub">
+{{ else }}<img src="/images/icons/link-icon.png" alt="Link">
+{{ end }}
