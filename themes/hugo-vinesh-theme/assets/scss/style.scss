@@ -150,11 +150,76 @@ $breakpoints: (
 
   .highlight {
     margin: 1.75rem 0;
+    position: relative;
     background: var(--codeblock-bg-color);
     border: 1px solid var(--codeblock-border-color);
     border-radius: 0.9rem;
     box-shadow: 0 10px 24px rgba(16, 15, 15, 0.06);
     overflow: hidden;
+
+    &.highlight-copy-enabled pre {
+      padding-top: 3.5rem;
+    }
+
+    &:hover .code-copy-button,
+    &:focus-within .code-copy-button {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .code-copy-button {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 5rem;
+    min-height: 2.5rem;
+    padding: 0.4rem 0.85rem;
+    border: 1px solid var(--codeblock-border-color);
+    border-radius: 999px;
+    background: var(--base-color);
+    color: var(--text-color);
+    font-family: var(--font-family-paragraph);
+    font-size: 0.8rem;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(-0.2rem);
+    transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      opacity: 1;
+      transform: translateY(0);
+      border-color: var(--highlight-color);
+      outline: none;
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 3px var(--codeblock-border-color);
+    }
+
+    &[data-copy-state='copied'] {
+      opacity: 1;
+      transform: translateY(0);
+      background: var(--color-cyan-50);
+      border-color: var(--color-cy);
+      color: var(--color-cy);
+    }
+
+    &[data-copy-state='error'] {
+      opacity: 1;
+      transform: translateY(0);
+      background: var(--color-yellow-100);
+      border-color: var(--color-or);
+      color: var(--color-or);
+    }
   }
 
   .highlight pre {
@@ -164,6 +229,23 @@ $breakpoints: (
     padding: 1.1rem 1.25rem;
     line-height: 1.65;
     font-size: 0.95rem;
+  }
+}
+
+.theme-dark .content .code-copy-button[data-copy-state='copied'] {
+  background: var(--color-cyan-950);
+  color: var(--color-cyan-400);
+}
+
+.theme-dark .content .code-copy-button[data-copy-state='error'] {
+  background: var(--color-yellow-900);
+  color: var(--color-yellow-400);
+}
+
+@media (hover: none), (pointer: coarse) {
+  .content .code-copy-button {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
