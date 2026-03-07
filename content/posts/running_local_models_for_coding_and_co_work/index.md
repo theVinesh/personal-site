@@ -1,5 +1,6 @@
 ---
 title: "Running local models for coding and co-work"
+image: "header.png"
 date: 2026-03-07T00:00:00+00:00
 description: "A brief note on using llmfit, Ollama, llama.cpp, and OpenCode together for a local coding workflow."
 tags:
