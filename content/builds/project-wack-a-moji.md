@@ -9,4 +9,6 @@ tags: ["mobile", "android", "ios", "game", "kotlin", "multiplatform"]
 links:
   - "https://github.com/theVinesh/wack-a-moji"
   - "https://thevinesh.github.io/wack-a-moji/"
+  - "https://play.google.com/store/apps/details?id=com.thevinesh.wackamoji"
+  - "https://apps.apple.com/app/id6760299516"
 ---
