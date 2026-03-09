@@ -1,8 +1,16 @@
 {{ define "body_classes" }}page-default-single{{ end }}
 
 {{ define "main" }}
+{{ $isResumePage := and .File (eq .File.Path "pages/resume.md") }}
 <div class="intro">
+  {{ if $isResumePage }}<div class="resume-intro-row">{{ end }}
   <h1 style="font-size: 64px; line-height: 70px;">{{ .Title }}{{ if .Site.Params.addDot }}<span class="dot">.</span>{{ end }}</h1>
+  {{ if $isResumePage }}
+  <div class="resume-actions resume-actions-top noprint">
+    <button type="button" class="resume-print-button" data-print-resume>Save as PDF</button>
+  </div>
+  {{ end }}
+  {{ if $isResumePage }}</div>{{ end }}
   {{ if .Params.image }}
   <img alt="{{.Params.imageAltAttribute | default "Article hero image"}}" src="{{ .Params.image | relURL }}" />
   {{ end }}

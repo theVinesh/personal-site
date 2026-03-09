@@ -139,3 +139,19 @@ function addCopyButtonsToCodeBlocks() {
 }
 
 addCopyButtonsToCodeBlocks();
+
+function addResumePrintButtonHandler() {
+  var printButtons = document.querySelectorAll('[data-print-resume]');
+
+  if (printButtons.length === 0 || typeof window.print !== 'function') {
+    return;
+  }
+
+  for (var i = 0; i < printButtons.length; i++) {
+    printButtons[i].addEventListener('click', function() {
+      window.print();
+    });
+  }
+}
+
+addResumePrintButtonHandler();

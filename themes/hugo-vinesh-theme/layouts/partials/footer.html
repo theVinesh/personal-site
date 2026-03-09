@@ -1,19 +1,28 @@
-<div class="footer noprint">
-  {{ if .Site.Data.social.links }}
-  <div class="footer-social">
-    {{ range .Site.Data.social.links }}
-    <span class="social-icon social-icon-{{ .name | urlize }}">
-      <a href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener">
-        <img src="{{ .image | relURL }}" width="24" height="24" alt="{{ .name }}" />
-      </a>
-    </span>
+{{ $isResumePage := and .File (eq .File.Path "pages/resume.md") }}
+<div class="footer noprint{{ if $isResumePage }} footer-resume{{ end }}">
+  <div class="footer-meta">
+    {{ if .Site.Data.social.links }}
+    <div class="footer-social">
+      {{ range .Site.Data.social.links }}
+      <span class="social-icon social-icon-{{ .name | urlize }}">
+        <a href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener">
+          <img src="{{ .image | relURL }}" width="24" height="24" alt="{{ .name }}" />
+        </a>
+      </span>
+      {{ end }}
+    </div>
     {{ end }}
+    <div class="footer-attribution">
+      <p>built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> | icons from <a
+          href="https://icons8.com/" target="_blank" rel="noopener">icon8</a></p>
+      <p>checkout the source on <a href="https://github.com/theVinesh/personal-site" target="_blank"
+          rel="noopener">github</a></p>
+    </div>
+  </div>
+
+  {{ if $isResumePage }}
+  <div class="resume-actions resume-actions-footer">
+    <button type="button" class="resume-print-button" data-print-resume>Save as PDF</button>
   </div>
   {{ end }}
-  <div class="footer-attribution">
-    <p>built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> | icons from <a
-        href="https://icons8.com/" target="_blank" rel="noopener">icon8</a></p>
-    <p>checkout the source on <a href="https://github.com/theVinesh/personal-site" target="_blank"
-        rel="noopener">github</a></p>
-  </div>
 </div>

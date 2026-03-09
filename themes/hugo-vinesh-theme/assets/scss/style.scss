@@ -274,6 +274,94 @@ body {
   margin: 0 auto;
 }
 
+.resume-intro-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 16px 24px;
+
+  h1 {
+    flex: 1 1 320px;
+    margin-bottom: 0;
+  }
+}
+
+.resume-actions {
+  margin-top: 24px;
+}
+
+.resume-actions-top,
+.resume-actions-footer {
+  margin-top: 0;
+  margin-left: auto;
+}
+
+.footer-resume {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.footer-meta {
+  flex: 1 1 320px;
+}
+
+.resume-print-button {
+  appearance: none;
+  border: 2px solid var(--highlight-color);
+  background: var(--highlight-color);
+  color: var(--base-color);
+  font-family: var(--font-family-heading);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 12px 18px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--base-color);
+    color: var(--highlight-color);
+  }
+}
+
+@media (max-width: 766px) {
+  .resume-intro-row {
+    gap: 12px;
+
+    h1 {
+      flex-basis: 100%;
+    }
+  }
+
+  .resume-actions {
+    width: 100%;
+  }
+
+  .resume-actions-top,
+  .resume-actions-footer {
+    margin-left: 0;
+  }
+
+  .footer-resume {
+    gap: 16px;
+  }
+
+  .footer-meta {
+    flex-basis: 100%;
+  }
+
+  .resume-print-button {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 14px;
+    text-align: center;
+  }
+}
+
 .word-wall:after {
   position: fixed;
   top: -10%;
@@ -304,6 +392,10 @@ body {
 
   .onlyprint {
       display: inherit
+  }
+
+  .resume-actions {
+    display: none;
   }
 
   /* Print-specific typography adjustments */
