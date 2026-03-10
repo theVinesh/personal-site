@@ -18,7 +18,7 @@ pygmentsUseClasses = true
 [params]
   google_analytics_id = ""
   twitter_handle = "@theVinesh"
-  defaultShareImage = "images/avatar.png"
+  defaultShareImage = "images/share-default.png"
   defaultMetaDescription = "Welcome to Vinesh Raju's corner of the web for notes on technology, projects, and everyday curiosities."
   showAuthorOnHomepage = false
   showIntroContentOnHomepage = true

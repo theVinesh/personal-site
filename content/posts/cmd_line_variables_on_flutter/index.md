@@ -4,6 +4,7 @@ description: How to pass build-time values into Flutter apps with --dart-define 
 categories: ["tech", "flutter"]
 date: 2021-03-25T04:42:02+05:30
 image: "command_line.png"
+shareImage: "share.png"
 ---
 
 This post explains how to send command line variables and use them with flutter.  

@@ -1,12 +1,88 @@
+{{ $pageURL := .Permalink }}
+{{ if hugo.IsServer }}
+  {{ $pageURL = .RelPermalink | absURL }}
+{{ end }}
+
+{{ $redirectURL := $pageURL }}
+{{ with .Params.links }}
+  {{ if gt (len .) 0 }}
+    {{ $redirectURL = index . 0 }}
+  {{ end }}
+{{ end }}
+
+{{ $socialImage := "" }}
+{{ with .Params.image }}
+  {{ if or (hasPrefix . "http://") (hasPrefix . "https://") }}
+    {{ $socialImage = . }}
+  {{ else }}
+    {{ with $.Resources.Get . }}
+      {{ $socialImage = .Permalink }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ if not $socialImage }}
+  {{ with .Site.Params.defaultShareImage }}
+    {{ $socialImage = . | absURL }}
+    {{ if or (hasPrefix . "http://") (hasPrefix . "https://") }}
+      {{ $socialImage = . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $socialDescription := "" }}
+{{ with .Params.description }}
+  {{ $socialDescription = . }}
+{{ else }}
+  {{ with .Summary }}
+    {{ $socialDescription = . | plainify | replaceRE "[[:space:]]+" " " | replaceRE "^[[:space:]]+|[[:space:]]+$" "" | truncate 160 }}
+  {{ end }}
+  {{ if not $socialDescription }}
+    {{ with .Site.Params.defaultMetaDescription }}
+      {{ $socialDescription = . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>{{ .Title }}</title>
+  <title>{{ .Title }} - {{ .Site.Title }}</title>
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url={{ index .Params.links 0 }}">
-  <link rel="canonical" href="{{ index .Params.links 0 }}">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0; url={{ $redirectURL }}">
+  <link rel="canonical" href="{{ $redirectURL }}">
+
+  {{ if $socialDescription }}
+    <meta name="description" content="{{ $socialDescription }}"/>
+  {{ end }}
+
+  <meta property="og:title" content="{{ .Title }}"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="{{ $pageURL }}"/>
+
+  {{ if $socialImage }}
+    <meta property="og:image" content="{{ $socialImage }}"/>
+  {{ end }}
+  {{ if $socialDescription }}
+    <meta property="og:description" content="{{ $socialDescription }}"/>
+  {{ end }}
+
+  <meta name="twitter:card" content="{{ if $socialImage }}summary_large_image{{ else }}summary{{ end }}"/>
+  <meta name="twitter:title" content="{{ .Title }}"/>
+
+  {{ if $socialDescription }}
+    <meta name="twitter:description" content="{{ $socialDescription }}"/>
+  {{ end }}
+  {{ if $socialImage }}
+    <meta name="twitter:image" content="{{ $socialImage }}"/>
+  {{ end }}
+  {{ if .Site.Params.twitter_handle }}
+    <meta name="twitter:site" content="{{ .Site.Params.twitter_handle }}"/>
+    <meta name="twitter:creator" content="{{ .Site.Params.twitter_handle }}"/>
+  {{ end }}
 </head>
 <body>
-  <p>Redirecting to <a href="{{ index .Params.links 0 }}">{{ .Title }}</a>...</p>
+  <p>Redirecting to <a href="{{ $redirectURL }}">{{ .Title }}</a>...</p>
 </body>
 </html>
