@@ -34,7 +34,7 @@
       {{ $articleTags = .Params.categories }}
     {{ end }}
     {{ $hasExplicitLastmod := isset .Params "lastmod" }}
-    {{ with .Params.image }}
+    {{ with .Params.shareImage }}
       {{ $social.Set "image" (. | absURL) }}
       {{ if or (hasPrefix . "http://") (hasPrefix . "https://") }}
         {{ $social.Set "image" . }}
@@ -44,10 +44,21 @@
         {{ end }}
       {{ end }}
     {{ else }}
-      {{ with .Site.Params.defaultShareImage }}
+      {{ with .Params.image }}
         {{ $social.Set "image" (. | absURL) }}
         {{ if or (hasPrefix . "http://") (hasPrefix . "https://") }}
           {{ $social.Set "image" . }}
+        {{ else }}
+          {{ with $.Resources.Get . }}
+            {{ $social.Set "image" .Permalink }}
+          {{ end }}
+        {{ end }}
+      {{ else }}
+        {{ with .Site.Params.defaultShareImage }}
+          {{ $social.Set "image" (. | absURL) }}
+          {{ if or (hasPrefix . "http://") (hasPrefix . "https://") }}
+            {{ $social.Set "image" . }}
+          {{ end }}
         {{ end }}
       {{ end }}
     {{ end }}
