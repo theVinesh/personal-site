@@ -1,5 +1,6 @@
 ---
 title: "Installing Jellyfin Media System"
+description: A guide to setting up Jellyfin as a self-hosted media system for streaming your own library.
 date: 2022-08-31T00:44:57+01:00
 lastmod: 2022-08-31T00:44:57+01:00
 categories: ["tech", "jellifin", "self hosted", "home server"]

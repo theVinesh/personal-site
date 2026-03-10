@@ -1,5 +1,6 @@
 ---
 title: "Command line variables on Flutter using --dart-define"
+description: How to pass build-time values into Flutter apps with --dart-define and read them back in code.
 categories: ["tech", "flutter"]
 date: 2021-03-25T04:42:02+05:30
 image: "command_line.png"

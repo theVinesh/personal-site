@@ -1,5 +1,6 @@
 ---
 title: "In the beginning"
+description: Why I finally started this Hugo-powered personal site after bouncing between blogging platforms.
 tags: 
     - about me
     - general

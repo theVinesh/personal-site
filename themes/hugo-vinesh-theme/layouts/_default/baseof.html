@@ -4,10 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  {{ .Scratch.Set "canonicalURL" .Permalink }}
+  {{ if hugo.IsServer }}{{ .Scratch.Set "canonicalURL" (.RelPermalink | absURL) }}{{ end }}
   <title>{{ block "title" . }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="{{ .Site.BaseURL }}favicon.png">
-  <link rel="canonical" href="{{ .Permalink }}" />
+  <link rel="canonical" href="{{ .Scratch.Get "canonicalURL" }}" />
 
   {{- if hugo.IsProduction | or (eq site.Params.env "production") }}
     {{ $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "style.scss" . | toCSS (dict "targetPath" "css/style.css" "enableSourceMap" false) }}
@@ -22,13 +24,62 @@
   {{- end }}
 
   {{ block "meta_tags" . }}
-    {{ if .Params.description }}<meta name="description" content="{{ .Params.description }}"/>{{ end }}
+    {{ $social := newScratch }}
+    {{ $social.Set "image" "" }}
+    {{ $social.Set "description" "" }}
+    {{ $isArticle := and .IsPage (eq .Type "posts") }}
+    {{ $articleAuthor := .Params.author | default .Site.Data.author.name }}
+    {{ $articleTags := .Params.tags }}
+    {{ if not $articleTags }}
+      {{ $articleTags = .Params.categories }}
+    {{ end }}
+    {{ $hasExplicitLastmod := isset .Params "lastmod" }}
+    {{ with .Params.image }}
+      {{ $social.Set "image" (. | absURL) }}
+      {{ if or (hasPrefix . "http://") (hasPrefix . "https://") }}
+        {{ $social.Set "image" . }}
+      {{ else }}
+        {{ with $.Resources.Get . }}
+          {{ $social.Set "image" .Permalink }}
+        {{ end }}
+      {{ end }}
+    {{ else }}
+      {{ with .Site.Params.defaultShareImage }}
+        {{ $social.Set "image" (. | absURL) }}
+        {{ if or (hasPrefix . "http://") (hasPrefix . "https://") }}
+          {{ $social.Set "image" . }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    {{ with .Params.description }}
+      {{ $social.Set "description" . }}
+    {{ else }}
+      {{ with .Summary }}
+        {{ $social.Set "description" (. | plainify | replaceRE "[[:space:]]+" " " | replaceRE "^[[:space:]]+|[[:space:]]+$" "" | truncate 160) }}
+      {{ end }}
+      {{ if not ($social.Get "description") }}
+        {{ with .Site.Params.defaultMetaDescription }}
+          {{ $social.Set "description" . }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    {{ $socialImage := $social.Get "image" }}
+    {{ $socialDescription := $social.Get "description" }}
+    {{ if $socialDescription }}<meta name="description" content="{{ $socialDescription }}"/>{{ end }}
+    {{ if and $isArticle $articleAuthor }}<meta name="author" content="{{ $articleAuthor }}"/>{{ end }}
     <meta property="og:title" content="{{ .Title }}"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="{{ .Permalink }}"/>
-    {{ if .Params.image }}<meta property="og:image" content="{{ .Params.image | absURL }}"/>{{ end }}
-    {{ if .Params.description }}<meta property="og:description" content="{{ .Params.description }}"/>{{ end }}
-    <meta name="twitter:card" content="summary"/>
+    <meta property="og:type" content="{{ if $isArticle }}article{{ else }}website{{ end }}"/>
+    <meta property="og:url" content="{{ .Scratch.Get "canonicalURL" }}"/>
+    {{ if $socialImage }}<meta property="og:image" content="{{ $socialImage }}"/>{{ end }}
+    {{ if $socialDescription }}<meta property="og:description" content="{{ $socialDescription }}"/>{{ end }}
+    {{ if $isArticle }}<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"/>{{ end }}
+    {{ if and $isArticle (or $hasExplicitLastmod (gt .Lastmod.Unix .Date.Unix)) }}<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}"/>{{ end }}
+    {{ if and $isArticle $articleAuthor }}<meta property="article:author" content="{{ $articleAuthor }}"/>{{ end }}
+    {{ if $isArticle }}{{ range $articleTags }}<meta property="article:tag" content="{{ . }}"/>{{ end }}{{ end }}
+    <meta name="twitter:card" content="{{ if $socialImage }}summary_large_image{{ else }}summary{{ end }}"/>
+    <meta name="twitter:title" content="{{ .Title }}"/>
+    {{ if $socialDescription }}<meta name="twitter:description" content="{{ $socialDescription }}"/>{{ end }}
+    {{ if $socialImage }}<meta name="twitter:image" content="{{ $socialImage }}"/>{{ end }}
     {{ if .Site.Params.twitter_handle }}<meta name="twitter:site" content="{{ .Site.Params.twitter_handle }}"/>{{ end }}
     {{ if .Site.Params.twitter_handle }}<meta name="twitter:creator" content="{{ .Site.Params.twitter_handle }}"/>{{ end }}
   {{ end }}

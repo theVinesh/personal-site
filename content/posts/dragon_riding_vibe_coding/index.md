@@ -1,5 +1,6 @@
 ---
 title: "Dragon Riding: The Art of Vibe Coding"
+description: A playful take on vibe coding that treats working with AI agents like learning to ride a dragon.
 image: "dragon_riding_header.png"
 tags: 
     - programming
