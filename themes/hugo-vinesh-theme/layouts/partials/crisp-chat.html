@@ -1,0 +1,33 @@
+<script>
+    window.$crisp = window.$crisp || [];
+    window.CRISP_WEBSITE_ID = "3289a012-9831-4413-9574-2118579bee8b";
+
+    (function () {
+        function injectCrisp() {
+            if (document.getElementById("crisp-chat-script")) return;
+
+            var script = document.createElement("script");
+            script.id = "crisp-chat-script";
+            script.src = "https://client.crisp.chat/l.js";
+            script.async = true;
+            script.onerror = function () {
+                console.warn("Crisp chat failed to load.");
+            };
+            document.head.appendChild(script);
+        }
+
+        function scheduleCrisp() {
+            if ("requestIdleCallback" in window) {
+                window.requestIdleCallback(injectCrisp, { timeout: 2000 });
+            } else {
+                window.setTimeout(injectCrisp, 0);
+            }
+        }
+
+        if (document.readyState === "complete") {
+            scheduleCrisp();
+        } else {
+            window.addEventListener("load", scheduleCrisp, { once: true });
+        }
+    }());
+</script>
