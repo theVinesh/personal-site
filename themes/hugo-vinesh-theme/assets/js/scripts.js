@@ -155,3 +155,73 @@ function addResumePrintButtonHandler() {
 }
 
 addResumePrintButtonHandler();
+
+function initRoleRotator() {
+  var rotator = document.getElementById('role-rotator');
+  var articleEl = document.getElementById('role-article');
+
+  if (!rotator) return;
+
+  var roles = [
+    { word: 'Builder', article: 'a' },
+    { word: 'Girl Dad', article: 'a' },
+    { word: 'Home Cook', article: 'a' },
+    { word: 'Comedian', article: 'a' },
+    { word: 'Writer', article: 'a' },
+    { word: 'Engineer', article: 'an' },
+    { word: 'Lazy Bum', article: 'a' },
+    { word: 'Learner', article: 'a' }
+  ];
+
+  var currentIndex = 0;
+  var intervalTime = 3000;
+
+  setInterval(function() {
+    if (document.hidden) return;
+
+    var currentWordEl = rotator.querySelector('.role-word:not(.is-exiting)');
+    if (!currentWordEl) return;
+
+    var nextIndex = (currentIndex + 1) % roles.length;
+    var currentRole = roles[currentIndex];
+    var nextRole = roles[nextIndex];
+
+    var startWidth = rotator.offsetWidth;
+    rotator.style.width = startWidth + 'px';
+
+    currentWordEl.classList.add('is-exiting');
+
+    var nextWordEl = document.createElement('strong');
+    nextWordEl.className = 'role-word is-entering';
+    nextWordEl.textContent = nextRole.word;
+    rotator.appendChild(nextWordEl);
+
+    var targetWidth = nextWordEl.offsetWidth;
+    rotator.style.width = targetWidth + 'px';
+
+    if (articleEl && currentRole.article !== nextRole.article) {
+      articleEl.style.opacity = '0';
+      setTimeout(function() {
+        articleEl.textContent = nextRole.article;
+        articleEl.style.opacity = '1';
+      }, 150);
+    }
+
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        nextWordEl.classList.remove('is-entering');
+      });
+    });
+
+    setTimeout(function() {
+      if (currentWordEl && currentWordEl.parentNode) {
+        currentWordEl.parentNode.removeChild(currentWordEl);
+      }
+      rotator.style.width = '';
+    }, 450);
+
+    currentIndex = nextIndex;
+  }, intervalTime);
+}
+
+initRoleRotator();

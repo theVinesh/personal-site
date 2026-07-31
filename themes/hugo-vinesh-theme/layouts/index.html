@@ -1,4 +1,5 @@
 {{ define "body_classes" }}page-home{{ end }}
+{{ define "title" }}{{ .Site.Title }}{{ end }}
 
 {{ define "main" }}
 
@@ -7,11 +8,18 @@
   {{ end }}
 
   <div class="intro">
-    <h1>{{ .Title }}{{ if .Site.Params.addDot }}<span class="dot">.</span>{{ end }}</h1>
+    <h1 class="intro-heading">
+      I am Vinesh Raju and I am <span class="role-article" id="role-article">a</span> <span class="role-rotator" id="role-rotator" aria-live="polite"><strong class="role-word">Builder</strong></span>{{ if .Site.Params.addDot }}<span class="dot">.</span>{{ end }}
+    </h1>
     {{ if .Site.Params.showIntroContentOnHomepage}}
       <div class="intro-content">{{ .Content }}</div>
     {{ end }}
+    <div class="intro-social">
+      {{ partial "social-links.html" . }}
+    </div>
   </div>
+
+  <hr class="intro-separator" />
 
   {{ if .Site.Params.showPostsOnHomepage }}
 
