@@ -164,12 +164,10 @@ function initRoleRotator() {
 
   var roles = [
     { word: 'Builder', article: 'a' },
-    { word: 'Girl Dad', article: 'a' },
+    { word: 'Dad', article: 'a' },
     { word: 'Home Cook', article: 'a' },
-    { word: 'Comedian', article: 'a' },
-    { word: 'Writer', article: 'a' },
+    { word: 'Tinkerer', article: 'a' },
     { word: 'Engineer', article: 'an' },
-    { word: 'Lazy Bum', article: 'a' },
     { word: 'Learner', article: 'a' }
   ];
 
