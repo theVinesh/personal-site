@@ -4,7 +4,7 @@
 {{ $isResumePage := and .File (eq .File.Path "pages/resume.md") }}
 <div class="intro">
   {{ if $isResumePage }}<div class="resume-intro-row">{{ end }}
-  <h1 style="font-size: 64px; line-height: 70px;">{{ .Title }}{{ if .Site.Params.addDot }}<span class="dot">.</span>{{ end }}</h1>
+  <h1 style="font-size: clamp(28px, 10vw, 64px); line-height: 1.1;">{{ .Title }}{{ if .Site.Params.addDot }}<span class="dot">.</span>{{ end }}</h1>
   {{ if $isResumePage }}
   <div class="resume-actions resume-actions-top noprint">
     <button type="button" class="resume-print-button" data-print-resume>Save as PDF</button>
