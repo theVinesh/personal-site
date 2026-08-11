@@ -4,11 +4,11 @@ aliases:
   - /resume
   - /cv
 ---
-## Mobile App Developer – Android | Flutter | React Native
+## Senior Software Engineer
 ------------------------
 📍 Dublin, Ireland | 📞 +353 892338410 | ✉️ hi@thevinesh.com | 👨🏻‍💻 [theVinesh.com](https://theVinesh.com)
 
-Mobile App Developer with 9+ years of experience building native and cross-platform apps using Android, Flutter and React Native. Skilled in end-to-end app development and delivering high-performance user experiences. Open to full-time and contract opportunities. No visa sponsorship required.
+Senior Software Engineer with 9+ years shipping apps at every stage: 100M+ download consumer apps, a startup grown from zero, and SDKs embedded in products worldwide. Deep in native Android, fluent in React Native and Flutter, hands-on across the full lifecycle: architecture, mentoring, CI/CD, and release management. Currently one of two senior engineers behind the Dublin Airport app. See [selected projects](/builds). Open to full-time and contract opportunities. No visa sponsorship required.
 
 ------------------------
 ### **Senior Software Engineer** at **DAA**
