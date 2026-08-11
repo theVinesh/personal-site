@@ -60,11 +60,11 @@ Mobile App Developer with 9+ years of experience building native and cross-platf
 ------------------------
 ### **Member Technical Staff** at **Zoho Corp**
 #### Dec, 2016 - Jul, 2018 | Chennai, TN, India
-- Built the Single Sign On (SSO) library from scratch which is used by **50+ Zoho apps to onboard millions of users**.
-- Built an SDK with which 3rd party apps can provide "Sign in with Zoho" option and published it to Maven.
-- Helped teams to adopt OAuth2 and SSO for their Android apps.
-- Advocated and Drove the team to adopt Kotlin and Room early.
-- Co-Developed OneAuth and MyZoho which boast **100,000+ downloads on Playstore**.
+- Built Zoho's Single Sign-On (SSO) library from scratch. It now authenticates **millions of users across 50+ Zoho apps**
+- Shipped a public Maven SDK letting third-party apps offer "Sign in with Zoho" (OAuth2)
+- Drove OAuth2 and SSO adoption across Zoho's Android teams
+- Championed early adoption of Kotlin and Room, modernizing the Android codebase ahead of the ecosystem
+- Co-developed OneAuth and MyZoho, consumer apps with **100,000+ Play Store downloads**
 
 ------------------------
 ### **Education**
