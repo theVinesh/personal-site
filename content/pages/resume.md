@@ -4,11 +4,10 @@ aliases:
   - /resume
   - /cv
 ---
-## Senior Software Engineer
-------------------------
+
 📍 Dublin, Ireland | 📞 +353 892338410 | ✉️ hi@thevinesh.com | 👨🏻‍💻 [theVinesh.com](https://theVinesh.com)
 
-Senior Software Engineer with 9+ years shipping apps at every stage: 100M+ download consumer apps, a startup grown from zero, and SDKs embedded in products worldwide. Deep in native Android, fluent in React Native and Flutter, hands-on across the full lifecycle: architecture, mentoring, CI/CD, and release management. Currently one of two senior engineers behind the Dublin Airport app. See [selected projects](/builds). Open to full-time and contract opportunities. No visa sponsorship required.
+Senior Software Engineer with 9+ years shipping apps at every stage: 100M+ download consumer apps, a startup grown from zero, and SDKs embedded in products worldwide. Deep in native Android, fluent in React Native and Flutter, hands-on across the full lifecycle: architecture, mentoring, CI/CD, and release management. Currently one of two senior engineers behind the Dublin Airport app. Open to full-time and contract opportunities. No visa sponsorship required.
 
 ------------------------
 ### **Senior Software Engineer** at **DAA**
@@ -19,9 +18,8 @@ Senior Software Engineer with 9+ years shipping apps at every stage: 100M+ downl
 - Run team workshops on AI-assisted workflows and automated mobile on-call and triage
 
 ------------------------
-### **Senior Software Engineer** at **Perigord**
+### **Senior Software Engineer** at **Verizon Connect**
 #### Nov, 2023 - Jul, 2025 | Dublin, Ireland
-   *On Contract for Verizon Connect | Team Lead | Android | Kotlin | Jetpack Compose*
 - Led the development of Driver Experience, a new Android app built from scratch, coordinating design and delivery across product and engineering
 - Mentored junior engineers and conducted code reviews grounded in frontend and mobile architecture best practices
 - Owned CI/CD and release management, integrating with existing pipelines and QA systems

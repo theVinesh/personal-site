@@ -1,0 +1,155 @@
+/*
+ * Resume page styling (pages/resume.md)
+ * Scoped to .page-default-single (only the resume page uses this body class).
+ * Screen: styled document, same palette as the rest of the site.
+ * Print: formal resume, decorations stripped, A4.
+ */
+
+.page-default-single {
+  --resume-hairline: var(--codeblock-border-color);
+  --resume-muted: var(--color-tx-muted);
+}
+
+.page-default-single .content {
+  max-width: 840px;
+}
+
+/* --- Header block -------------------------------------------------------- */
+
+/* divider under the big name h1 */
+.page-default-single .content > hr {
+  border: 0;
+  border-top: 1px solid var(--resume-hairline);
+  margin: 10px 0 18px;
+}
+
+/* contact line (📍 Dublin ...) */
+.page-default-single .content > p:first-of-type {
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  color: var(--resume-muted);
+  margin: 0 0 18px;
+}
+
+/* --- Role blocks -------------------------------------------------------- */
+
+.page-default-single .content > h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 30px 0 0;
+}
+
+/* dates: a quiet meta line under the role heading */
+.page-default-single .content > h4 {
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--resume-muted);
+}
+
+/* per-role tagline (e.g. "On Contract for Verizon Connect | ...") */
+.page-default-single .content > h4 + p {
+  font-size: 13.5px;
+  font-style: italic;
+  color: var(--resume-muted);
+  margin: 2px 0 12px;
+}
+
+.page-default-single .content > ul {
+  margin: 10px 0 0;
+  padding-left: 1.35em;
+}
+
+.page-default-single .content > ul > li {
+  margin-bottom: 7px;
+  line-height: 1.55;
+}
+
+.page-default-single .content > ul > li::marker {
+  color: var(--highlight-color);
+}
+
+/* --- Print: formal resume -------------------------------------------------- */
+
+@media print {
+  .page-default-single {
+    background: #ffffff;
+  }
+
+  @page {
+    size: A4;
+    margin: 14mm 15mm;
+  }
+
+  .page-default-single .content {
+    max-width: 100%;
+    color: #000000;
+  }
+
+  /* name: keep, but not billboard-sized */
+  .page-default-single .intro h1 {
+    font-size: 26pt;
+    line-height: 1.2;
+  }
+
+  .page-default-single .content > p:first-of-type {
+    font-size: 10pt;
+    color: #333333;
+  }
+
+  .page-default-single .content > hr {
+    border-top-color: #999999;
+  }
+
+  .page-default-single .content > h3 {
+    font-size: 12pt;
+    color: #000000;
+    margin-top: 16pt;
+  }
+
+  .page-default-single .content > h4 {
+    margin-top: 1pt;
+    color: #333333;
+  }
+
+  .page-default-single .content > h4 + p {
+    font-size: 10pt;
+    color: #333333;
+  }
+
+  .page-default-single .content > ul {
+    margin-top: 6pt;
+  }
+
+  .page-default-single .content > ul > li {
+    font-size: 10pt;
+    line-height: 1.45;
+    margin-bottom: 4pt;
+    break-inside: avoid;
+  }
+
+  .page-default-single .content > ul > li::marker {
+    color: #000000;
+  }
+
+  .page-default-single .content a {
+    color: #000000;
+    text-decoration: none;
+  }
+
+  /* never print raw link URLs */
+  .page-default-single .content a::after {
+    content: none !important;
+  }
+
+  /* keep role headings with their meta line and bullets */
+  .page-default-single .content > h3,
+  .page-default-single .content > h4 {
+    break-after: avoid;
+  }
+
+  body {
+    padding: 0;
+  }
+}
