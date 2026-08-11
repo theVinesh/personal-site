@@ -13,9 +13,10 @@ Mobile App Developer with 9+ years of experience building native and cross-platf
 ------------------------
 ### **Senior Software Engineer** at **DAA**
 #### Aug, 2025 - PRESENT | Dublin, Ireland
-- One of the two senior engineers looking after Dublin Airport app.
-- Lead development of DUB Rewards.
-- Working closely with contractors to tweak processes to ease up working with DAA engineers.
+- One of two senior engineers owning the Dublin Airport app
+- Lead development of DUB Rewards, the airport's loyalty program: React Native front end backed by Contentful + GraphQL, built to be reusable across future reward campaigns
+- Shipped foundational marketing features: deferred deep links, rich push notifications, and a marketing inbox. Led a Salesforce integration for tracking and targeting users, driving a **23% increase in in-app engagement** within 3 months of rollout
+- Run team workshops on AI-assisted workflows and automated mobile on-call and triage
 
 ------------------------
 ### **Senior Software Engineer** at **Perigord**
