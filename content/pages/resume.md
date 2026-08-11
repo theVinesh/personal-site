@@ -7,7 +7,7 @@ aliases:
 
 📍 Dublin, Ireland | 📞 +353 892338410 | ✉️ hi@thevinesh.com | 👨🏻‍💻 [theVinesh.com](https://theVinesh.com)
 
-Senior Software Engineer with 9+ years shipping apps at every stage: 100M+ download consumer apps, a startup grown from zero, and SDKs embedded in products worldwide. Deep in native Android, fluent in React Native and Flutter, hands-on across the full lifecycle: architecture, mentoring, CI/CD, and release management. Currently one of two senior engineers behind the Dublin Airport app. Open to full-time and contract opportunities. No visa sponsorship required.
+Senior Software Engineer with 9+ years shipping apps at every stage: 100M+ download consumer apps, a startup grown from zero, and SDKs embedded in products worldwide. Hands-on across the full lifecycle: architecture, mentoring, CI/CD, and release management. Currently one of two senior engineers behind the Dublin Airport app. Open to full-time and contract opportunities. No visa sponsorship required.
 
 ------------------------
 ### **Senior Software Engineer** at **DAA**
