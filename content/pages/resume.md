@@ -44,10 +44,10 @@ Mobile App Developer with 9+ years of experience building native and cross-platf
 ------------------------
 ### **SDE I** at **Swiggy**
 #### Apr, 2019 - Jul, 2020 | Bengaluru, KA, India
-- Built Swiggy's Flagship android client which is responsible for **10,000,000+ orders per day**.
-- Responsible for Live Order Tracking module, which is the most used feature in the app after order listing
-- Re-wrote Offers and Coupons discovery, visibility and communication flow for better user experience.
-- Helped reduce app size by automating Resource optimisation as a part of CI/CD pipeline.
+- Built Swiggy's flagship Android client, handling **10,000,000+ orders per day**
+- Owned the Live Order Tracking module, the most used feature in the app after order listing
+- Rewrote Offers and Coupons discovery, visibility, and communication flows for a smoother user experience
+- Automated resource optimization in the CI/CD pipeline to cut app size
 
 ------------------------
 ### **Android Developer** at **Meesho**
