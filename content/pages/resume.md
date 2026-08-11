@@ -52,10 +52,10 @@ Mobile App Developer with 9+ years of experience building native and cross-platf
 ------------------------
 ### **Android Developer** at **Meesho**
 #### Aug, 2018 - Apr, 2019 | Bengaluru, KA, India
-- Co-Developed Meesho’s Android application to help scale it to **100,000,000+ downloads on Playstore**.
-- Owned and implemented key features such as Onboarding, Product Review and User profiling from scratch.
-- Migrated legacy code to use Kotlin, MVVM, RxJava and Data binding.
-- Played an active role in Product and API design .
+- Co-developed Meesho's Android app, scaling it past **100,000,000+ Play Store downloads**
+- Owned Onboarding, Product Review, and User Profiling end-to-end, rewriting each from scratch
+- Led the migration of legacy code to Kotlin, MVVM, RxJava, and Data Binding
+- Shaped product and API design decisions across the app
 
 ------------------------
 ### **Member Technical Staff** at **Zoho Corp**
