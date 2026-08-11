@@ -37,9 +37,10 @@ Mobile App Developer with 9+ years of experience building native and cross-platf
 ------------------------
 ### **Software Engineer** at **Multipl**
 #### Jul, 2020 - Nov, 2021 | Bengaluru, KA, India
-- Lead Multipl’s client app development from scratch with flutter.
-- Helped the startup grow from **0 to 300,000+ users**
-- Played a major role in architecting and designing backend apis.
+- One of the first engineers at Multipl
+- Led Multipl's client app development from scratch in Flutter
+- Took the client app from **0 to 300,000+ users**
+- Co-architected the backend APIs powering the platform
 
 ------------------------
 ### **SDE I** at **Swiggy**
