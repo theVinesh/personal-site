@@ -29,10 +29,10 @@ Mobile App Developer with 9+ years of experience building native and cross-platf
 ------------------------
 ### **Product Engineer III** at **Intercom**
 #### Nov, 2021 - Nov, 2023 | Dublin, Ireland
-- Co-developed Intercom’s native Android SDK.
-- Lead the planning, development and release of Intercom’s Ai bot - Fin on Mobile
-- Actively maintains Intercom’s React Native and Flutter SDK
-- Played an active role in Intercom Messenger’s recent UI refresh
+- Led the planning, development, and release of Fin, Intercom's AI bot, on mobile
+- Co-developed Intercom's native Android SDK
+- Maintained Intercom's React Native and Flutter SDKs
+- Contributed to Intercom Messenger's mobile UI refresh
 
 ------------------------
 ### **Software Engineer** at **Multipl**
