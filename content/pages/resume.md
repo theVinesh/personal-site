@@ -21,10 +21,10 @@ Mobile App Developer with 9+ years of experience building native and cross-platf
 ### **Senior Software Engineer** at **Perigord**
 #### Nov, 2023 - Jul, 2025 | Dublin, Ireland
    *On Contract for Verizon Connect | Team Lead | Android | Kotlin | Jetpack Compose*
-- Lead the development of Driver Experience, a new Android app from scratch coordinating design and functionality across product and engineering.
-- Mentored junior engineers and conducted code reviews aligned with best practices in frontend and mobile architecture.
-- Applied strong CI/CD and release management discipline, integrating with existing pipelines and QA systems.
-- Played a major role in maintaining important legacy apps for the business.
+- Led the development of Driver Experience, a new Android app built from scratch, coordinating design and delivery across product and engineering
+- Mentored junior engineers and conducted code reviews grounded in frontend and mobile architecture best practices
+- Owned CI/CD and release management, integrating with existing pipelines and QA systems
+- Maintained business-critical legacy apps alongside the new build
 
 ------------------------
 ### **Product Engineer III** at **Intercom**
