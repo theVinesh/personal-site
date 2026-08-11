@@ -15,7 +15,8 @@ Senior Software Engineer with 9+ years shipping apps at every stage: 100M+ downl
 - One of two senior engineers owning the Dublin Airport app
 - Lead development of DUB Rewards, the airport's loyalty program: React Native front end backed by Contentful + GraphQL, built to be reusable across future reward campaigns
 - Shipped foundational marketing features: deferred deep links, rich push notifications, and a marketing inbox. Led a Salesforce integration for tracking and targeting users, driving a **23% increase in in-app engagement** within 3 months of rollout
-- Run team workshops on AI-assisted workflows and automated mobile on-call and triage
+- Run team workshops on AI-assisted workflows
+- Automated mobile on-call and triage
 
 ------------------------
 ### **Senior Software Engineer** at **Verizon Connect**
