@@ -4,7 +4,8 @@
   {{ if .Params.image }}
   {{ $image := .Resources.Get .Params.image }}
   {{ if $image }}
-  <img loading="lazy" alt="{{.Params.imageAltAttribute | default "Article hero image"}}" src="{{ $image.RelPermalink }}" />
+  {{ $thumb := $image.Resize "640x q75" }}
+  <img loading="lazy" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{.Params.imageAltAttribute | default "Article hero image"}}" src="{{ $thumb.RelPermalink }}" />
   {{ end }}
   {{ end }}
   <p class="summary-description">
@@ -14,5 +15,5 @@
     {{ .Summary }}
     {{ end }}
   </p>
-  <a class="summary-readmore" href="{{ .RelPermalink }}">read more</a>
+  <a class="summary-readmore" href="{{ .RelPermalink }}">Read more: {{ .Title }}</a>
 </div>

@@ -113,8 +113,10 @@
   {{ partial "menu-main-mobile.html" . }}
   <div id="wrapper" class="wrapper">
     {{ partial "header.html" . }}
-    {{ block "main" . }}
-    {{ end }}
+    <main>
+      {{ block "main" . }}
+      {{ end }}
+    </main>
     {{ partial "footer.html" . }}
   </div>
 
