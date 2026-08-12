@@ -45,7 +45,7 @@ jobs:
             --form-factor "${{ inputs.form-factor }}" \
             --output=json --output=html \
             --output-path="./lh-${{ matrix.page }}" \
-            --chrome-flags="--no-sandbox"
+            --chrome-flags="--no-sandbox --headless=new"
       - name: Show scores
         run: |
           for f in lh-*.json; do
