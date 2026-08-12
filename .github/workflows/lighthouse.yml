@@ -1,0 +1,60 @@
+name: Lighthouse
+
+on:
+  workflow_dispatch:
+    inputs:
+      pages:
+        description: 'Pages to audit'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - home
+          - resume
+          - all
+      form-factor:
+        description: 'Emulated device'
+        required: false
+        default: 'mobile'
+        type: choice
+        options:
+          - mobile
+          - desktop
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - page: home
+            path: https://www.thevinesh.com/
+          - page: resume
+            path: https://www.thevinesh.com/pages/resume/
+    steps:
+      - name: Run Lighthouse
+        run: |
+          if [ "${{ inputs.pages }}" != "all" ] && [ "${{ matrix.page }}" != "${{ inputs.pages }}" ]; then
+            echo "Skipping ${{ matrix.page }} (not selected)"
+            exit 0
+          fi
+          npx -y lighthouse "${{ matrix.path }}" \
+            --only-categories=performance,accessibility,best-practices,seo \
+            --form-factor "${{ inputs.form-factor }}" \
+            --output=json --output=html \
+            --output-path="./lh-${{ matrix.page }}" \
+            --chrome-flags="--no-sandbox"
+      - name: Show scores
+        run: |
+          for f in lh-*.json; do
+            jq -r '.finalUrl + " -> perf " + ((.categories.performance.score*100)|round|tostring) + " | a11y " + ((.categories.accessibility.score*100)|round|tostring) + " | bp " + ((.categories["best-practices"].score*100)|round|tostring) + " | seo " + ((.categories.seo.score*100)|round|tostring)' "$f" 2>/dev/null || true
+          done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-${{ matrix.page }}-${{ inputs.form-factor }}
+          path: lh-*
+          if-no-files-found: ignore
+          retention-days: 7
