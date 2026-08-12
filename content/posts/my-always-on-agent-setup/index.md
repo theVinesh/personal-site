@@ -1,6 +1,8 @@
 ---
 title: "My Always-On Agent Costs Me Nothing*"
 description: "The story of ntran, my always-on AI agent that runs on a free-tier VM, remembers everything, and costs me nothing to run."
+image: "always-on-agent-header.jpg"
+imageAltAttribute: "A tiny robot agent beside a matchbox, a smartwatch and phone on the desk"
 tags:
     - ai
     - agents
