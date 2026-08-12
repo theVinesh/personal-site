@@ -5,7 +5,8 @@
   {{ $image := .Resources.Get .Params.image }}
   {{ if $image }}
   {{ $thumb := $image.Resize "640x q75" }}
-  <img loading="lazy" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{.Params.imageAltAttribute | default "Article hero image"}}" src="{{ $thumb.RelPermalink }}" />
+  {{ $thumb2x := $image.Resize "1280x q75" }}
+  <img loading="lazy" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{.Params.imageAltAttribute | default "Article hero image"}}" src="{{ $thumb.RelPermalink }}" srcset="{{ $thumb.RelPermalink }} 640w, {{ $thumb2x.RelPermalink }} 1280w" sizes="(min-width: 768px) 500px, 92vw" />
   {{ end }}
   {{ end }}
   <p class="summary-description">
