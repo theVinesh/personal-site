@@ -1,0 +1,39 @@
+{{ $authorName := .Site.Data.author.name }}
+{{ $github := "" }}
+{{ $linkedin := "" }}
+{{ range .Site.Data.social.links }}
+  {{ if eq .name "github" }}{{ $github = .url }}{{ end }}
+  {{ if eq .name "linkedin" }}{{ $linkedin = .url }}{{ end }}
+{{ end }}
+{{ $base := .Site.BaseURL }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "{{ $base }}#person",
+      "name": "{{ $authorName }}",
+      "url": "{{ $base }}",
+      "jobTitle": "Senior Software Engineer",
+      "sameAs": ["{{ $github }}", "{{ $linkedin }}"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ $base }}#website",
+      "url": "{{ $base }}",
+      "name": "{{ .Site.Title }}"
+    }{{ if and .IsPage (eq .Section "posts") .Params.image }},
+    {
+      "@type": "Article",
+      "@id": "{{ .Permalink }}#article",
+      "headline": {{ .Title | jsonify }},
+      "datePublished": {{ .Date.Format "2006-01-02" | jsonify }},
+      "image": "{{ .Permalink }}{{ .Params.image }}",
+      "author": { "@id": "{{ $base }}#person" },
+      "publisher": { "@id": "{{ $base }}#person" },
+      "mainEntityOfPage": "{{ .Permalink }}"
+    }{{ end }}
+  ]
+}
+</script>

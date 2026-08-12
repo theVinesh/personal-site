@@ -16,18 +16,19 @@
             document.head.appendChild(script);
         }
 
-        function scheduleCrisp() {
-            if ("requestIdleCallback" in window) {
-                window.requestIdleCallback(injectCrisp, { timeout: 2000 });
-            } else {
-                window.setTimeout(injectCrisp, 0);
-            }
+        function arm() {
+            // Load chat only once the visitor shows intent (or as a 15s safety fallback).
+            var events = ["pointerdown", "mousemove", "scroll", "touchstart", "keydown"];
+            events.forEach(function (e) {
+                window.addEventListener(e, injectCrisp, { once: true, passive: true });
+            });
+            window.setTimeout(injectCrisp, 15000);
         }
 
         if (document.readyState === "complete") {
-            scheduleCrisp();
+            arm();
         } else {
-            window.addEventListener("load", scheduleCrisp, { once: true });
+            window.addEventListener("load", arm, { once: true });
         }
     }());
 </script>
