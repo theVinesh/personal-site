@@ -40,9 +40,14 @@ jobs:
             echo "Skipping ${{ matrix.page }} (not selected)"
             exit 0
           fi
+          if [ "${{ inputs.form-factor }}" = "desktop" ]; then
+            FLAGS="--preset=desktop"
+          else
+            FLAGS="--form-factor=mobile"
+          fi
           npx -y lighthouse "${{ matrix.path }}" \
             --only-categories=performance,accessibility,best-practices,seo \
-            --form-factor "${{ inputs.form-factor }}" \
+            $FLAGS \
             --output=json --output=html \
             --output-path="./lh-${{ matrix.page }}" \
             --chrome-flags="--no-sandbox --headless=new"
