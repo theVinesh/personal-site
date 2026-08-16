@@ -4,8 +4,10 @@
 <div class="blog">
   {{ partial "author.html" . }}
   <div class="intro">
-    <span class="post-date">{{ dateFormat "January 2, 2006" .Date }}</span>
-    {{ if and (isset .Params "lastmod") (gt .Lastmod.Unix .Date.Unix) }}<span class="post-date"> · Last updated {{ dateFormat "January 2, 2006" .Lastmod }}</span>{{ end }}
+    <div class="post-dates">
+      <span class="post-date">{{ dateFormat "January 2, 2006" .Date }}</span>
+      {{ if and (isset .Params "lastmod") (gt .Lastmod.Unix .Date.Unix) }}<span class="post-updated">Last updated {{ dateFormat "January 2, 2006" .Lastmod }}</span>{{ end }}
+    </div>
     <h1>{{ .Title }}{{ if .Site.Params.addDot }}<span class="dot">.</span>{{ end }}</h1>
     {{ if .Params.image }}
     {{ $image := .Resources.Get .Params.image }}

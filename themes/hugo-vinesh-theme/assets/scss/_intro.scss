@@ -40,10 +40,31 @@
       line-height: 32px;
     }
   }
-  .post-date {
-    display: inline-block;
-    vertical-align: middle;
-    color: var(--color-tx-muted);
+  .post-dates {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    margin-bottom: 10px;
+    @include breakpoint('small') {
+      flex-direction: row;
+      align-items: baseline;
+      gap: 0;
+    }
+    .post-date,
+    .post-updated {
+      display: inline-block;
+      color: var(--color-tx-muted);
+    }
+    .post-updated {
+      @include breakpoint('small') {
+        margin-left: 10px;
+        &::before {
+          content: '·';
+          margin-right: 10px;
+        }
+      }
+    }
   }
   img {
     max-width: 100%;
