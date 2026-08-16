@@ -21,6 +21,19 @@ p {
   line-height: 24px;
 }
 
+.post-rss {
+  margin-top: 40px;
+  font-size: 14px;
+  color: var(--color-tx-muted);
+  a {
+    color: var(--color-tx-muted);
+    text-decoration: underline;
+    &:hover {
+      color: var(--highlight-color);
+    }
+  }
+}
+
 ol,
 ul {
   margin: 0;
