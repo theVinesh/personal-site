@@ -1,0 +1,34 @@
+// Cloudflare Pages Function — platform-aware redirect for /builds/<slug>/
+// Intercepts /builds/<slug> and 302-redirects the visitor to the right store/build URL
+// based on their device. Fallback chain: platform link -> github -> /builds/ listing.
+//
+// Route is single-segment ([slug]); matches /builds/project-wack-a-moji, /builds/dejavu, etc.
+// builds.json lives in static/ -> deployed to public/builds.json -> read from ASSETS.
+
+export async function onRequest({ params, request, env }) {
+  const slug = params.slug;
+  const ua = request.headers.get("user-agent") || "";
+
+  // Detect platform from User-Agent
+  let platform = "web";
+  if (/iPhone|iPad/i.test(ua)) platform = "ios";
+  else if (/Android/i.test(ua)) platform = "android";
+
+  // Read the static builds.json from THIS deployment's assets.
+  // env.ASSETS.fetch() reads the deployed asset directly (no network round-trip,
+  // no redirect loop) — the correct primitive for a Workers/Pages runtime.
+  // A bare fetch("/builds.json") would throw here (relative URL, no base).
+  const assetUrl = new URL("/builds.json", request.url).href;
+  const builds = await env.ASSETS.fetch(assetUrl)
+    .then((r) => (r.ok ? r.json() : {}))
+    .catch(() => ({}));
+
+  const build = builds[slug];
+  if (!build) {
+    return new Response("Not found", { status: 404 });
+  }
+
+  // Fallback: platform link -> github -> /builds/
+  const target = build[platform] || build.github || "/builds/";
+  return Response.redirect(target, 302);
+}

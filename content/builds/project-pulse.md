@@ -7,5 +7,6 @@ image: "pulse-screenshot.jpg"
 imageAltAttribute: "Pulse app screenshot"
 tags: ["mobile", "android", "productivity"]
 links:
-  - "https://play.google.com/store/apps/details?id=com.thevinesh.pulse"
+  android: https://play.google.com/store/apps/details?id=com.thevinesh.pulse
+  github: https://github.com/theVinesh/pulse
 ---

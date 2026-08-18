@@ -6,8 +6,9 @@ description: "Think of a word — DejaVu reveals it like magic. The mind-reading
 imageAltAttribute: "DejaVu app icon"
 tags: ["mobile", "android", "ios", "game"]
 links:
-  - "https://play.google.com/store/apps/details?id=com.thevinesh.dejavu"
-  - "https://apps.apple.com/us/app/dejavu-reads-your-mind/id6796777748"
+  android: https://play.google.com/store/apps/details?id=com.thevinesh.dejavu
+  ios: https://apps.apple.com/us/app/dejavu-reads-your-mind/id6796777748
+  github: https://github.com/theVinesh/dejavu-app
 ---
 
 Think of a word — DejaVu reveals it like magic.
