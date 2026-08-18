@@ -40,7 +40,7 @@
 }
 
 /* dates: a quiet meta line under the role heading */
-.page-default-single .content > h2 {
+.page-default-single .content > h3 {
   margin: 2px 0 0;
   font-size: 12.5px;
   font-weight: 500;
@@ -108,12 +108,12 @@
     margin-top: 16pt;
   }
 
-  .page-default-single .content > h2 {
+  .page-default-single .content > h3 {
     margin-top: 1pt;
     color: #333333;
   }
 
-  .page-default-single .content > h2 + p {
+  .page-default-single .content > h3 + p {
     font-size: 10pt;
     color: #333333;
   }
@@ -145,7 +145,7 @@
 
   /* keep role headings with their meta line and bullets */
   .page-default-single .content > h2,
-  .page-default-single .content > h2 {
+  .page-default-single .content > h3 {
     break-after: avoid;
   }
 
