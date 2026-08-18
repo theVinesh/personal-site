@@ -3,3 +3,10 @@ node_modules
 .idea
 resources
 public
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
