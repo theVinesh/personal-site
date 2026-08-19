@@ -22,7 +22,7 @@ He's not just a chatbot. He has a terminal. He has a browser. He has his own ema
 
 **What "always on" looks like on a normal day.** I sent it a link to my own [resume](/pages/resume/) once, with the message "this looks sad." Two hours and a dozen back-and-forths later it had rewritten the bullet points, restyled the page, screenshotted the result to show me, and pushed it live. I signed off from a train platform.
 
-Another one: my daughter played [Wack-A-Moji](/builds/project-wack-a-moji/) at an arcade, and that night I prompted one into existence on all three platforms. Android, iOS, and the web, from a single Kotlin codebase, shipped through CI: Play Store internal track, TestFlight, GitHub Pages. She doesn't care about any of that. She just likes bonking the emojis.
+Another one: my daughter played [Wack-A-Moji](/builds/wack-a-moji/) at an arcade, and that night I prompted one into existence on all three platforms. Android, iOS, and the web, from a single Kotlin codebase, shipped through CI: Play Store internal track, TestFlight, GitHub Pages. She doesn't care about any of that. She just likes bonking the emojis.
 
 **The one story that sums up the whole project:** I complained once that my insurance was getting expensive. He gathered my policies into a tracking sheet, chased cheaper quotes, and got me onto one that costs noticeably less. Then he remembered the car one is due again, so I don't have to. Everything about this setup runs like that: what can we stop paying for today?
 
