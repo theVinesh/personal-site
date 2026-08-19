@@ -1,4 +1,5 @@
 ---
+disableKinds: [page]
 title: "Wack-A-Moji"
 date: 2026-03-05
 type: "builds"

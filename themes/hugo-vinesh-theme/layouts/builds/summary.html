@@ -1,7 +1,11 @@
 <div class="summary">
     <h2 class="summary-title">
-        {{ if and .Params.links (gt (len .Params.links) 0) }}
-        <a href="{{ index .Params.links 0 }}" target="_blank" rel="noopener noreferrer">{{ .Title }}</a>
+        {{ $primary := "" }}
+        {{ with .Params.links }}
+            {{ $primary = index . "web" | default (index . "ios" | default (index . "android" | default (index . "github"))) }}
+        {{ end }}
+        {{ if $primary }}
+        <a href="{{ $primary }}" target="_blank" rel="noopener noreferrer">{{ .Title }}</a>
         {{ else }}
         <span>{{ .Title }}</span>
         {{ end }}

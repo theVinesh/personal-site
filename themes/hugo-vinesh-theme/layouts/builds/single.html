@@ -6,7 +6,7 @@
 {{ $redirectURL := $pageURL }}
 {{ with .Params.links }}
   {{ if gt (len .) 0 }}
-    {{ $redirectURL = index . 0 }}
+    {{ $redirectURL = index . "web" | default (index . "ios" | default (index . "android" | default (index . "github"))) }}
   {{ end }}
 {{ end }}
 

@@ -1,4 +1,5 @@
 ---
+disableKinds: [page]
 title: "DejaVu"
 date: 2026-08-12
 type: "builds"
