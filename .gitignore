@@ -6,6 +6,8 @@ public
 
 # wrangler files
 .wrangler
+.worker
+_routes.json
 .dev.vars*
 !.dev.vars.example
 .env*

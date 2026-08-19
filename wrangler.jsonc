@@ -2,11 +2,16 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "personal-site",
   "compatibility_date": "2026-08-15",
-  "pages_build_output_dir": "public",
-  "observability": {
-    "enabled": true
+  "main": ".worker/index.js",
+  "build": {
+    "command": "hugo build --gc --minify && npx wrangler pages functions build --outdir .worker --build-output-directory public"
   },
   "assets": {
-    "directory": "public"
+    "directory": "public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/builds/*"]
+  },
+  "observability": {
+    "enabled": true
   }
 }
