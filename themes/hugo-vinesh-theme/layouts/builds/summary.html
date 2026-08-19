@@ -1,14 +1,6 @@
 <div class="summary">
     <h2 class="summary-title">
-        {{ $primary := "" }}
-        {{ with .Params.links }}
-            {{ $primary = index . "web" | default (index . "ios" | default (index . "android" | default (index . "github"))) }}
-        {{ end }}
-        {{ if $primary }}
-        <a href="{{ $primary }}" target="_blank" rel="noopener noreferrer">{{ .Title }}</a>
-        {{ else }}
-        <span>{{ .Title }}</span>
-        {{ end }}
+        <a href="{{ printf "/builds/%s" .File.ContentBaseName | relURL }}">{{ .Title }}</a>
     </h2>
     {{ if .Params.image }}
     {{ $image := .Resources.Get .Params.image }}
