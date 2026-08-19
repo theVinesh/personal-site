@@ -1,0 +1,7 @@
+{{- $builds := dict -}}
+{{- range $page := where site.RegularPages "Section" "builds" -}}
+  {{- with $page.Params.links -}}
+    {{- $builds = merge $builds (dict $page.File.ContentBaseName .) -}}
+  {{- end -}}
+{{- end -}}
+{{- $builds | jsonify -}}

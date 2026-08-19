@@ -15,6 +15,12 @@ pygmentsUseClasses = true
     extended = true
     min = "0.55.0"
 
+[outputFormats.BuildsJSON]
+  mediaType = "application/json"
+  baseName = "builds"
+  isPlainText = true
+  notAlternative = true
+
 [params]
   google_analytics_id = ""
   twitter_handle = "@theVinesh"
