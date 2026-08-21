@@ -70,6 +70,32 @@
   color: var(--highlight-color);
 }
 
+/* --- AI chat bubble (resume page only) ------------------------------------ */
+
+/* Match the Cloudflare chat widget to the site theme (light + dark) */
+chat-bubble-snippet {
+  --search-snippet-primary-color: var(--highlight-color);
+  --search-snippet-primary-hover: var(--color-ui-hover);
+  --search-snippet-background: var(--color-bg-primary);
+  --search-snippet-surface: var(--color-bg-secondary);
+  --search-snippet-hover-background: var(--codeblock-bg-color);
+  --search-snippet-text-color: var(--color-tx-normal);
+  --search-snippet-text-secondary: var(--color-tx-muted);
+  --search-snippet-border-color: var(--codeblock-border-color);
+  --search-snippet-user-message-bg: var(--highlight-color);
+  --search-snippet-user-message-text: var(--base-color);
+  --search-snippet-assistant-message-bg: var(--color-bg-secondary);
+  --search-snippet-assistant-message-text: var(--color-tx-normal);
+  --search-snippet-font-family-heading: var(--font-family-heading);
+  --search-snippet-font-family: var(--font-family-paragraph);
+}
+
+@media print {
+  chat-bubble-snippet {
+    display: none;
+  }
+}
+
 /* --- Print: formal resume -------------------------------------------------- */
 
 @media print {

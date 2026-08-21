@@ -20,3 +20,16 @@
   {{ .Content }}
 </div>
 {{ end }}
+
+{{ define "footer_js" }}
+{{ $isResumePage := and .File (eq .File.Path "pages/resume.md") }}
+{{ if $isResumePage }}
+<script type="module" src="https://443443e5-7fa8-4dae-9b5c-23996396ed8f.search.ai.cloudflare.com/search-snippet.es.js"></script>
+<chat-bubble-snippet
+  api-url="https://443443e5-7fa8-4dae-9b5c-23996396ed8f.search.ai.cloudflare.com/"
+  placeholder="Ask about Vinesh's experience, or paste a JD..."
+  theme="auto"
+  hide-branding="true"
+></chat-bubble-snippet>
+{{ end }}
+{{ end }}
