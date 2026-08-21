@@ -1,0 +1,59 @@
+name: Sync ai-data to AI Search
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "ai-data/**"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Upload changed files to Cloudflare AI Search
+        env:
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_AI_SEARCH_TOKEN }}
+          CF_ACCOUNT_ID: 9a7cabcfc719d4dcedd0ca26f991147c
+          CF_NAMESPACE: vinesh-resume-rag
+          CF_INSTANCE: gentle-hall-6ec1
+        run: |
+          set -euo pipefail
+
+          # On workflow_dispatch there is no previous commit; sync everything.
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ ! -f ai-data/.gitkeep ]; then
+            FILES=$(find ai-data -type f -name "*.md")
+          else
+            FILES=$(git diff --name-only --diff-filter=ACMR HEAD~1 HEAD -- 'ai-data/*.md' || true)
+            # Fallback: diff against remote target for force-pushes
+            if [ -z "$FILES" ]; then
+              FILES=$(git diff --name-only --diff-filter=ACMR "@{push}" HEAD -- 'ai-data/*.md' || true)
+            fi
+          fi
+
+          if [ -z "$FILES" ]; then
+            echo "No changed files under ai-data/, nothing to do."
+            exit 0
+          fi
+
+          BASE="https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT_ID/ai-search/namespaces/$CF_NAMESPACE/instances/$CF_INSTANCE/items"
+
+          FAILED=0
+          for f in $FILES; do
+            KEY="${f#ai-data/}"
+            echo "Uploading $f as key '$KEY'"
+            HTTP_CODE=$(curl -s -o /tmp/resp.json -w "%{http_code}" \
+              -X POST "$BASE" \
+              -H "Authorization: Bearer $CF_API_TOKEN" \
+              -F "file=@$f")
+            SUCCESS=$(python3 -c "import json; print(json.load(open('/tmp/resp.json')).get('success'))" 2>/dev/null || echo false)
+            echo "  HTTP $HTTP_CODE success=$SUCCESS $(cat /tmp/resp.json | head -c 300)"
+            if [ "$HTTP_CODE" != "200" ] || [ "$SUCCESS" != "True" ]; then
+              FAILED=1
+            fi
+          done
+          exit $FAILED
