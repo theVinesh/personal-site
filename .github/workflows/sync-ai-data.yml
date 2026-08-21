@@ -26,12 +26,12 @@ jobs:
 
           # On workflow_dispatch there is no previous commit; sync everything.
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ ! -f ai-data/.gitkeep ]; then
-            FILES=$(find ai-data -type f -name "*.md")
+            FILES=$(find ai-data -type f -name "*.md" ! -name "system-prompt.md")
           else
-            FILES=$(git diff --name-only --diff-filter=ACMR HEAD~1 HEAD -- 'ai-data/*.md' || true)
+            FILES=$(git diff --name-only --diff-filter=ACMR HEAD~1 HEAD -- 'ai-data/*.md' '!ai-data/system-prompt.md' || true)
             # Fallback: diff against remote target for force-pushes
             if [ -z "$FILES" ]; then
-              FILES=$(git diff --name-only --diff-filter=ACMR "@{push}" HEAD -- 'ai-data/*.md' || true)
+              FILES=$(git diff --name-only --diff-filter=ACMR "@{push}" HEAD -- 'ai-data/*.md' '!ai-data/system-prompt.md' || true)
             fi
           fi
 
