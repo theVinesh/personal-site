@@ -24,13 +24,6 @@
 {{ define "footer_js" }}
 {{ $isResumePage := and .File (eq .File.Path "pages/resume.md") }}
 {{ if $isResumePage }}
-<script type="module" src="https://ai.thevinesh.com/assets/v0.0.43/search-snippet.es.js"></script>
-<chat-bubble-snippet
-  api-url="https://ai.thevinesh.com/"
-  placeholder="Ask about Vinesh"
-  theme="auto"
-  hide-branding="true"
-  translations='{"chatTitle":"Ask VinAI","chatPlaceholder":"Ask about Vinesh"}'
-></chat-bubble-snippet>
+{{ partial "crisp-chat.html" . }}
 {{ end }}
 {{ end }}
