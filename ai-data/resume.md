@@ -1,6 +1,6 @@
 # Vinesh Raju Radhakrishnan — Resume
 
-📍 Dublin, Ireland | 📞 +353 892338410 | ✉️ hire@thevinesh.dev | 🌐 theVinesh.com
+📍 Dublin, Ireland | ✉️ hire@thevinesh.dev | 🌐 theVinesh.com
 
 Senior Software Engineer with 9+ years shipping apps at every stage: 100M+ download consumer apps, a startup grown from zero, and SDKs embedded in products worldwide. Hands-on across the full lifecycle: architecture, mentoring, CI/CD, and release management. Currently one of two senior engineers behind the Dublin Airport app. Open to full-time and contract opportunities. No visa sponsorship required.
 
