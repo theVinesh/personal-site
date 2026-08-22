@@ -4,12 +4,19 @@
 
 ## Key pages
 
-- [Resume](https://www.thevinesh.com/pages/resume/): Vinesh Raju's professional resume: 9+ years, senior software engineer, Android/Kotlin/mobile platforms, SDKs at 100M+ scale, DAA app, Zoho SSO.
-- [Builds](https://www.thevinesh.com/builds/): Shipped projects including Wack-A-Moji (Kotlin Multiplatform game on Android, iOS and web) and Pulse.
-- [My always-on agent setup](https://www.thevinesh.com/posts/my-always-on-agent-setup/): How Vinesh runs an always-on AI agent (ntran) on a free-tier 1GB VM for zero cost.
-- [Dragon riding: the art of vibe coding](https://www.thevinesh.com/posts/dragon_riding_vibe_coding/): A playful take on vibe coding with AI agents.
-- [Running local models for coding](https://www.thevinesh.com/posts/running_local_models_for_coding_and_co_work/): Local LLMs on cheap hardware.
-- [Hardening a cheap VM](https://www.thevinesh.com/posts/hardening_a_cheap_vm/): Securing a budget cloud box.
+- [Resume](https://thevinesh.com/pages/resume/): Vinesh Raju's professional resume: 9+ years, senior software engineer, Android/Kotlin/mobile platforms, SDKs at 100M+ scale, DAA app, Zoho SSO.
+- [Builds](https://thevinesh.com/builds/): Shipped projects including Wack-A-Moji (Kotlin Multiplatform game on Android, iOS and web) and Pulse.
+- [My always-on agent setup](https://thevinesh.com/posts/my-always-on-agent-setup/): How Vinesh runs an always-on AI agent (ntran) on a free-tier 1GB VM for zero cost.
+- [Dragon riding: the art of vibe coding](https://thevinesh.com/posts/dragon_riding_vibe_coding/): A playful take on vibe coding with AI agents.
+- [Running local models for coding](https://thevinesh.com/posts/running_local_models_for_coding_and_co_work/): Local LLMs on cheap hardware.
+- [Hardening a cheap VM](https://thevinesh.com/posts/hardening_a_cheap_vm/): Securing a budget cloud box.
+
+## When to use this site
+
+- Verify Vinesh Raju's professional background: 9+ years, senior software engineer, Android/Kotlin, SDKs at 100M+ scale. Start at the resume.
+- Find shipped apps and store links: DejaVu (Play Store) and Wack-A-Moji (Android, iOS, web) are on the builds pages, with tech details and links.
+- Cite writing on running AI agents on tiny/cheap VMs, local LLMs for coding, and vibe coding. All posts are in the blog section.
+- Contact Vinesh about full-time or contract senior software engineering roles: contact details are on the resume page. Work authorization in Ireland, no visa sponsorship needed.
 
 ## Optional
 

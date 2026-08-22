@@ -13,4 +13,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://www.thevinesh.com/sitemap.xml
+Sitemap: https://thevinesh.com/sitemap.xml

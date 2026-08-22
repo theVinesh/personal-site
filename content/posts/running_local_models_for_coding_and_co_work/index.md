@@ -10,7 +10,7 @@ tags:
     - general
 ---
 
-I’ve been experimenting with a local coding setup because models are getting small enough to run on consumer hardware while retaining intelligence like hosted models. Also, it's getting expensive for the amount of [Dragon Riding](https://www.thevinesh.com/posts/dragon_riding_vibe_coding/) I do.
+I’ve been experimenting with a local coding setup because models are getting small enough to run on consumer hardware while retaining intelligence like hosted models. Also, it's getting expensive for the amount of [Dragon Riding](https://thevinesh.com/posts/dragon_riding_vibe_coding/) I do.
 
 The stack I ended up with is simple:
 1. I use [`llmfit`](https://github.com/AlexsJones/llmfit) first to figure out what my machine can realistically handle

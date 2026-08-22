@@ -1,4 +1,4 @@
-baseURL = "https://www.thevinesh.com/"
+baseURL = "https://thevinesh.com/"
 languageCode = "en-us"
 theme = "hugo-vinesh-theme"
 themesDir = "themes"
