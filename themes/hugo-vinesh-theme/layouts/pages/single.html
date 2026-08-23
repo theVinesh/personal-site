@@ -24,6 +24,6 @@
 {{ define "footer_js" }}
 {{ $isResumePage := and .File (eq .File.Path "pages/resume.md") }}
 {{ if $isResumePage }}
-{{ partial "crisp-chat.html" . }}
+{{ partial "vinai-chat.html" . }}
 {{ end }}
 {{ end }}
