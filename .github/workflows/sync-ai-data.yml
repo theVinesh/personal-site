@@ -19,8 +19,8 @@ jobs:
         env:
           CF_API_TOKEN: ${{ secrets.CLOUDFLARE_AI_SEARCH_TOKEN }}
           CF_ACCOUNT_ID: 9a7cabcfc719d4dcedd0ca26f991147c
-          CF_NAMESPACE: vinesh-resume-rag
-          CF_INSTANCE: gentle-hall-6ec1
+          CF_NAMESPACE: default
+          CF_INSTANCE: vinai-site-chat
         run: |
           set -euo pipefail
 
